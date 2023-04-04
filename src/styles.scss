@@ -1,3 +1,5 @@
+@import "src/variables.scss";
+
 form {
     margin-top: 10px;
 
@@ -10,7 +12,7 @@ form {
     margin-top: 10px;
 
     .error {
-        background-color: #d88380;
+        background-color: $primary-color;
         text-align: center;
     }
 }
