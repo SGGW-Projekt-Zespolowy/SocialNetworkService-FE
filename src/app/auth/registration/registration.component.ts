@@ -26,7 +26,6 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: new FormControl(null, [
         Validators.required, 
         Validators.minLength(7),
-         // TODo: add custom validator to check if password is the same
       ]),
       email: new FormControl(null, [
         Validators.required,
