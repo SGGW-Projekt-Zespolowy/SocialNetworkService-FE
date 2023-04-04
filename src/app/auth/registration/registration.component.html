@@ -1,1 +1,40 @@
-<p>registration works!</p>
+<form 
+    [formGroup]="registrationForm"
+    (ngSubmit)="onSubmitRegistrationForm()">
+    <label for="name">Imię</label>
+    <input 
+        type="text"
+        id="name"
+        formControlName="name">
+    <label for="surname">Nazwisko</label>
+    <input 
+        type="text"
+        id="surname"
+        formControlName="surname">
+    <label for="password">Hasło</label>
+    <input 
+        type="password"
+        id="password"
+        formControlName="password">
+    <label for="confirmPassword">Potwierdź hasło</label>
+    <input 
+        type="password"
+        id="confirmPassword"
+        formControlName="confirmPassword">
+    <label for="email">Email</label>
+    <input 
+        type="text"
+        id="email"
+        formControlName="email">
+    <label for="title">Tytuł</label>
+    <select 
+        id="title"
+        formControlName="title">
+        <option 
+            *ngFor="let title of titles" 
+            [ngValue]="title">
+            {{ title }}
+        </option>
+    </select>
+    <button type="submit">Załóż konto</button>
+</form>
