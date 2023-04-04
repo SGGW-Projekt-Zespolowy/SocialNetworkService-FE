@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomAuthValidators } from '../custom-auth-validators';
 
 @Component({
   selector: 'app-registration',
@@ -34,6 +35,8 @@ export class RegistrationComponent implements OnInit {
       title: new FormControl(null, [
         Validators.required
       ])
+    }, {
+      validators: [CustomAuthValidators.MatchValidator('password', 'confirmPassword')]
     });
   }
 
