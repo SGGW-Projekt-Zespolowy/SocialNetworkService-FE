@@ -9,7 +9,7 @@ import { CustomAuthValidators } from '../custom-auth-validators';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
-  titles = ['Doktor', 'Student', 'rezydent'];
+  titles = ['Doktor', 'Student', 'Rezydent'];
 
   ngOnInit() {
     this.registrationForm = new FormGroup({

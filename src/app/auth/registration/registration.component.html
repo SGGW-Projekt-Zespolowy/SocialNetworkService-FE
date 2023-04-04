@@ -1,6 +1,15 @@
+<div class="errors">
+    <div 
+        class="error"
+        *ngIf="registrationForm.errors?.['mismatch'] &&
+               registrationForm.get('confirmPassword').touched">
+        Hasła nie są identyczne!
+    </div>
+</div>
 <form 
     [formGroup]="registrationForm"
     (ngSubmit)="onSubmitRegistrationForm()">
+
     <label for="name">Imię</label>
     <input 
         type="text"
