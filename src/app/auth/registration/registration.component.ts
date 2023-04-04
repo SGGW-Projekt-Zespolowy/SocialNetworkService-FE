@@ -18,15 +18,15 @@ export class RegistrationComponent implements OnInit {
       surname: new FormControl(null, [
         Validators.required
       ]),
-      password: new FormControl(null, 
-        [Validators.required,
-         Validators.minLength(7)
-        ]),
-      confirmPassword: new FormControl(null, 
-        [Validators.required, 
-         Validators.minLength(7),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(7)
+      ]),
+      confirmPassword: new FormControl(null, [
+        Validators.required, 
+        Validators.minLength(7),
          // TODo: add custom validator to check if password is the same
-        ]),
+      ]),
       email: new FormControl(null, [
         Validators.required,
         Validators.email
