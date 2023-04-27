@@ -1,15 +1,22 @@
-<form 
-    [formGroup]="loginForm" 
-    (ngSubmit)="onSubmitLoginForm()">
-    <label for="email">Email:</label>
-    <input 
-        type="text"
-        id="email"
-        formControlName="email">
-    <label for="password">Hasło:</label>
-    <input 
-        type="password"
-        id="password"
-        formControlName="password">
-    <button type="submit">Zaloguj</button>
-</form>
+<div class="content">
+    <div class="auth-form">
+        <h1>Witaj ponownie</h1>
+        <p>Wprowadź swoje dane aby się zalogować</p>
+        <form 
+        [formGroup]="loginForm" 
+        (ngSubmit)="onSubmitLoginForm()">
+        <label for="email">Email:</label>
+        <input 
+            type="text"
+            id="email"
+            formControlName="email">
+        <label for="password">Hasło:</label>
+        <input 
+            type="password"
+            id="password"
+            formControlName="password">
+        <button type="submit">Zaloguj</button>
+    </form>
+    </div>
+    
+</div>
