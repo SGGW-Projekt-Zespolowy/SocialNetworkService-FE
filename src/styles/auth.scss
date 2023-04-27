@@ -1,3 +1,11 @@
+input.ng-valid.ng-touched {
+  border-color: #A7DFBD;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #EB3223;
+}
+
 .content {
   background-repeat: no-repeat;
   background-position: center center;
