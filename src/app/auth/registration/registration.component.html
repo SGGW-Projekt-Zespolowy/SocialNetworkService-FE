@@ -1,49 +1,57 @@
-<div class="errors">
+<!-- <div class="errors">
     <div 
         class="error"
         *ngIf="registrationForm.errors?.['mismatch'] &&
                registrationForm.get('confirmPassword').touched">
         Hasła nie są identyczne!
     </div>
-</div>
-<form 
-    [formGroup]="registrationForm"
-    (ngSubmit)="onSubmitRegistrationForm()">
+</div> -->
 
-    <label for="name">Imię</label>
-    <input 
-        type="text"
-        id="name"
-        formControlName="name">
-    <label for="surname">Nazwisko</label>
-    <input 
-        type="text"
-        id="surname"
-        formControlName="surname">
-    <label for="password">Hasło</label>
-    <input 
-        type="password"
-        id="password"
-        formControlName="password">
-    <label for="confirmPassword">Potwierdź hasło</label>
-    <input 
-        type="password"
-        id="confirmPassword"
-        formControlName="confirmPassword">
-    <label for="email">Email</label>
-    <input 
-        type="text"
-        id="email"
-        formControlName="email">
-    <label for="title">Tytuł</label>
-    <select 
-        id="title"
-        formControlName="title">
-        <option 
-            *ngFor="let title of titles" 
-            [ngValue]="title">
-            {{ title }}
-        </option>
-    </select>
-    <button type="submit">Załóż konto</button>
-</form>
+<div class="content">
+    <div class="auth-form">
+        <form 
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmitRegistrationForm()">
+
+        <h1>Utwórz konto</h1>
+        <p>Wpypełnij formularz aby się zajerestrować</p>
+    
+        <label for="name">Imię</label>
+        <input 
+            type="text"
+            id="name"
+            formControlName="name">
+        <label for="surname">Nazwisko</label>
+        <input 
+            type="text"
+            id="surname"
+            formControlName="surname">
+        <label for="password">Hasło</label>
+        <input 
+            type="password"
+            id="password"
+            formControlName="password">
+        <label for="confirmPassword">Potwierdź hasło</label>
+        <input 
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword">
+        <label for="email">Email</label>
+        <input 
+            type="text"
+            id="email"
+            formControlName="email">
+        <label for="title">Tytuł</label>
+        <select 
+            id="title"
+            formControlName="title">
+            <option 
+                *ngFor="let title of titles" 
+                [ngValue]="title">
+                {{ title }}
+            </option>
+        </select>
+        <button type="submit">Załóż konto</button>
+    </form>
+    </div>
+</div>
