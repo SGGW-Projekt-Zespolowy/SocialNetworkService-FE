@@ -1,7 +1,16 @@
 @import "src/variables.scss";
 
+// zmienić potem na assets
+@import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
+
 body {
     margin: 0px;
+    font-family: 'Arya', sans-serif;
+    font-weight: 400;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 h1 {
@@ -13,13 +22,11 @@ p {
 }
 
 // do usunuęcia
-form {
-    margin-top: 10px;
-
-    * {
-        display: block;
-    }
-}
+// form {
+//     * {
+//         display: block;
+//     }
+// }
 
 .errors {
     margin-top: 10px;

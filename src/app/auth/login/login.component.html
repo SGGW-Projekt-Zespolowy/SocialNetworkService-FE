@@ -1,10 +1,13 @@
 <div class="content">
     <div class="auth-form">
-        <h1>Witaj ponownie</h1>
-        <p>Wprowadź swoje dane aby się zalogować</p>
+
         <form 
         [formGroup]="loginForm" 
         (ngSubmit)="onSubmitLoginForm()">
+
+        <h1>Witaj ponownie</h1>
+        <p>Wprowadź swoje dane aby się zalogować</p>
+
         <label for="email">Email:</label>
         <input 
             type="text"
@@ -15,7 +18,13 @@
             type="password"
             id="password"
             formControlName="password">
+
+        <span class="forget-pass">Zapomniałeś hasła?</span>
         <button type="submit">Zaloguj</button>
+        <div class="change-auth">
+            <span>Nie masz konta?</span>
+            <span class="switch-auth-btn">Zajerestruj się</span>
+        </div>
     </form>
     </div>
     
