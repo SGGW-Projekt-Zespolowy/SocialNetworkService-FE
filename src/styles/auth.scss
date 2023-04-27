@@ -81,3 +81,17 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) { 
+  .auth-form {
+    width: 100vw;
+    border-radius: 0px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) { 
+  .auth-form {
+    font-size: 3.6vw;
+  }
+}
