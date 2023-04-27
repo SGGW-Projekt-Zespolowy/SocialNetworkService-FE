@@ -7,6 +7,7 @@ body {
     margin: 0px;
     font-family: 'Arya', sans-serif;
     font-weight: 400;
+    font-size: 12px;
 }
 
 button:hover {
@@ -21,18 +22,6 @@ p {
     margin: 0px;
 }
 
-// do usunuęcia
-// form {
-//     * {
-//         display: block;
-//     }
-// }
-
-.errors {
-    margin-top: 10px;
-
-    .error {
-        background-color: $primary-color;
-        text-align: center;
-    }
+.pointer:hover {
+    cursor: pointer;
 }
