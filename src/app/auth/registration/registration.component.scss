@@ -4,6 +4,15 @@
 
 .auth-form {
   form {
-    width: 65%;
+    // width: 65%;
+    input {
+      width: 130%;
+    }
+
+    label {
+      align-self: center;
+      width: 130%;
+    }
   }
 }
+
