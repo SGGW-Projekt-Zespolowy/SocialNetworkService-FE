@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomAuthValidators } from '../custom-auth-validators';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLoginForm() {
-    console.log(this.loginForm.get('password').errors);
+    CustomAuthValidators.validateAllFormFields(this.loginForm);
+    
     if(this.loginForm.valid) {
       console.log(this.loginForm.value);
     }

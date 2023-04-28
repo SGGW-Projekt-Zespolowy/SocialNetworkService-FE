@@ -40,6 +40,8 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmitRegistrationForm() {
+    CustomAuthValidators.validateAllFormFields(this.registrationForm);
+
     if(this.registrationForm.valid) {
       console.log(this.registrationForm.value);
     }

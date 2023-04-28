@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 export class CustomAuthValidators {
     static MatchValidator(source: string, target: string): ValidatorFn {
@@ -8,11 +8,22 @@ export class CustomAuthValidators {
 
             const mismatch = sourceCtrl && targetCtrl && sourceCtrl.value !== targetCtrl.value;
 
-            if(mismatch) {
-                targetCtrl.setErrors({mismatch: true})  
+            if (mismatch) {
+                targetCtrl.setErrors({ mismatch: true })
             }
 
             return null;
         }
+    }
+
+    static validateAllFormFields(formGroup: FormGroup) {
+        Object.keys(formGroup.controls).forEach(field => {
+            const control = formGroup.get(field);
+            if (control instanceof FormControl) {
+                control.markAsTouched({ onlySelf: true });
+            } else if (control instanceof FormGroup) {
+                this.validateAllFormFields(control);
+            }
+        });
     }
 }
