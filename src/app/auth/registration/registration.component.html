@@ -23,7 +23,15 @@
                 <input 
                     type="text"
                     id="name"
-                    formControlName="name">                 
+                    formControlName="name">  
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('name').touched &&
+                    registrationForm.get('name').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                </div>                                   
             </div>
 
             <div class="form-input">
@@ -31,7 +39,16 @@
                 <input 
                     type="text"
                     id="surname"
-                    formControlName="surname">                
+                    formControlName="surname"> 
+
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('surname').touched &&
+                    registrationForm.get('surname').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                </div>               
             </div>
 
             <div class="form-input email">
@@ -39,7 +56,19 @@
                 <input 
                     type="text"
                     id="email"
-                    formControlName="email">                 
+                    formControlName="email">
+
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('email').touched &&
+                    registrationForm.get('email').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['email']">
+                        Błędny adres email!
+                    </span>
+                </div>                     
             </div>
             
             <div class="form-input password">
@@ -47,14 +76,40 @@
                 <input 
                     type="password"
                     id="password"
-                    formControlName="password">                   
+                    formControlName="password"> 
+                    
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('password').touched &&
+                    registrationForm.get('password').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['minlength']">
+                        Hasło musi mieć co najmniej 7 znaków!
+                    </span>
+                </div> 
             </div>
             <div class="form-input">
                 <label for="confirmPassword">Potwierdź hasło</label>
                 <input 
                     type="password"
                     id="confirmPassword"
-                    formControlName="confirmPassword">                  
+                    formControlName="confirmPassword">  
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('confirmPassword').touched &&
+                    registrationForm.get('confirmPassword').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['minlength']">
+                        Hasło musi mieć co najmniej 7 znaków!
+                    </span>
+                    <span *ngIf="errors['mismatch']">
+                        Hasła się nie zgadzają!
+                    </span>
+                </div> 
             </div>
 
             <div class="form-input title">
@@ -67,9 +122,17 @@
                         [ngValue]="title">
                         {{ title }}
                     </option>
-                </select>                  
+                </select>
+            <div class="validation-errors" *ngIf="
+                registrationForm.get('title').touched &&
+                registrationForm.get('title').errors as errors">
+
+                <span *ngIf="errors['required']">
+                    Pole wymagane!
+                </span>
+            </div>               
             </div>
-                   
+
         </div>
 
         <button type="submit">Załóż konto</button>
