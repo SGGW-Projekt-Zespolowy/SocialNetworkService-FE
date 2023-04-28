@@ -9,6 +9,14 @@ input.ng-invalid.ng-touched {
   border-color: $error-color;
 }
 
+select.ng-valid.ng-touched {
+  border-color: #A7DFBD;
+}
+
+select.ng-invalid.ng-touched {
+  border-color: $error-color;
+}
+
 .validation-errors {
   color: $error-color;
   font-size: 0.6em;
@@ -82,6 +90,14 @@ input.ng-invalid.ng-touched {
       background: #022B9B;
       border: 5px solid rgba(2, 35, 126, 0.7);
       border-radius: 28px;
+    }
+
+    select {
+      box-sizing: border-box;
+      padding: 10px;
+      background: linear-gradient(0deg, rgba(185, 207, 251, 0.7), rgba(185, 207, 251, 0.7)), #FFFFFF;
+      border: 5px solid #B9CFFB;
+      border-radius: 20px;
     }
 
     .change-auth {
