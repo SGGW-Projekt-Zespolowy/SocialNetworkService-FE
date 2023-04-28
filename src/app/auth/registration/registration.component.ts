@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
         Validators.required
       ])
     }, {
-      validators: [CustomAuthValidators.MatchValidator('password', 'confirmPassword')]
+      validators: [CustomAuthValidators.matchValidator('password', 'confirmPassword')]
     });
   }
 
