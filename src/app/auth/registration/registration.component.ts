@@ -26,7 +26,6 @@ export class RegistrationComponent implements OnInit {
       confirmPassword: new FormControl(null, [
         Validators.required, 
         Validators.minLength(7),
-        CustomAuthValidators.passwordIsTheSame('password')
       ]),
       email: new FormControl(null, [
         Validators.required,
@@ -35,6 +34,8 @@ export class RegistrationComponent implements OnInit {
       title: new FormControl(null, [
         Validators.required
       ])
+    }, {
+      validators: [CustomAuthValidators.MatchValidator('password', 'confirmPassword')]
     });
   }
 
