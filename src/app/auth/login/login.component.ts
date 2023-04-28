@@ -19,10 +19,11 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(7)
       ]),
-    });
+    });    
   }
 
   onSubmitLoginForm() {
+    console.log(this.loginForm.get('password').errors);
     if(this.loginForm.valid) {
       console.log(this.loginForm.value);
     }
