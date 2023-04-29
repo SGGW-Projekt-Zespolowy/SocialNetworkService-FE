@@ -1,22 +1,5 @@
 $error-color: #EB3223;
 
-input.ng-valid.ng-touched {
-  border-color: #A7DFBD;
-}
-
-input.ng-invalid.ng-touched {
-  //border-color: #EB3223;
-  border-color: $error-color;
-}
-
-select.ng-valid.ng-touched {
-  border-color: #A7DFBD;
-}
-
-select.ng-invalid.ng-touched {
-  border-color: $error-color;
-}
-
 .validation-errors {
   color: $error-color;
   font-size: 0.6em;
@@ -117,6 +100,23 @@ select.ng-invalid.ng-touched {
         align-self: flex-end;
         text-decoration: underline;
       }
+    }
+
+    input.ng-valid.ng-touched {
+      border-color: #A7DFBD;
+    }
+    
+    input.ng-invalid.ng-touched {
+      //border-color: #EB3223;
+      border-color: $error-color;
+    }
+    
+    select.ng-valid.ng-touched {
+      border-color: #A7DFBD;
+    }
+    
+    select.ng-invalid.ng-touched {
+      border-color: $error-color;
     }
   }
 }
