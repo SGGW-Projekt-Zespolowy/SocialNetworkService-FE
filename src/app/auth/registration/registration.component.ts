@@ -8,7 +8,7 @@ import { CustomAuthValidators } from '../custom-auth-validators';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  titles = ['Doktor', 'Student', 'Rezydent'];
+  titles = ['Student', 'Lek. stażysta', 'Lek. rezydent', 'Lek. med.', 'Lek. dent.', 'Dr n. med.', 'Dr hab n. med.', 'Prof dr hab n. med.'];
   registrationForm: FormGroup 
 
   ngOnInit() {
