@@ -1,15 +1,49 @@
-<form 
-    [formGroup]="loginForm" 
-    (ngSubmit)="onSubmitLoginForm()">
-    <label for="email">Email:</label>
-    <input 
-        type="text"
-        id="email"
-        formControlName="email">
-    <label for="password">Hasło:</label>
-    <input 
-        type="password"
-        id="password"
-        formControlName="password">
-    <button type="submit">Zaloguj</button>
-</form>
+<div class="content">
+    <div class="auth-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
+
+            <h1>Witaj ponownie</h1>
+            <p>Wprowadź swoje dane aby się zalogować</p>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" formControlName="email">
+
+            <div class="validation-errors" *ngIf="
+                loginForm.get('email').touched &&
+                loginForm.get('email').errors as errors">
+
+                <span *ngIf="errors['required']">
+                    Pole wymagane!
+                </span>
+                <span *ngIf="errors['email']">
+                    Błędny adres email!
+                </span>
+            </div>
+
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" formControlName="password">
+
+            <div class="validation-errors" *ngIf="
+                loginForm.get('password').touched &&
+                loginForm.get('password').errors as errors">
+
+                <span *ngIf="errors['required']">
+                    Pole wymagane!
+                </span>
+                <span *ngIf="errors['minlength']">
+                    Hasło musi mieć co najmniej 7 znaków!
+                </span>
+            </div>
+
+            <span class="forget-pass">Zapomniałeś hasła?</span>
+            <button type="submit">Zaloguj</button>
+            <div class="change-auth">
+                <span>Nie masz konta?</span>
+                <span class="switch-auth-btn pointer" routerLink="/registration">
+                    Zajerestruj się
+                </span>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -8,8 +8,8 @@ import { CustomAuthValidators } from '../custom-auth-validators';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  registrationForm: FormGroup;
   titles = ['Doktor', 'Student', 'Rezydent'];
+  registrationForm: FormGroup 
 
   ngOnInit() {
     this.registrationForm = new FormGroup({
@@ -35,11 +35,13 @@ export class RegistrationComponent implements OnInit {
         Validators.required
       ])
     }, {
-      validators: [CustomAuthValidators.MatchValidator('password', 'confirmPassword')]
+      validators: [CustomAuthValidators.matchValidator('password', 'confirmPassword')]
     });
   }
 
   onSubmitRegistrationForm() {
+    CustomAuthValidators.validateAllFormFields(this.registrationForm);
+
     if(this.registrationForm.valid) {
       console.log(this.registrationForm.value);
     }

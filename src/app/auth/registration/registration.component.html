@@ -1,49 +1,141 @@
-<div class="errors">
-    <div 
-        class="error"
-        *ngIf="registrationForm.errors?.['mismatch'] &&
-               registrationForm.get('confirmPassword').touched">
-        Hasła nie są identyczne!
+<div class="content">
+    <div class="auth-form">
+        <form 
+        [formGroup]="registrationForm"
+        (ngSubmit)="onSubmitRegistrationForm()">
+
+        <h1>Utwórz konto</h1>
+        <p>Wpypełnij formularz aby się zajerestrować</p>
+
+        <div class="form-inputs">
+
+            <div class="form-input">
+                <label for="name">Imię</label>
+                <input 
+                    type="text"
+                    id="name"
+                    formControlName="name">  
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('name').touched &&
+                    registrationForm.get('name').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                </div>                                   
+            </div>
+
+            <div class="form-input">
+                <label for="surname">Nazwisko</label>
+                <input 
+                    type="text"
+                    id="surname"
+                    formControlName="surname"> 
+
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('surname').touched &&
+                    registrationForm.get('surname').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                </div>               
+            </div>
+
+            <div class="form-input email">
+                <label for="email">Email</label>
+                <input 
+                    type="text"
+                    id="email"
+                    formControlName="email">
+
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('email').touched &&
+                    registrationForm.get('email').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['email']">
+                        Błędny adres email!
+                    </span>
+                </div>                     
+            </div>
+            
+            <div class="form-input password">
+                <label for="password">Hasło</label>
+                <input 
+                    type="password"
+                    id="password"
+                    formControlName="password"> 
+                    
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('password').touched &&
+                    registrationForm.get('password').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['minlength']">
+                        Hasło musi mieć co najmniej 7 znaków!
+                    </span>
+                </div> 
+            </div>
+            <div class="form-input">
+                <label for="confirmPassword">Potwierdź hasło</label>
+                <input 
+                    type="password"
+                    id="confirmPassword"
+                    formControlName="confirmPassword">  
+                <div class="validation-errors" *ngIf="
+                    registrationForm.get('confirmPassword').touched &&
+                    registrationForm.get('confirmPassword').errors as errors">
+    
+                    <span *ngIf="errors['required']">
+                        Pole wymagane!
+                    </span>
+                    <span *ngIf="errors['minlength']">
+                        Hasło musi mieć co najmniej 7 znaków!
+                    </span>
+                    <span *ngIf="errors['mismatch']">
+                        Hasła się nie zgadzają!
+                    </span>
+                </div> 
+            </div>
+
+            <div class="form-input title">
+                <label for="title">Tytuł</label>
+                <select 
+                    id="title"
+                    formControlName="title">
+                    <option 
+                        *ngFor="let title of titles" 
+                        [ngValue]="title">
+                        {{ title }}
+                    </option>
+                </select>
+            <div class="validation-errors" *ngIf="
+                registrationForm.get('title').touched &&
+                registrationForm.get('title').errors as errors">
+
+                <span *ngIf="errors['required']">
+                    Pole wymagane!
+                </span>
+            </div>               
+            </div>
+
+        </div>
+
+        <button type="submit">Załóż konto</button>
+
+        <div class="change-auth">
+            <span>Masz już konto?</span>
+            <span 
+                class="switch-auth-btn pointer"
+                routerLink="/login">
+                Zaloguj się
+            </span>
+        </div>
+    </form>
     </div>
 </div>
-<form 
-    [formGroup]="registrationForm"
-    (ngSubmit)="onSubmitRegistrationForm()">
-
-    <label for="name">Imię</label>
-    <input 
-        type="text"
-        id="name"
-        formControlName="name">
-    <label for="surname">Nazwisko</label>
-    <input 
-        type="text"
-        id="surname"
-        formControlName="surname">
-    <label for="password">Hasło</label>
-    <input 
-        type="password"
-        id="password"
-        formControlName="password">
-    <label for="confirmPassword">Potwierdź hasło</label>
-    <input 
-        type="password"
-        id="confirmPassword"
-        formControlName="confirmPassword">
-    <label for="email">Email</label>
-    <input 
-        type="text"
-        id="email"
-        formControlName="email">
-    <label for="title">Tytuł</label>
-    <select 
-        id="title"
-        formControlName="title">
-        <option 
-            *ngFor="let title of titles" 
-            [ngValue]="title">
-            {{ title }}
-        </option>
-    </select>
-    <button type="submit">Załóż konto</button>
-</form>

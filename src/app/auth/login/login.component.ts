@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomAuthValidators } from '../custom-auth-validators';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +20,12 @@ export class LoginComponent implements OnInit {
         Validators.required,
         Validators.minLength(7)
       ]),
-    });
+    });    
   }
 
   onSubmitLoginForm() {
+    CustomAuthValidators.validateAllFormFields(this.loginForm);
+    
     if(this.loginForm.valid) {
       console.log(this.loginForm.value);
     }

@@ -1,0 +1,14 @@
+.content {
+  background-image: url('../../../assets/Images/backgrounds/login-back.png');
+}
+
+.forget-pass {
+  align-self: flex-end;
+  //font-size: 18px;
+  font-size: 0.9em;
+  text-decoration: underline;
+}
+
+.forget-pass:hover {
+  cursor: pointer;
+}
