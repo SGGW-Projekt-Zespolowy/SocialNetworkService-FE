@@ -1,0 +1,14 @@
+<div class="menu-trigger" (click)="isOpen = !isOpen">
+    <span *ngIf="selectedTitle">{{ selectedTitle }}</span>
+  </div>
+  <div class="menu" *ngIf="isOpen" [@dropDownMenu]>
+    <div
+      class="menu-item"
+      *ngFor="let title of titles"
+      [attr.value]="title"
+      (click)="selectTitle(title)"
+    >
+      {{ title }}
+    </div>
+  </div>
+  

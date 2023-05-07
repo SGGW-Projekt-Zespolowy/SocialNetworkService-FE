@@ -105,19 +105,10 @@
 
             <div class="form-input title">
                 <label for="title">Status</label>
-                <select 
-                    id="title"
-                    formControlName="title">
-                    <option 
-                        *ngFor="let title of titles" 
-                        [ngValue]="title">
-                        {{ title }}
-                    </option>
-                </select>
+                <dropdown-input [titles]="titles"></dropdown-input>
             <div class="validation-errors" *ngIf="
                 registrationForm.get('title').touched &&
                 registrationForm.get('title').errors as errors">
-
                 <span *ngIf="errors['required']">
                     Pole wymagane!
                 </span>
