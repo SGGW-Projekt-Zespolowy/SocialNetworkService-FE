@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 $error-color: #EB3223;
 
 .validation-errors {
   color: $error-color;
   font-size: 0.6em;
   align-self: flex-start;
+  font-family: 'Quicksand';
+  font-weight: 400;
 }
 
 .content {
@@ -40,7 +44,8 @@ $error-color: #EB3223;
   p {
     font-size: 0.9em;
     //font-size: 18px;
-
+    font-family: 'Quicksand';
+    font-weight: 400;
     margin-bottom: 1.2em;
 
   }
@@ -93,8 +98,9 @@ $error-color: #EB3223;
       display: flex;
       align-self: stretch;
       justify-content: space-between;
-      //font-size: 18px;
       font-size: 0.9em;
+      font-family: 'Quicksand';
+      font-weight: 400;
 
       .switch-auth-btn {
         align-self: flex-end;
