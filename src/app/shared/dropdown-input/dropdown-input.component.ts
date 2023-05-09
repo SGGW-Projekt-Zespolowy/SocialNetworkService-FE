@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { DropDownAnimation } from './animations';
 
 @Component({
@@ -15,6 +15,20 @@ export class DropdownInputComponent {
   @Input() titles;
   
   selectedTitle: string;
+
+  inside = false;
+
+  @HostListener("click")
+  clicked() {
+    this.inside = true;
+  }
+  @HostListener("document:click")
+  clickedOut() {
+    if(!this.inside) {
+      this.isOpen = false;
+    }
+    this.inside = false;
+  }
 
   selectTitle(title: string) {
     this.selectedTitle = title;
