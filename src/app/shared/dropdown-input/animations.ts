@@ -36,7 +36,7 @@ import {
             )
           ])
         ]),
-        animate("200ms", style({ height: 0 }))
+        animate("100ms", style({ height: 0 }))
       ])
     ])
   ]);

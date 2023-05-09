@@ -24,17 +24,23 @@ export class DropdownInputComponent implements ControlValueAccessor {
   selectedTitle: string;
 
   inside = false;
+  touched = false;
 
   @HostListener("click")
   clicked() {
     this.inside = true;
+    this.touched = true;
   }
   @HostListener("document:click")
   clickedOut() {
     if(!this.inside) {
-      this.onTouched();
       this.isOpen = false;
+
+      if(this.touched) {
+        this.onTouched();
+      }
     }
+
     this.inside = false;
   }
 

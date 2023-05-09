@@ -2,6 +2,7 @@
 
 :host {
     color: #656c7f;
+    position: relative;
 }
 
 :host.ng-invalid.ng-touched {
@@ -41,8 +42,10 @@ span{
 
 .menu {
   position: absolute;
-  top: 64%;
-  width: 61%;
+  width: 112%;
+  max-height: 200px;
+  overflow-y: scroll;
+
   background: linear-gradient(
       0deg,
       rgba(185, 207, 251, 0.7),
@@ -50,14 +53,11 @@ span{
     ),
     #ffffff;
   border-radius: 16px;
-  padding: 0px 1px 10px 10px;
 }
 
 .menu-item {
   color: #656c7f;
   text-align: left;
-  padding-bottom: -10px;
-  padding-top: -10px;
   padding-left: 10px;
   font-size: 22px;
   font-weight: 400;
@@ -71,6 +71,31 @@ span{
 
 .menu-item:hover {
   background-color: rgba(0, 79, 254, 0.2);
-  width: 96%;
 }
 
+// scrollbar
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+@media screen and (max-width: 500px) { 
+  .menu-trigger {
+    font-size: 16px;
+  }
+
+  .menu {
+    width: 112%;
+  }
+
+  .menu-item {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-height: 700px) { 
+  .menu {
+    height: 120px;
+  }
+}
