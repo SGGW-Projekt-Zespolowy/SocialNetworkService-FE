@@ -1,63 +1,76 @@
+@import "src/variables.scss";
+
 :host {
     color: #656c7f;
-  }
-  
+}
+
+:host.ng-invalid.ng-touched {
   .menu-trigger {
-    position: relative;
-    padding: 10px;
-    background: linear-gradient(
-        0deg,
-        rgba(185, 207, 251, 0.7),
-        rgba(185, 207, 251, 0.7)
-      ),
-      #ffffff;
-    border: 5px solid #b9cffb;
-    border-radius: 20px;
-    cursor: pointer;
-    height: 20px;
-    font-size: 22px;
-    font-weight: 400;
+    border-color: $error-color;
   }
+}
 
-  span{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+:host.ng-valid.ng-touched {
+  .menu-trigger {
+    border-color: $success-color;
   }
-  
-  .menu {
-    position: absolute;
-    top: 64%;
-    width: 61%;
-    background: linear-gradient(
-        0deg,
-        rgba(185, 207, 251, 0.7),
-        rgba(185, 207, 251, 0.7)
-      ),
-      #ffffff;
-    border-radius: 16px;
-    padding: 0px 1px 10px 10px;
-  }
-  
-  .menu-item {
-    color: #656c7f;
-    text-align: left;
-    padding-bottom: -10px;
-    padding-top: -10px;
-    padding-left: 10px;
-    font-size: 22px;
-    font-weight: 400;
-    width: 100%;
-    cursor: pointer;
-  }
-  
-  .menu-item:last-child {
-    border-bottom: none;
-  }
-  
-  .menu-item:hover {
-    background-color: rgba(0, 79, 254, 0.2);
-    width: 96%;
-  }
+}
 
-  
+.menu-trigger {
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(
+      0deg,
+      rgba(185, 207, 251, 0.7),
+      rgba(185, 207, 251, 0.7)
+    ),
+    #ffffff;
+  border: 5px solid #b9cffb;
+  border-radius: 20px;
+  cursor: pointer;
+  height: 20px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+span{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu {
+  position: absolute;
+  top: 64%;
+  width: 61%;
+  background: linear-gradient(
+      0deg,
+      rgba(185, 207, 251, 0.7),
+      rgba(185, 207, 251, 0.7)
+    ),
+    #ffffff;
+  border-radius: 16px;
+  padding: 0px 1px 10px 10px;
+}
+
+.menu-item {
+  color: #656c7f;
+  text-align: left;
+  padding-bottom: -10px;
+  padding-top: -10px;
+  padding-left: 10px;
+  font-size: 22px;
+  font-weight: 400;
+  width: 100%;
+  cursor: pointer;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 79, 254, 0.2);
+  width: 96%;
+}
+

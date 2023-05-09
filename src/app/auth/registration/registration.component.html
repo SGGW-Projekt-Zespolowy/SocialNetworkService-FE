@@ -105,7 +105,10 @@
 
             <div class="form-input title">
                 <label for="title">Status</label>
-                <dropdown-input [titles]="titles"></dropdown-input>
+                <dropdown-input 
+                    [titles]="titles"
+                    formControlName="title">
+                </dropdown-input>
             <div class="validation-errors" *ngIf="
                 registrationForm.get('title').touched &&
                 registrationForm.get('title').errors as errors">

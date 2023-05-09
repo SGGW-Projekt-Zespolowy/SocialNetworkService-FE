@@ -1,4 +1,4 @@
-$error-color: #EB3223;
+@import "src/variables.scss";
 
 .validation-errors {
   color: $error-color;
@@ -102,7 +102,7 @@ $error-color: #EB3223;
       }
     }
     input.ng-valid.ng-touched {
-      border-color: #A7DFBD;
+      border-color: $success-color;
     }
     
     input.ng-invalid.ng-touched {
@@ -111,7 +111,7 @@ $error-color: #EB3223;
     }
     
     select.ng-valid.ng-touched {
-      border-color: #A7DFBD;
+      border-color: $success-color;
     }
     
     select.ng-invalid.ng-touched {
