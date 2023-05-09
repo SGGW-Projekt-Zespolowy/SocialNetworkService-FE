@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-$error-color: #EB3223;
+@import "src/variables.scss";
 
 .validation-errors {
   color: $error-color;
@@ -107,9 +107,8 @@ $error-color: #EB3223;
         text-decoration: underline;
       }
     }
-
     input.ng-valid.ng-touched {
-      border-color: #A7DFBD;
+      border-color: $success-color;
     }
     
     input.ng-invalid.ng-touched {
@@ -118,7 +117,7 @@ $error-color: #EB3223;
     }
     
     select.ng-valid.ng-touched {
-      border-color: #A7DFBD;
+      border-color: $success-color;
     }
     
     select.ng-invalid.ng-touched {
