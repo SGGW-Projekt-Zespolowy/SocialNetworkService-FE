@@ -21,18 +21,30 @@
   margin-right: 2em;
 }
 
+.nav-brand:hover {
+  cursor: pointer;
+}
+
 .nav-items {
   display: inline;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-.nav-item {
-  margin-left: 1em;
+  color: #FFFF;
+  font-size: 1.3em;
+
+  .nav-item {
+    margin-left: 1em;
+  }
+
+  .nav-item:hover {
+    cursor: pointer;
+  }
 }
 
 .search-bar {
+  padding: 0px 13px;
   width: 800px;
   height: 32px;
   background-color: white;
