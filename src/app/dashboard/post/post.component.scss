@@ -1,0 +1,89 @@
+.post {
+  background: #FFFFFF;
+  box-shadow: 0px 5px 10px 1px rgba(217, 217, 217, 0.5);
+  border-radius: 23px;  
+  padding: 10px 20px;
+  border: 1px solid black;
+
+  display: flex;
+  margin-top: 20px;
+  width: 700px;
+}
+
+.stats {
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  margin-right: 2em;
+  margin-top: 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  .vote-section {
+    color: #02237E;
+    font-size: 27px;
+
+    i {
+      font-size: 25px;
+      vertical-align: bottom;
+    }
+
+    margin-bottom: 1em;
+  }
+
+  .other-section {
+    margin-top: auto;
+  }
+
+  * {
+    display: block;
+  }
+
+  .fa-eye {
+    color: #B9CFFB;
+  }
+
+  .fa-comment {
+    color: #B9CFFB
+  }
+}
+
+.main {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .basic-info {
+      display: inline;
+
+      .title {
+        font-family: 'Arya';
+        font-weight: 400;
+        font-size: 32px;
+      }
+  
+      .author-and-category {
+        color: #656C7F;
+        font-family: "Quicksand";
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .bookmark {
+      color: #02237E;
+      font-size: 20px;
+      padding: 0.7em;
+    }
+  }
+
+  .post-content {
+    font-family: "Quicksand";
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
