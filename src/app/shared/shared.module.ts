@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    DropdownInputComponent
+    DropdownInputComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
   ],
   exports: [
-    DropdownInputComponent
+    DropdownInputComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

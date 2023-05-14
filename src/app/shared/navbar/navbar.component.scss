@@ -1,0 +1,8 @@
+@import "src/variables.scss";
+
+.navbar {
+  position: fixed;
+  height: $navbar-height;
+  width: 100vw;
+  background-color: $secondary-color;
+}
