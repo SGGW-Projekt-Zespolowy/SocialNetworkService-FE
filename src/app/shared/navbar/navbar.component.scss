@@ -2,6 +2,8 @@
 
 .navbar {
   position: fixed;
+  z-index: 10000;
+
   height: $navbar-height;
   width: 100vw;
   background-color: $secondary-color;
