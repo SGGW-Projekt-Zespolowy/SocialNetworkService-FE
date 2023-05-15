@@ -3,10 +3,14 @@
     display: inline-block;
   }
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   min-height: 100vh;
   background: rgba(238, 236, 248, 0.3);
+}
+
+.categories-section {
+  margin-right: auto;
 }
 
 .posts-section {
@@ -14,3 +18,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.friends-section {
+  margin-left: auto;
+}
+
+.sub-section {
+  //flex: 2 1 auto
+} 
