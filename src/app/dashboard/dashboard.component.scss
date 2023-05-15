@@ -1,7 +1,4 @@
 .nav-content {
-  div {
-    display: inline-block;
-  }
   display: flex;
   justify-content: space-between;
 
@@ -13,16 +10,16 @@
   margin-right: auto;
 }
 
-.friends-section {
+app-friends-section {
   margin-left: auto;
 }
-
-.sub-section {
-  //flex: 1;
-} 
 
 @media screen and (max-width: 800px) { 
   .sub-section {
     display: none !important;
   } 
+
+  app-friends-section {
+    display: none !important;
+  }
 }
