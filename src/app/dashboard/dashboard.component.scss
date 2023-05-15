@@ -16,7 +16,9 @@
 .posts-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  //flex: 2;;
 }
 
 .friends-section {
@@ -24,5 +26,5 @@
 }
 
 .sub-section {
-  //flex: 2 1 auto
+  //flex: 1;
 } 

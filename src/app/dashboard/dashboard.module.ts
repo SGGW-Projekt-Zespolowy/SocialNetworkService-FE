@@ -4,13 +4,15 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { PostComponent } from './post/post.component';
+import { PostsSectionComponent } from './posts-section/posts-section.component';
 
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    PostComponent
+    PostComponent,
+    PostsSectionComponent
   ],
   imports: [
     CommonModule,
