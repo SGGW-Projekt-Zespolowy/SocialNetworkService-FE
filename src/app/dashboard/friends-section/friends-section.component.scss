@@ -1,8 +1,10 @@
 .friends {
   margin-top: 1em;
   margin-right: 2em;
+  font-size: 12px;
 
-  padding-left: 31px;
+  padding-left: 2.58333em;
+  //padding-left: 31px;
 
   border-left: 2px solid rgba(217, 217, 217, 0.4);
   min-height: 90vh;
@@ -10,13 +12,18 @@
   .friend {
     display: flex;
     align-items: center;
-    min-width: 300px;
 
-    margin-top: 14px;
+    min-width: 25em;
+    //min-width: 300px;
+
+    margin-top: 1.16666em;
+    //margin-top: 14px;
   
     .avatar {
-      width: 36px;
-      height: 36px;
+      width: 3em;
+      height: 3em;
+      //width: 36px;
+      //height: 36px;
       border-radius: 10px;
     }
     
@@ -27,21 +34,36 @@
       height: 36px;
       border-bottom: 2px solid rgba(217, 217, 217, 0.4);
 
-      margin-left: 10px;
+      margin-left: 0.83333em;
+      //margin-left: 10px;
 
       .name {
         font-family: "Quicksand";
-        font-size: 18px;
+
+        font-size: 1.5em;
+        //font-size: 18px;
         font-weight: 400;
-        padding-left: 10px;
+
+        padding-left: 0.83333em;
+        //padding-left: 10px;
       }
   
       .activity-status {
         margin-left: auto;
-        padding-left: 15px;
+
+        padding-left: 1.25em;
+        //padding-left: 15px;
       }
     }
   }
-  
+}
+
+@media screen and (max-width: 1200px) { 
+  .friends {
+    font-size: 10px;
+    .friend {
+      min-width: 26em;
+    }
+  }
 }
 

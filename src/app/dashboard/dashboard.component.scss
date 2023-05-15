@@ -23,6 +23,10 @@ app-friends-section {
 }
 
 @media screen and (max-width: 900px) { 
+  .nav-content {
+    justify-content: center;
+  }
+
   .sub-section {
     display: none !important;
   } 
