@@ -1,6 +1,9 @@
+@import "src/variables.scss";
+
 .nav-content {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 
   min-height: 100vh;
   background: rgba(238, 236, 248, 0.3);
@@ -8,10 +11,15 @@
 
 .categories-section {
   margin-right: auto;
+  width: 300px;
 }
 
 app-friends-section {
   margin-left: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: $navbar-height;
+
 }
 
 @media screen and (max-width: 800px) { 
@@ -22,4 +30,10 @@ app-friends-section {
   app-friends-section {
     display: none !important;
   }
+}
+
+@media screen and (max-width: 1330px) { 
+  .sub-section {
+    display: none !important;
+  } 
 }
