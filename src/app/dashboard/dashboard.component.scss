@@ -1,0 +1,45 @@
+@import "src/variables.scss";
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  min-height: 100vh;
+  background: rgba(238, 236, 248, 0.3);
+}
+
+app-control-section {
+  margin-right: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: $navbar-height;
+}
+
+app-friends-section {
+  margin-left: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: $navbar-height;
+
+}
+
+@media screen and (max-width: 900px) { 
+  .nav-content {
+    justify-content: center;
+  }
+
+  // app-control-section {
+  //   display: none !important;
+  // } 
+
+  // app-friends-section {
+  //   display: none !important;
+  // }
+}
+
+// @media screen and (max-width: 1330px) { 
+//   app-control-section {
+//     display: none !important;
+//   } 
+// }

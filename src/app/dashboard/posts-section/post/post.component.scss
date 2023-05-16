@@ -1,0 +1,211 @@
+.post {
+  background: #FFFFFF;
+  box-shadow: 0px 5px 10px 1px rgba(217, 217, 217, 0.5);
+  border-radius: 23px;  
+  padding: 10px 20px;
+  margin: 0px 2em;
+
+  display: flex;
+  margin-top: 20px;
+  max-width: 700px;
+
+  font-size: 12px;
+}
+
+.stats {
+  font-family: 'Quicksand';
+
+  margin-right: 2em;
+  margin-top: 1em;
+
+  display: flex;
+  flex-direction: column;
+
+  .vote-section {
+    color: #02237E;
+    font-size: 2.25em;
+    //font-size: 27px;
+
+    i {
+      font-size: 0.9259;
+      //font-size: 25px;
+      transform: scale(1.5);
+      vertical-align: bottom;
+    }
+
+    margin-bottom: 1em;
+  }
+
+  .other-section {
+    margin-top: auto;
+    font-size: 1.3em;
+    //font-size: 16px;
+  }
+
+  * {
+    display: block;
+  }
+
+  .fa-eye {
+    color: #B9CFFB;
+
+    font-size: 1.3125em;
+    //font-size: 21px;
+  }
+
+  .fa-comment {
+    color: #B9CFFB;
+
+    font-size: 1.3125em;
+    //font-size: 21px;
+  }
+}
+
+.main {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .basic-info {
+      .title {
+        font-family: 'Arya';
+        font-weight: 400;
+        font-size: 2.66em;
+        //font-size: 32px;
+      }
+  
+      .author-and-category {
+        color: #656C7F;
+        font-family: "Quicksand";
+        font-weight: 500;
+        font-size: 1.3em;
+        //font-size: 16px;
+      }
+    }
+
+    .bookmark {
+      color: #02237E;
+      font-size: 1.6666em;
+      //font-size: 20px;
+      padding: 0.7em 0px 0.7em 0.7em;
+    }
+  }
+
+  .post-content {
+    font-family: "Quicksand";
+    font-weight: 400;
+    font-size: 1.5em;
+    //font-size: 18px;
+  }
+
+  .tag-section {
+    margin-top: 2em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    * {
+      margin-left: 0.7rem;
+    }
+
+    .tag {
+      border: 2px solid;
+      border-radius: 17px;
+
+      padding: 0.35em 0.7em;
+      //padding: 7px 14px;
+
+      font-family: "Quicksand";
+      font-weight: 500;
+
+      font-size: 1.6666em;
+      //font-size: 20px;
+    }
+
+    .show-more-tags {
+      font-family: 'Quicksand';
+      font-style: normal;
+      font-weight: 500;
+
+      font-size: 2.0833333em;
+      //font-size: 25px;
+      color: #02237E;
+    }
+
+    .orange {
+      background-color: rgba(239, 129, 14, 0.3);;
+      border-color: #EF810E;
+      color: #EF810E;
+    }
+
+    .blue {
+      background-color: rgba(92, 180, 253, 0.3);
+      border-color: #5CB4FD;
+      color: #5CB4FD;
+    }
+
+    .purple {
+      background-color: rgba(116, 64, 217, 0.3);
+      border-color: #7440D9;
+      color: #7440D9;
+    }
+
+    .images {
+      //width: 72px;
+      //height: 72px;
+
+      width: 6em;
+      height: 6em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) { 
+  .post {
+    font-size: 10px;
+  }
+
+  .bookmark {
+    font-size: 2em !important;
+  }
+}
+
+@media screen and (max-width: 500px) { 
+  .post {
+    //padding: 5px 10px;
+    //font-size: 8px;
+    font-size: 1.6vw;
+  }
+
+  .bookmark {
+    font-size: 2.4em !important;
+  }
+
+  .vote-section {
+    i {
+      font-size: 1.5em !important;
+    }
+  }
+
+  .stats {
+    margin-right: 3em;
+  }
+
+  .fa-eye {
+    font-size: 1.5em !important;
+  }
+
+  .fa-comment {
+    font-size: 1.5em !important;
+  }
+}
+
+@media screen and (max-width: 300px) { 
+  .post {
+    margin: 10px 5px;
+  }
+}

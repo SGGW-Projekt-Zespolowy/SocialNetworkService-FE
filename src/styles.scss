@@ -3,6 +3,10 @@
 // zmienić potem na assets
 @import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
 
+html {
+    font-size: 12px
+}
+
 body {
     margin: 0px;
     font-family: 'Arya', sans-serif;
@@ -24,4 +28,8 @@ p {
 
 .pointer:hover {
     cursor: pointer;
+}
+
+.nav-content {
+    padding-top: $navbar-height;
 }
