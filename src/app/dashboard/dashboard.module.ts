@@ -6,13 +6,15 @@ import { SharedModule } from '../shared/shared.module';
 import { PostComponent } from './posts-section/post/post.component';
 import { PostsSectionComponent } from './posts-section/posts-section.component';
 import { FriendsSectionComponent } from './friends-section/friends-section.component';
+import { ControlSectionComponent } from './control-section/control-section.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     PostComponent,
     PostsSectionComponent,
-    FriendsSectionComponent
+    FriendsSectionComponent,
+    ControlSectionComponent
   ],
   imports: [
     CommonModule,

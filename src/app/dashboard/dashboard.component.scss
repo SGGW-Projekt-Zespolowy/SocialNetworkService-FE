@@ -9,9 +9,8 @@
   background: rgba(238, 236, 248, 0.3);
 }
 
-.categories-section {
+app-control-section {
   margin-right: auto;
-  width: 300px;
 }
 
 app-friends-section {
@@ -27,7 +26,7 @@ app-friends-section {
     justify-content: center;
   }
 
-  .sub-section {
+  app-control-section {
     display: none !important;
   } 
 
@@ -37,7 +36,7 @@ app-friends-section {
 }
 
 @media screen and (max-width: 1330px) { 
-  .sub-section {
+  app-control-section {
     display: none !important;
   } 
 }
