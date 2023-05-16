@@ -1,21 +1,25 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppBreakpoints } from '../custom-breakpoints';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   controlIsVisible: boolean = true;
   friendsIsVisible: boolean = true;
 
+  controlDisapearSub: Subscription
+  friendsDisapearSub: Subscription
+
   constructor(private responsive: BreakpointObserver) {}
 
   ngOnInit(): void {
-    this.responsive.observe([
+    this.controlDisapearSub = this.responsive.observe([
       AppBreakpoints.controlDisapearBreakpoint
       ])
       .subscribe(result => {
@@ -25,7 +29,7 @@ export class DashboardComponent implements OnInit {
         }
     });
 
-    this.responsive.observe([
+    this.friendsDisapearSub = this.responsive.observe([
       AppBreakpoints.friendsDisapearBreakpoint
       ])
       .subscribe(result => {
@@ -34,5 +38,10 @@ export class DashboardComponent implements OnInit {
           this.friendsIsVisible = false;
         }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.controlDisapearSub.unsubscribe();
+    this.friendsDisapearSub.unsubscribe();
   }
 }
