@@ -1,5 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { AppBreakpoints } from '../custom-breakpoints';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,14 +12,11 @@ export class DashboardComponent implements OnInit {
   controlIsVisible: boolean = true;
   friendsIsVisible: boolean = true;
 
-  controlDisapearBreakpoint: string = `(max-width: 1300px)`;
-  friendsDisapearBreakpoint: string = `(max-width: 900px)`;
-
   constructor(private responsive: BreakpointObserver) {}
 
   ngOnInit(): void {
     this.responsive.observe([
-      this.controlDisapearBreakpoint
+      AppBreakpoints.controlDisapearBreakpoint
       ])
       .subscribe(result => {
         this.controlIsVisible = true;
@@ -28,7 +26,7 @@ export class DashboardComponent implements OnInit {
     });
 
     this.responsive.observe([
-      this.friendsDisapearBreakpoint
+      AppBreakpoints.friendsDisapearBreakpoint
       ])
       .subscribe(result => {
         this.friendsIsVisible = true;
