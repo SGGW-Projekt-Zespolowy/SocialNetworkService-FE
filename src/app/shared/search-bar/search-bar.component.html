@@ -2,5 +2,10 @@
   <search-bar-input></search-bar-input>
 </div>
 <div class="search-icon" *ngIf="searchIconIsVisible">
-  <i class="fa-solid fa-magnifying-glass"></i>
+  <i (click)="searchViewIsVisible = !searchViewIsVisible" class="fa-solid fa-magnifying-glass"></i>
+</div>
+
+<div class="search-phone-view" *ngIf="searchViewIsVisible">
+  <i (click)="searchViewIsVisible = !searchViewIsVisible" class="fa-solid fa-x"></i>
+  <span (click)="searchViewIsVisible = !searchViewIsVisible">Zamknij</span>
 </div>

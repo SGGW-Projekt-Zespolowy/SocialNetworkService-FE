@@ -14,6 +14,8 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   searchBarIsVisible: boolean = true;
   searchIconIsVisible: boolean = false;
 
+  searchViewIsVisible: boolean = false;
+
   constructor(private responsive: BreakpointObserver) {}
 
   ngOnInit(): void {
@@ -23,6 +25,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       .subscribe(result => {
         this.searchBarIsVisible = true;
         this.searchIconIsVisible = false;
+        this.searchViewIsVisible = false;
 
         if (result.matches) {
           this.searchBarIsVisible = false;
