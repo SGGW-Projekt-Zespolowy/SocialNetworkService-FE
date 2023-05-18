@@ -1,6 +1,6 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AppBreakpoints } from '../custom-breakpoints';
+import { AppBreakpoints } from '../app-breakpoints';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.controlDisapearSub = this.responsive.observe([
-      AppBreakpoints.controlDisapearBreakpoint
+      AppBreakpoints.Large
       ])
       .subscribe(result => {
         this.controlIsVisible = true;
@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     });
 
     this.friendsDisapearSub = this.responsive.observe([
-      AppBreakpoints.friendsDisapearBreakpoint
+      AppBreakpoints.Medium
       ])
       .subscribe(result => {
         this.friendsIsVisible = true;
