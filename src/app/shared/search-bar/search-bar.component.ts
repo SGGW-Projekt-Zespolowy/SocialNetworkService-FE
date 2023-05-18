@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppBreakpoints } from 'src/app/app-breakpoints';
 
@@ -8,7 +8,7 @@ import { AppBreakpoints } from 'src/app/app-breakpoints';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent {
+export class SearchBarComponent implements OnInit, OnDestroy {
 
   searchToggleSub: Subscription;
   searchBarIsVisible: boolean = true;
@@ -29,5 +29,9 @@ export class SearchBarComponent {
           this.searchIconIsVisible = true;
         }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.searchToggleSub.unsubscribe();
   }
 }
