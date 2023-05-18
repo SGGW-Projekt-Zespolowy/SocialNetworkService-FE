@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchBarInputComponent } from './search-bar-input/search-bar-input.component';
 
 @NgModule({
   declarations: [
     DropdownInputComponent,
     NavbarComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SearchBarInputComponent
   ],
   imports: [
     CommonModule,
