@@ -4,13 +4,15 @@ import { DropdownInputComponent } from './dropdown-input/dropdown-input.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchBarInputComponent } from './search-bar-input/search-bar-input.component';
+import { SearchPhoneViewComponent } from './search-phone-view/search-phone-view.component';
 
 @NgModule({
   declarations: [
     DropdownInputComponent,
     NavbarComponent,
     SearchBarComponent,
-    SearchBarInputComponent
+    SearchBarInputComponent,
+    SearchPhoneViewComponent
   ],
   imports: [
     CommonModule,

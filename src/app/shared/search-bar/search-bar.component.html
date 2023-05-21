@@ -1,15 +1,12 @@
 <div class="search-bar" *ngIf="searchBarIsVisible">
   <search-bar-input></search-bar-input>
 </div>
+
 <div class="search-icon" *ngIf="searchIconIsVisible">
   <i (click)="searchViewIsVisible = !searchViewIsVisible" class="fa-solid fa-magnifying-glass"></i>
 </div>
 
-<div class="search-phone-view" *ngIf="searchViewIsVisible">
-  <div class="controls">
-    <i (click)="searchViewIsVisible = !searchViewIsVisible" class="fa-solid fa-less-than"></i>
-    <search-bar-input></search-bar-input>
-  </div>
-  <hr>
-  <span>Historia wyszukiwania</span>
-</div>
+<search-phone-view
+  *ngIf="searchViewIsVisible"
+  (close)="searchViewIsVisible = $event">
+</search-phone-view>

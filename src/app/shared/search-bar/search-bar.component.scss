@@ -7,30 +7,30 @@
   font-size: 1.3em;
 }
 
-.search-phone-view {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+// .search-phone-view {
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
 
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 10px;
+//   width: 100vw;
+//   height: 100vh;
+//   box-sizing: border-box;
+//   padding: 10px;
 
-  background-color: rgb(238, 236, 248);
+//   background-color: rgb(238, 236, 248);
 
-  .controls {
-    display: flex;
-    align-items: center;
-    //justify-content: flex-end;
+//   .controls {
+//     display: flex;
+//     align-items: center;
+//     //justify-content: flex-end;
 
-    search-bar-input {
-      width: 100%;
-    }
+//     search-bar-input {
+//       width: 100%;
+//     }
 
-    i {
-      //color: #fcfbfb;
-      margin-right: 0.5em;
-    }
-  }
-}
+//     i {
+//       //color: #fcfbfb;
+//       margin-right: 0.5em;
+//     }
+//   }
+// }
