@@ -17,5 +17,20 @@
   box-sizing: border-box;
   padding: 10px;
 
-  background-color: #FFFF;
+  background-color: rgb(238, 236, 248);
+
+  .controls {
+    display: flex;
+    align-items: center;
+    //justify-content: flex-end;
+
+    search-bar-input {
+      width: 100%;
+    }
+
+    i {
+      //color: #fcfbfb;
+      margin-right: 0.5em;
+    }
+  }
 }
