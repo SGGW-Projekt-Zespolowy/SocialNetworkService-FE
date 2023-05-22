@@ -21,5 +21,11 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/Speech.svg', 'comment').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/bookmark.svg', 'bookmark').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/home.svg', 'home').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/hossa.svg', 'hossa').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/messsage-1.svg', 'messsage-1').subscribe();
   }
 }
