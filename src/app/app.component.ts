@@ -11,5 +11,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.iconReg.loadSvg('../assets/Icons/test-icon.svg', 'test').subscribe();
+    this.iconReg.loadSvg('../assets/Icons/sort-up.svg', 'sort-up').subscribe();
+    this.iconReg.loadSvg('../assets/Icons/sort-down.svg', 'sort-down').subscribe();
   }
 }
