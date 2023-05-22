@@ -16,7 +16,6 @@
   font-family: 'Quicksand';
 
   margin-right: 1.5em;
-  margin-top: 1em;
 
   display: flex;
   flex-direction: column;
@@ -99,9 +98,14 @@
 
     .bookmark {
       color: #02237E;
-      font-size: 1.6666em;
+      //font-size: 1.6666em;
       //font-size: 20px;
       padding: 0.7em 0px 0.7em 0.7em;
+
+      .bookmark-icon {
+        width: 1.6666em;
+        height: 3.06666666em;
+      }
     }
   }
 
@@ -179,21 +183,15 @@
   .post {
     font-size: 10px;
   }
-
-  .bookmark {
-    font-size: 2em !important;
-  }
 }
 
 @media screen and (max-width: 500px) { 
   .post {
-    //padding: 5px 10px;
-    //font-size: 8px;
     font-size: 1.6vw;
   }
 
   .bookmark {
-    font-size: 2.4em !important;
+    font-size: 1.2em !important;
   }
 
   .vote-section {
