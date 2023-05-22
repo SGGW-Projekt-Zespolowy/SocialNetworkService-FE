@@ -58,13 +58,6 @@
     display: block;
   }
 
-  // .fa-eye {
-  //   color: #B9CFFB;
-
-  //   font-size: 1.3125em;
-  //   //font-size: 21px;
-  // }
-
   .eye-icon {
     margin-bottom: 0.3125em;
 
@@ -76,18 +69,12 @@
     width: 1.875em;
     height: 1.875em;
   }
-
-  .fa-comment {
-    color: #B9CFFB;
-
-    font-size: 1.3125em;
-    //font-size: 21px;
-  }
 }
 
 .main {
-  display: inline-block;
-  height: 100%;
+  //display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
   .header {
@@ -127,7 +114,8 @@
   }
 
   .tag-section {
-    margin-top: 2em;
+    //margin-top: 2em;
+    margin-top: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
