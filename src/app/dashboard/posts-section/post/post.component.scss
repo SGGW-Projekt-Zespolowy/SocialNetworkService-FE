@@ -15,22 +15,30 @@
 .stats {
   font-family: 'Quicksand';
 
-  margin-right: 2em;
-  margin-top: 1em;
+  margin-right: 1.5em;
 
   display: flex;
   flex-direction: column;
+
 
   .vote-section {
     color: #02237E;
     font-size: 2.25em;
     //font-size: 27px;
+    text-align: center;
 
     i {
       font-size: 0.9259;
       //font-size: 25px;
       transform: scale(1.5);
       vertical-align: bottom;
+    }
+
+    .sort {
+      //width: 30px;
+      width: 2.3em;
+      //height: 30px;
+      height: 2.3em;
     }
 
     margin-bottom: 1em;
@@ -40,30 +48,31 @@
     margin-top: auto;
     font-size: 1.3em;
     //font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   * {
     display: block;
   }
 
-  .fa-eye {
-    color: #B9CFFB;
+  .eye-icon {
+    margin-bottom: 0.3125em;
 
-    font-size: 1.3125em;
-    //font-size: 21px;
+    width: 2.0625em;
+    height: 1.75em;
   }
 
-  .fa-comment {
-    color: #B9CFFB;
-
-    font-size: 1.3125em;
-    //font-size: 21px;
+  .comment-icon {
+    width: 1.875em;
+    height: 1.875em;
   }
 }
 
 .main {
-  display: inline-block;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
   .header {
@@ -89,9 +98,14 @@
 
     .bookmark {
       color: #02237E;
-      font-size: 1.6666em;
+      //font-size: 1.6666em;
       //font-size: 20px;
       padding: 0.7em 0px 0.7em 0.7em;
+
+      .bookmark-icon {
+        width: 1.6666em;
+        height: 3.06666666em;
+      }
     }
   }
 
@@ -103,7 +117,8 @@
   }
 
   .tag-section {
-    margin-top: 2em;
+    //margin-top: 2em;
+    margin-top: auto;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -168,21 +183,15 @@
   .post {
     font-size: 10px;
   }
-
-  .bookmark {
-    font-size: 2em !important;
-  }
 }
 
 @media screen and (max-width: 500px) { 
   .post {
-    //padding: 5px 10px;
-    //font-size: 8px;
     font-size: 1.6vw;
   }
 
   .bookmark {
-    font-size: 2.4em !important;
+    font-size: 1.2em !important;
   }
 
   .vote-section {

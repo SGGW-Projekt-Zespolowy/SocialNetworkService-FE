@@ -12,11 +12,6 @@
   align-items: center;
   margin-top: 5px;
 
-  i {
-    color: #B9CFFB;
-    font-size: 25px;
-  }
-
   span {
     color: #02237E;
     font-size: 25px;
@@ -54,7 +49,8 @@
   font-weight: 400;
   white-space: nowrap;
 
-  i {
-    margin-right: 16px;
+  .new-post-icon {
+    vertical-align: sub;
+    margin-right: 8px;
   }
 }
