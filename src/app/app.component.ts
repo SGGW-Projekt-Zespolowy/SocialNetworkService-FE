@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
 
     this.iconReg.loadSvg('../assets/Icons/sign-out.svg', 'sign-out').subscribe();
 
-    this.iconReg.loadSvg('../assets/Icons/profile.svg', 'profile').subscribe();
+    this.iconReg.loadSvg('../assets/Icons/user.svg', 'profile').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/messages.svg', 'messages').subscribe();
   }
