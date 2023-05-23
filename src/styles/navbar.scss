@@ -61,15 +61,25 @@ search-bar {
 }
 
 @media screen and (max-width: 500px) { 
-  // search-bar {
-  //   display: none;
-  // }
+  .navbar {
+    padding: 0px 10px;
+  }
+
+  .nav-item {
+    margin-left: 0.5em;
+  }
 
   .nav-items {
     margin-right: 0px;
   }
 
   .nav-brand {
+    font-size: 0.8em;
     margin-right: 0em;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 30px;
   }
 }
