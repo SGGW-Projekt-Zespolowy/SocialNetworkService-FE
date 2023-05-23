@@ -39,5 +39,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/user.svg', 'profile').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/messages.svg', 'messages').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/loop-white.svg', 'loop-white').subscribe();
   }
 }
