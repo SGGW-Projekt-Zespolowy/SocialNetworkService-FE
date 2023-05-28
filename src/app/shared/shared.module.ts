@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     CommonModule,
+    AngularSvgIconModule
   ],
   exports: [
     DropdownInputComponent,
