@@ -8,9 +8,14 @@ import { Component, Input } from '@angular/core';
 export class PostComponent {
   @Input() data: PostModel;
   isFollowed: boolean = false;
+  showAllTags: boolean = false;
 
   toggleFollowingStatus() {
     this.isFollowed = !this.isFollowed;
+  }
+
+  showMoreTags() {
+    this.showAllTags = true;
   }
 }
 

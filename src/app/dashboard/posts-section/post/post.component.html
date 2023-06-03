@@ -34,14 +34,23 @@
       {{ data.content }}
     </div>
     <div class="tag-section">
-      <ng-container *ngFor="let tag of data.tags">
-        <div class="tag" [class]="tag.color">
-          {{ tag.content }}
+      <ng-container *ngIf="data.tags.length > 3 && !showAllTags">
+        <ng-container *ngFor="let tag of data.tags | slice:0:3">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+        <div class="show-more-tags" (click)="showMoreTags()">
+          +{{ data.tags.length - 3 }}
         </div>
       </ng-container>
-      <div class="show-more-tags">
-        +2
-      </div>
+      <ng-container *ngIf="data.tags.length <= 3 || showAllTags">
+        <ng-container *ngFor="let tag of data.tags">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+      </ng-container>
       <img 
       class="images"
       [src]='data.image' 
