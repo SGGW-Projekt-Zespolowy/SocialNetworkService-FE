@@ -24,6 +24,8 @@ const posts = [
       {content: 'Mózg', color: 'purple'},
       {content: 'Złamanie', color: 'purple'},
       {content: 'Biegunka', color: 'blue'},
+      {content: 'Nowotwór', color: 'purple'},
+      {content: 'Dupy', color: 'orange'},
     ],
     image: 'https://media.istockphoto.com/id/453858187/pl/zdj%C4%99cie/skrzepy-fibrynowe.jpg?s=612x612&w=is&k=20&c=c4J9wyBOZ_mFQ896HePyVDlHBQkErQPA4qXyfqDdj10='
   },

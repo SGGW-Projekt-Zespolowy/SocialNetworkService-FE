@@ -22,10 +22,10 @@
         </div>
       </div>
       <div class="bookmark" (click)="toggleFollowingStatus()">
-        <ng-container *ngIf="isFollowed">
+        <ng-container *ngIf="!isFollowed">
           <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
         </ng-container>
-        <ng-container *ngIf="!isFollowed">
+        <ng-container *ngIf="isFollowed">
           <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
         </ng-container>
       </div>
