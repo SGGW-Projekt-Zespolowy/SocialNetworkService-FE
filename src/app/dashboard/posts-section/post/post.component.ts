@@ -27,7 +27,9 @@ export interface PostModel {
   commentsCount: number;
   followersCount: number;
   tags: TagModel[]
-  image: string
+  image: string,
+  category: string,
+  verified: boolean
 }
 
 export interface TagModel {

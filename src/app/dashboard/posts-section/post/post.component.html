@@ -8,7 +8,6 @@
     <div class="other-section">
       <svg-icon class="eye-icon other-sec-icon" [applyClass]="true" name="eye"></svg-icon>
       <span>{{ data.followersCount }}</span>
-      
       <svg-icon class="comment-icon other-sec-icon" [applyClass]="true" name="comment"></svg-icon>
       <span>{{ data.commentsCount }}</span>
     </div>
@@ -18,7 +17,18 @@
       <div class="basic-info">
         <div class="title">{{ data.title }}</div>
         <div class="author-and-category">
-          {{ data.author }}
+          <span class="author">{{ data.author }}</span>
+          &nbsp;
+          <ng-container *ngIf="data.verified">
+            <svg-icon class="verification-icon" [applyClass]="true" name="verified"></svg-icon>
+          </ng-container>
+          <ng-container *ngIf="!data.verified">
+            <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
+          </ng-container>
+          &nbsp;
+          <span class="category">
+            {{ data.category }}
+          </span>
         </div>
       </div>
       <div class="bookmark" (click)="toggleFollowingStatus()">
