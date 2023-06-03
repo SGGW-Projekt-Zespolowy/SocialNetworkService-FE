@@ -1,8 +1,9 @@
-$error-color: #EB3223;
-$success-color: #A7DFBD;
+:root {
+  --error-color: #EB3223;
+  --success-color: #A7DFBD;
 
-$primary-color: #022B9B;
-$secondary-color: #A8BCDE;
+  --primary-color: #022B9B;
+  --secondary-color: #A8BCDE;
 
-// navbar
-$navbar-height: 64px;
+  --navbar-height: 64px;
+}

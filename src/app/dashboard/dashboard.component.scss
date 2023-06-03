@@ -13,14 +13,14 @@ app-control-section {
   margin-right: auto;
   position: -webkit-sticky;
   position: sticky;
-  top: $navbar-height;
+  top: var(--navbar-height);;
 }
 
 app-friends-section {
   margin-left: auto;
   position: -webkit-sticky;
   position: sticky;
-  top: $navbar-height;
+  top: var(--navbar-height);;
 
 }
 

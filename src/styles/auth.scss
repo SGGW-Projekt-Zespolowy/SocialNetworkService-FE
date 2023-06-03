@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-@import "src/variables.scss";
-
 .validation-errors {
-  color: $error-color;
+  color: var(--error-color);
   font-size: 0.6em;
   align-self: flex-start;
   font-family: 'Quicksand';
@@ -108,20 +106,20 @@
       }
     }
     input.ng-valid.ng-touched {
-      border-color: $success-color;
+      border-color: var(--success-color);
     }
     
     input.ng-invalid.ng-touched {
       //border-color: #EB3223;
-      border-color: $error-color;
+      border-color: var(--error-color);
     }
     
     select.ng-valid.ng-touched {
-      border-color: $success-color;
+      border-color: var(--success-color);
     }
     
     select.ng-invalid.ng-touched {
-      border-color: $error-color;
+      border-color: var(--error-color);
     }
   }
 }

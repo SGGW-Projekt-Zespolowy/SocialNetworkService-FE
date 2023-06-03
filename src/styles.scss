@@ -31,5 +31,5 @@ p {
 }
 
 .nav-content {
-    padding-top: $navbar-height;
+    padding-top: var(--navbar-height);
 }

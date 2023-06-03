@@ -1,12 +1,10 @@
-@import "src/variables.scss";
-
 .navbar {
   position: fixed;
   z-index: 10000;
 
-  height: $navbar-height;
+  height: var(--navbar-height);
   width: 100vw;
-  background-color: $secondary-color;
+  background-color: var(--secondary-color);
 
   font-family: 'Quicksand';
   font-weight: 400;
