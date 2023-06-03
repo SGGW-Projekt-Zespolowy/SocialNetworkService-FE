@@ -64,6 +64,16 @@
     height: 1.75em;
   }
 
+  .other-sec-icon:hover {
+    // original color
+    // color #B9CFFB
+
+    // color onhover
+    //color: #a4b9e2;
+
+    filter: invert(94%) sepia(14%) saturate(5248%) hue-rotate(182deg) brightness(91%) contrast(95%);
+  }
+
   .comment-icon {
     width: 1.875em;
     height: 1.875em;
