@@ -2,23 +2,23 @@
   <div class="stats">
     <div class="vote-section">
       <svg-icon class="sort" [applyClass]="true" name="sort-up"></svg-icon>
-      <span class="post-rate">21</span>
+      <span class="post-rate">{{ data.rate }}</span>
       <svg-icon class="sort" [applyClass]="true" name="sort-down"></svg-icon>
     </div>
     <div class="other-section">
       <svg-icon class="eye-icon" [applyClass]="true" name="eye"></svg-icon>
-      <span>69</span>
+      <span>{{ data.followersCount }}</span>
       
       <svg-icon class="comment-icon" [applyClass]="true" name="comment"></svg-icon>
-      <span>69</span>
+      <span>{{ data.commentsCount }}</span>
     </div>
   </div>
   <div class="main">
     <div class="header">
       <div class="basic-info">
-        <div class="title">Skok nadciśnienia czaszkowego</div>
+        <div class="title">{{ data.title }}</div>
         <div class="author-and-category">
-          Dr n. med. Tomasz Budny
+          {{ data.author }}
         </div>
       </div>
       <div class="bookmark">
@@ -26,18 +26,14 @@
       </div>
     </div>
     <div class="post-content">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi architecto at exercitationem rem natus temporibus, totam modi. Voluptatum cumque iusto vitae adipisci ut consequuntur, harum odit rerum.
+      {{ data.content }}
     </div>
     <div class="tag-section">
-      <div class="tag orange">
-        Złamania
-      </div>
-      <div class="tag blue">
-        Wylew
-      </div>
-      <div class="tag purple">
-        Mózg
-      </div>
+      <ng-container *ngFor="let tag of data.tags">
+        <div class="tag" [class]="tag.color">
+          {{ tag.content }}
+        </div>
+      </ng-container>
       <div class="show-more-tags">
         +2
       </div>

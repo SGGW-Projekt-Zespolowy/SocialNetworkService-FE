@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
+  @Input() data: PostModel
 
+  classOrange = 'orange'
+}
+
+export interface PostModel {
+  title: string;
+  author: string;
+  content: string;
+  rate: number;
+  commentsCount: number;
+  followersCount: number;
+  tags: TagModel[]
+}
+
+export interface TagModel {
+  content: string,
+  color: string,
 }
