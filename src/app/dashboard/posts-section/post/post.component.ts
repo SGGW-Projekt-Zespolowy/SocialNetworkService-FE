@@ -14,8 +14,8 @@ export class PostComponent {
     this.isFollowed = !this.isFollowed;
   }
 
-  showMoreTags() {
-    this.showAllTags = true;
+  toggleMoreTags() {
+    this.showAllTags = !this.showAllTags;
   }
 }
 

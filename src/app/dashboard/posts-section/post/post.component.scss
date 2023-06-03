@@ -138,6 +138,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
+    row-gap: 1em;
 
     * {
       margin-left: 0.7rem;

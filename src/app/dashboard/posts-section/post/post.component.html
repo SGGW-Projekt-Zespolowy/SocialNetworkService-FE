@@ -40,7 +40,7 @@
             {{ tag.content }}
           </div>
         </ng-container>
-        <div class="show-more-tags" (click)="showMoreTags()">
+        <div class="show-more-tags" (click)="toggleMoreTags()">
           +{{ data.tags.length - 3 }}
         </div>
       </ng-container>
@@ -50,6 +50,12 @@
             {{ tag.content }}
           </div>
         </ng-container>
+        <div 
+          *ngIf="data.tags.length > 3"
+          class="show-more-tags" 
+          (click)="toggleMoreTags()">
+          Ukryj
+        </div>
       </ng-container>
       <img 
       class="images"
