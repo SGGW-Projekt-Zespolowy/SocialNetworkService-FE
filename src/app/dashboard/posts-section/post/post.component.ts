@@ -12,12 +12,21 @@ export class PostComponent implements OnInit {
   isDownVoted: boolean = false;
   isUpVoted: boolean = false;
   rating: number;
+  followersCount: number;
 
   ngOnInit() {
     this.rating = this.data.rate; 
+    this.followersCount = this.data.followersCount;
   }
 
   toggleFollowingStatus() {
+    if(this.isFollowed) {
+      this.followersCount = this.data.followersCount;
+    }
+    else {
+      this.followersCount = this.data.followersCount + 1;
+    }
+
     this.isFollowed = !this.isFollowed;
   }
 
