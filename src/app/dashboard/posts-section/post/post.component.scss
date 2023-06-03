@@ -109,7 +109,7 @@
       .author-and-category {
         display: flex;
         align-items: center;
-        
+        padding-bottom: 0.7em;
 
         color: #656C7F;
         font-family: "Quicksand";
@@ -125,7 +125,7 @@
         }
 
         .unverification-icon {
-          vertical-align: super;
+          vertical-align: text-top;
 
           width: 0.5em;
           height: 0.5em;

@@ -60,7 +60,8 @@ export interface PostModel {
   tags: TagModel[]
   image: string,
   category: string,
-  verified: boolean
+  verified: boolean,
+  degree: string
 }
 
 export interface TagModel {
