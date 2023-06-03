@@ -17,6 +17,7 @@ export interface PostModel {
   commentsCount: number;
   followersCount: number;
   tags: TagModel[]
+  image: string
 }
 
 export interface TagModel {

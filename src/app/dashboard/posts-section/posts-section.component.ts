@@ -22,20 +22,22 @@ const posts = [
       {content: 'Złamanie', color: 'orange'},
       {content: 'Wylew', color: 'blue'},
       {content: 'Mózg', color: 'purple'}
-    ]
+    ],
+    image: 'https://media.istockphoto.com/id/453858187/pl/zdj%C4%99cie/skrzepy-fibrynowe.jpg?s=612x612&w=is&k=20&c=c4J9wyBOZ_mFQ896HePyVDlHBQkErQPA4qXyfqDdj10='
   },
 
   {
     title: 'Przerost mięśnia sercowego',
     author: 'Dr n. med. Tomasz Budny',
-    content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi.',
+    content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi. , corporis non placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus.',
     rate: 361,
     commentsCount: 120,
     followersCount: 2115,
     tags: [
       {content: 'Złamanie', color: 'orange'},
       {content: 'Wylew', color: 'blue'},
-    ]
+    ],
+    image: 'https://media.istockphoto.com/id/498761884/pl/zdj%C4%99cie/p%C5%82uc-tk.jpg?s=612x612&w=is&k=20&c=4i2b-TREsWqOCwh3RQLCQljd25arfhYIrjni_PAzvC0='
   },
 
   {
@@ -48,6 +50,7 @@ const posts = [
     tags: [
       {content: 'Złamanie', color: 'orange'},
       {content: 'Wylew', color: 'blue'},
-    ]
+    ],
+    image: 'https://media.istockphoto.com/id/499285748/pl/zdj%C4%99cie/serca-i-p%C5%82uca-w%C4%85troba-tk.jpg?s=612x612&w=is&k=20&c=EL-6YbOllBN528RFL4_HLz_wz1wsTofukgHPwNZAFuk='
   },
 ]
