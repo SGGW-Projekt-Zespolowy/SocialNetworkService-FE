@@ -21,8 +21,13 @@
           {{ data.author }}
         </div>
       </div>
-      <div class="bookmark">
-        <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
+      <div class="bookmark" (click)="toggleFollowingStatus()">
+        <ng-container *ngIf="isFollowed">
+          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
+        </ng-container>
+        <ng-container *ngIf="!isFollowed">
+          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
+        </ng-container>
       </div>
     </div>
     <div class="post-content">

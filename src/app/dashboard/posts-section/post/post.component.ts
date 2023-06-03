@@ -6,7 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  @Input() data: PostModel
+  @Input() data: PostModel;
+  isFollowed: boolean = false;
+
+  toggleFollowingStatus() {
+    this.isFollowed = !this.isFollowed;
+  }
 }
 
 export interface PostModel {
