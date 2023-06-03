@@ -7,8 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class PostComponent {
   @Input() data: PostModel
-
-  classOrange = 'orange'
 }
 
 export interface PostModel {
