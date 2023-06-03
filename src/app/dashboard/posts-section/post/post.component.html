@@ -1,9 +1,42 @@
 <div class="post">
   <div class="stats">
     <div class="vote-section">
-      <svg-icon class="sort" [applyClass]="true" name="sort-up"></svg-icon>
-      <span class="post-rate">{{ data.rate }}</span>
-      <svg-icon class="sort" [applyClass]="true" name="sort-down"></svg-icon>
+      <ng-container *ngIf="!isUpVoted">
+        <svg-icon
+          (click)="upVoteToggle()" 
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-up">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="isUpVoted">
+        <svg-icon 
+          (click)="upVoteToggle()"
+          class="sort rotate-90" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
+      <span class="post-rate">{{ rating }}</span>
+
+      <ng-container *ngIf="!isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
     </div>
     <div class="other-section">
       <svg-icon class="eye-icon other-sec-icon" [applyClass]="true" name="eye"></svg-icon>

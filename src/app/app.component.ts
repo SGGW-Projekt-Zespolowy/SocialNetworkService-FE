@@ -47,5 +47,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/verified.svg', 'verified').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/unverified.svg', 'unverified').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/sort-down-clicked.svg', 'sort-down-clicked').subscribe();
   }
 }
