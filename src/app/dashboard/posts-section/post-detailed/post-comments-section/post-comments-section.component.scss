@@ -1,3 +1,5 @@
+@import '../../../../../styles/scrollbar.scss';
+
 .comments-section {
   font-size: var(--post-font-size);
   background-color: var(--post-background-color);
@@ -6,9 +8,11 @@
   box-shadow: var(--post-box-shadow);
   border-radius: var(--post-border-radius);  
   padding: var(--post-border-radius);
+  padding-bottom: 10px;
   margin-top: 0px !important;
-  max-width: 800px;
+  max-width: var(--post-pop-up-max-width);
   box-sizing: border-box;
+  //max-height: 800px;
 
   padding-top: calc(40px + 2em);
 }
@@ -50,6 +54,15 @@
 
 .comments-list {
   margin-top: 15px;
+  max-height: 30em;
+  overflow-y : auto;
+  padding-right: 1em;
+}
+
+.comment {
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 1em;
 }
 
 .comment-content {

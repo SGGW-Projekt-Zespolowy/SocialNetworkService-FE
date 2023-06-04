@@ -10,11 +10,11 @@
 }
 
 :host ::ng-deep .post {
-  max-width: 800px !important;
+  max-width: var(--post-pop-up-max-width) !important;
   box-sizing: border-box !important;
 
   .post-content {
-    max-height: 15em !important;
+    max-height: 12em !important;
   }
 }
 
