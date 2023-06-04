@@ -1,7 +1,7 @@
 <div class="post">
   <div class="stats">
     <div class="vote-section">
-      <ng-container *ngIf="!isUpVoted">
+      <ng-container *ngIf="!data.isUpVoted">
         <svg-icon
           (click)="upVoteToggle()" 
           class="sort" 
@@ -9,7 +9,7 @@
           name="sort-up">
         </svg-icon>
       </ng-container>
-      <ng-container *ngIf="isUpVoted">
+      <ng-container *ngIf="data.isUpVoted">
         <svg-icon 
           (click)="upVoteToggle()"
           class="sort rotate-90" 
@@ -18,9 +18,9 @@
         </svg-icon>
       </ng-container>
 
-      <span class="post-rate">{{ rating }}</span>
+      <span class="post-rate">{{ data.rate }}</span>
 
-      <ng-container *ngIf="!isDownVoted">
+      <ng-container *ngIf="!data.isDownVoted">
         <svg-icon 
           (click)="downVoteToggle()"
           class="sort" 
@@ -28,7 +28,7 @@
           name="sort-down">
         </svg-icon>
       </ng-container>
-      <ng-container *ngIf="isDownVoted">
+      <ng-container *ngIf="data.isDownVoted">
         <svg-icon 
           (click)="downVoteToggle()"
           class="sort" 
@@ -44,7 +44,7 @@
         [applyClass]="true" 
         name="eye">
       </svg-icon>
-      <span>{{ followersCount }}</span>
+      <span>{{ data.followersCount }}</span>
       <svg-icon 
         (click)="showDetails.emit(data)"
         class="comment-icon other-sec-icon" 
@@ -76,10 +76,10 @@
         </div>
       </div>
       <div class="bookmark" (click)="toggleFollowingStatus()">
-        <ng-container *ngIf="!isFollowed">
+        <ng-container *ngIf="!data.isFollowed">
           <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
         </ng-container>
-        <ng-container *ngIf="isFollowed">
+        <ng-container *ngIf="data.isFollowed">
           <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
         </ng-container>
       </div>

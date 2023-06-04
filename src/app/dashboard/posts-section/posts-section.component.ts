@@ -17,7 +17,7 @@ export class PostsSectionComponent {
   }
 }
 
-const posts = [
+const posts: PostModel[] = [
   {
     title: 'Skok nadciśnienia czaszkowego',
     author: 'Tomasz Budny',
@@ -37,7 +37,10 @@ const posts = [
     image: 'https://media.istockphoto.com/id/453858187/pl/zdj%C4%99cie/skrzepy-fibrynowe.jpg?s=612x612&w=is&k=20&c=c4J9wyBOZ_mFQ896HePyVDlHBQkErQPA4qXyfqDdj10=',
     verified: true,
     category: 'Neurologia',
-    degree: 'Dr n. med.'
+    degree: 'Dr n. med.',
+    isFollowed: false,
+    isUpVoted: false,
+    isDownVoted: false,
   },
 
   {
@@ -54,7 +57,10 @@ const posts = [
     image: 'https://media.istockphoto.com/id/498761884/pl/zdj%C4%99cie/p%C5%82uc-tk.jpg?s=612x612&w=is&k=20&c=4i2b-TREsWqOCwh3RQLCQljd25arfhYIrjni_PAzvC0=',
     verified: true,
     category: 'Neurologia',
-    degree: 'Student'
+    degree: 'Student',
+    isFollowed: true,
+    isUpVoted: false,
+    isDownVoted: false,
   },
 
   {
@@ -71,6 +77,9 @@ const posts = [
     image: 'https://media.istockphoto.com/id/499285748/pl/zdj%C4%99cie/serca-i-p%C5%82uca-w%C4%85troba-tk.jpg?s=612x612&w=is&k=20&c=EL-6YbOllBN528RFL4_HLz_wz1wsTofukgHPwNZAFuk=',
     verified: false,
     category: 'Kardiologia',
-    degree: 'Dr n. med.'
+    degree: 'Dr n. med.',
+    isFollowed: false,
+    isUpVoted: false,
+    isDownVoted: false,
   },
 ]

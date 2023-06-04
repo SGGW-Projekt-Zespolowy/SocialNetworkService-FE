@@ -5,31 +5,19 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit {
+export class PostComponent {
   @Input() data: PostModel;
   @Output() showDetails = new EventEmitter<PostModel>()
-
-  isFollowed: boolean = false;
   showAllTags: boolean = false;
-  isDownVoted: boolean = false;
-  isUpVoted: boolean = false;
-  rating: number;
-  followersCount: number;
-
-  ngOnInit() {
-    this.rating = this.data.rate; 
-    this.followersCount = this.data.followersCount;
-  }
 
   toggleFollowingStatus() {
-    if(this.isFollowed) {
-      this.followersCount = this.data.followersCount;
+    if(this.data.isFollowed) {
+      this.data.followersCount = this.data.followersCount - 1;
     }
     else {
-      this.followersCount = this.data.followersCount + 1;
+      this.data.followersCount = this.data.followersCount + 1;
     }
-
-    this.isFollowed = !this.isFollowed;
+    this.data.isFollowed = !this.data.isFollowed; 
   }
 
   toggleMoreTags() {
@@ -37,27 +25,37 @@ export class PostComponent implements OnInit {
   }
 
   downVoteToggle() {
-    if(this.isDownVoted) {
-      this.rating = this.data.rate;
+    if(this.data.isDownVoted) {
+      this.data.rate = this.data.rate + 1;
     }
     else {
-      this.rating = this.data.rate - 1;
+      if(this.data.isUpVoted) {
+        this.data.rate = this.data.rate - 2;
+      }
+      else {
+        this.data.rate = this.data.rate - 1;
+      }
     }
 
-    this.isUpVoted = false;
-    this.isDownVoted = !this.isDownVoted;
+    this.data.isUpVoted = false;
+    this.data.isDownVoted = !this.data.isDownVoted;
   }
 
   upVoteToggle() {
-    if(this.isUpVoted) {
-      this.rating = this.data.rate;
+    if(this.data.isUpVoted) {
+      this.data.rate = this.data.rate - 1;
     }
     else {
-      this.rating = this.data.rate + 1;
+      if(this.data.isDownVoted) {
+        this.data.rate = this.data.rate + 2;
+      }
+      else {
+        this.data.rate = this.data.rate + 1;
+      }
     }
 
-    this.isDownVoted = false;
-    this.isUpVoted = !this.isUpVoted;
+    this.data.isDownVoted = false;
+    this.data.isUpVoted = !this.data.isUpVoted;
   }
 }
 
@@ -72,7 +70,10 @@ export interface PostModel {
   image: string,
   category: string,
   verified: boolean,
-  degree: string
+  degree: string,
+  isFollowed: boolean
+  isUpVoted: boolean
+  isDownVoted: boolean
 }
 
 export interface TagModel {
