@@ -39,3 +39,9 @@ p {
       --post-font-size: 1.6vw;
     }
 }  
+
+@media screen and (max-width: 300px) { 
+    :root {
+      --post-margin: 10px 5px;
+    }
+}
