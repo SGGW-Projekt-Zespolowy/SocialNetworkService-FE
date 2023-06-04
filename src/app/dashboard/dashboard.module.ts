@@ -9,6 +9,7 @@ import { FriendsSectionComponent } from './friends-section/friends-section.compo
 import { ControlSectionComponent } from './control-section/control-section.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PostDetailedComponent } from './posts-section/post-detailed/post-detailed.component';
+import { PostCommentsSectionComponent } from './posts-section/post-detailed/post-comments-section/post-comments-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PostDetailedComponent } from './posts-section/post-detailed/post-detail
     PostsSectionComponent,
     FriendsSectionComponent,
     ControlSectionComponent,
-    PostDetailedComponent
+    PostDetailedComponent,
+    PostCommentsSectionComponent
   ],
   imports: [
     CommonModule,

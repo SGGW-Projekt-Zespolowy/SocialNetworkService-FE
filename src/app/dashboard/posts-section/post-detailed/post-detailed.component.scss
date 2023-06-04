@@ -11,6 +11,10 @@
 
 :host ::ng-deep .post {
   max-width: 800px !important;
+
+  .post-content {
+    max-height: 15em !important;
+  }
 }
 
 

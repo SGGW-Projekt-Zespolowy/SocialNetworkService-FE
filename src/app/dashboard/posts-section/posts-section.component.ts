@@ -39,7 +39,7 @@ const posts: PostModel[] = [
     category: 'Neurologia',
     degree: 'Dr n. med.',
     isFollowed: false,
-    isUpVoted: false,
+    isUpVoted: true,
     isDownVoted: false,
   },
 
