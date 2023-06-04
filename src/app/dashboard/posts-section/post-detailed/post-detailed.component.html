@@ -1,4 +1,7 @@
-<div class="pop-up-background"></div>
+<div 
+  (click)="close.emit(true)"
+  class="pop-up-background">
+</div>
 <div class="pop-up-content">
-  <app-post [data]="post"></app-post>
+  <app-post [data]="data"></app-post>
 </div>

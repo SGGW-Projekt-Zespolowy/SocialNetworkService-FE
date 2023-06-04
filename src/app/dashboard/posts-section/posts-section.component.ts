@@ -8,6 +8,13 @@ import { PostModel } from './post/post.component';
 })
 export class PostsSectionComponent {
   posts = posts;
+  isPopUpVisible: boolean = false;
+  postsDetailed: PostModel;
+
+  showPostDetails(post) {
+    this.isPopUpVisible = true;
+    this.postsDetailed = post;
+  }
 }
 
 const posts = [

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
   @Input() data: PostModel;
+  @Output() showDetails = new EventEmitter<PostModel>()
+
   isFollowed: boolean = false;
   showAllTags: boolean = false;
   isDownVoted: boolean = false;
