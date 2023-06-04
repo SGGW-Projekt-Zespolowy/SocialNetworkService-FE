@@ -11,6 +11,7 @@
 
 :host ::ng-deep .post {
   max-width: 800px !important;
+  box-sizing: border-box !important;
 
   .post-content {
     max-height: 15em !important;
