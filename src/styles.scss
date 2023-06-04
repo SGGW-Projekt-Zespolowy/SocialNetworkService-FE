@@ -33,3 +33,9 @@ p {
 .nav-content {
     padding-top: var(--navbar-height);
 }
+
+@media screen and (max-width: 500px) {
+    :root {
+      --post-font-size: 1.6vw;
+    }
+}  

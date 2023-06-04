@@ -1,16 +1,16 @@
 .post {
+  font-size: var(--post-font-size);
+
   background: var(--post-background-color);
   box-shadow: var(--post-box-shadow);
   border-radius: var(--post-border-radius);  
-  padding: var(--post-border-radius);
+  padding: var(--post-padding);
   //margin: 0px 2em;
   margin: var(--post-margin);
 
   display: flex;
   margin-top: 20px;
   max-width: 700px;
-
-  font-size: 12px;
 }
 
 .stats {
@@ -232,8 +232,10 @@
 }
 
 @media screen and (max-width: 600px) { 
+  
   .post {
-    font-size: 10px;
+    --post-font-size: 10px
+    //font-size: 10px;
   }
 
   ::-webkit-scrollbar {
@@ -241,9 +243,10 @@
   }
 }
 
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   .post {
-    font-size: 1.6vw;
+    --post-font-size: 1.6vw;
+    //font-size: 1.6vw;
   }
 
   .bookmark {
