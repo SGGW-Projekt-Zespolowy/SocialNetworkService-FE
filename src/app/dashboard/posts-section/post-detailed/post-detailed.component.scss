@@ -1,0 +1,30 @@
+.pop-up-background {
+  position: fixed;
+  z-index: 40;
+  top: 0px;
+  left: 0px;
+
+  background: rgba(245, 245, 245, 0.65);
+  width: 100%;
+  min-height: 100%;
+}
+
+:host ::ng-deep .post {
+  max-width: 800px !important;
+}
+
+
+.pop-up-content {
+  z-index: 41;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  app-post {
+    position: fixed;
+  }
+}
+
+
+
