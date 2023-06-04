@@ -25,9 +25,24 @@
   display: flex;
   justify-content: center;
 
-  app-post {
+  .fixed-wrap {
     position: fixed;
   }
+}
+
+.relative-wrap {
+  position: relative;
+}
+
+app-post {
+  position: relative;
+  z-index: 41;
+}
+
+app-post-comments-section {
+  position: relative;
+  z-index: 40;
+  top: -30px
 }
 
 

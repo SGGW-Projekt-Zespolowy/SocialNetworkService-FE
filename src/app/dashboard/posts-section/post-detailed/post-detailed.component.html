@@ -3,5 +3,10 @@
   class="pop-up-background">
 </div>
 <div class="pop-up-content">
-  <app-post [data]="data"></app-post>
+  <div class="fixed-wrap">
+    <app-post [data]="data"></app-post>
+    <app-post-comments-section></app-post-comments-section>
+  </div>
+</div>
+<div class="relative-wrap">
 </div>

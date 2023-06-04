@@ -1,9 +1,10 @@
 .post {
-  background: #FFFFFF;
-  box-shadow: 0px 5px 10px 1px rgba(217, 217, 217, 0.5);
-  border-radius: 23px;  
-  padding: 10px 20px 10px 10px;
-  margin: 0px 2em;
+  background: var(--post-background-color);
+  box-shadow: var(--post-box-shadow);
+  border-radius: var(--post-border-radius);  
+  padding: var(--post-border-radius);
+  //margin: 0px 2em;
+  margin: var(--post-margin);
 
   display: flex;
   margin-top: 20px;
