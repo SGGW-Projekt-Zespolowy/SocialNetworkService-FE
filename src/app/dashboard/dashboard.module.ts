@@ -10,6 +10,7 @@ import { ControlSectionComponent } from './control-section/control-section.compo
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PostDetailedComponent } from './posts-section/post-detailed/post-detailed.component';
 import { PostCommentsSectionComponent } from './posts-section/post-detailed/post-comments-section/post-comments-section.component';
+import { PostCommentComponent } from './posts-section/post-detailed/post-comments-section/post-comment/post-comment.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PostCommentsSectionComponent } from './posts-section/post-detailed/post
     FriendsSectionComponent,
     ControlSectionComponent,
     PostDetailedComponent,
-    PostCommentsSectionComponent
+    PostCommentsSectionComponent,
+    PostCommentComponent
   ],
   imports: [
     CommonModule,
