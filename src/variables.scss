@@ -1,8 +1,17 @@
-$error-color: #EB3223;
-$success-color: #A7DFBD;
+:root {
+  --error-color: #EB3223;
+  --success-color: #A7DFBD;
 
-$primary-color: #022B9B;
-$secondary-color: #A8BCDE;
+  --primary-color: #022B9B;
+  --secondary-color: #A8BCDE;
 
-// navbar
-$navbar-height: 64px;
+  --navbar-height: 64px;
+
+  --post-font-size: 12px;
+  --post-margin: 0px 2em;
+  --post-background-color: #FFFFFF;
+  --post-box-shadow: 0px 5px 10px 1px rgba(217, 217, 217, 0.5);
+  --post-border-radius: 23px;
+  --post-padding: 10px 20px 10px 10px;
+  --post-pop-up-max-width: 900px;
+}

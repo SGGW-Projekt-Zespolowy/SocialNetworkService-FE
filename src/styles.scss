@@ -3,6 +3,8 @@
 // zmienić potem na assets
 @import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 html {
     font-size: 12px
 }
@@ -31,5 +33,17 @@ p {
 }
 
 .nav-content {
-    padding-top: $navbar-height;
+    padding-top: var(--navbar-height);
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+      --post-font-size: 1.6vw;
+    }
+}  
+
+@media screen and (max-width: 300px) { 
+    :root {
+      --post-margin: 10px 5px;
+    }
 }

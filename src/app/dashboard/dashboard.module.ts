@@ -7,6 +7,10 @@ import { PostComponent } from './posts-section/post/post.component';
 import { PostsSectionComponent } from './posts-section/posts-section.component';
 import { FriendsSectionComponent } from './friends-section/friends-section.component';
 import { ControlSectionComponent } from './control-section/control-section.component';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { PostDetailedComponent } from './posts-section/post-detailed/post-detailed.component';
+import { PostCommentsSectionComponent } from './posts-section/post-detailed/post-comments-section/post-comments-section.component';
+import { PostCommentComponent } from './posts-section/post-detailed/post-comments-section/post-comment/post-comment.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +18,16 @@ import { ControlSectionComponent } from './control-section/control-section.compo
     PostComponent,
     PostsSectionComponent,
     FriendsSectionComponent,
-    ControlSectionComponent
+    ControlSectionComponent,
+    PostDetailedComponent,
+    PostCommentsSectionComponent,
+    PostCommentComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    AngularSvgIconModule.forRoot()
   ]
 })
 export class DashboardModule { }

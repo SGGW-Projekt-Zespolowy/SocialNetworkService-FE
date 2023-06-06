@@ -1,5 +1,15 @@
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
-<app-post></app-post>
+<div class="relative-wrap" *ngIf="isPopUpVisible">
+  <app-post-detailed
+    [data]="postDetailed"
+    (close)="isPopUpVisible = false">
+  </app-post-detailed>
+</div>
+
+<div class="posts">
+  <ng-container *ngFor="let post of posts">
+    <app-post
+      (showDetails)="showPostDetails($event)"
+      [data]="post">
+    </app-post>
+  </ng-container>
+</div>

@@ -1,49 +1,119 @@
 <div class="post">
   <div class="stats">
     <div class="vote-section">
-      <i class="fa-solid fa-caret-up"></i>
-      <span>21</span>
-      <i class="fa-solid fa-caret-down"></i>
+      <ng-container *ngIf="!data.isUpVoted">
+        <svg-icon
+          (click)="upVoteToggle()" 
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-up">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="data.isUpVoted">
+        <svg-icon 
+          (click)="upVoteToggle()"
+          class="sort rotate-90" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
+      <span class="post-rate">{{ data.rate }}</span>
+
+      <ng-container *ngIf="!data.isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="data.isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
     </div>
     <div class="other-section">
-      <i class="fa-solid fa-eye"></i>
-      <span>69</span>
-  
-      <i class="fa-solid fa-comment"></i>
-      <span>69</span>
+      <svg-icon 
+        class="eye-icon other-sec-icon" 
+        [applyClass]="true" 
+        name="eye">
+      </svg-icon>
+      <span>{{ data.followersCount }}</span>
+      <svg-icon 
+        (click)="showDetails.emit(data)"
+        class="comment-icon other-sec-icon" 
+        [applyClass]="true" 
+        name="comment">
+      </svg-icon>
+      <span>{{ data.commentsCount }}</span>
     </div>
   </div>
   <div class="main">
     <div class="header">
       <div class="basic-info">
-        <div class="title">Skok nadciśnienia czaszkowego</div>
+        <div class="title">{{ data.title }}</div>
         <div class="author-and-category">
-          Dr n. med. Tomasz Budny
+          <span class="degree">{{ data.degree }}</span>
+          &nbsp;
+          <span class="author">{{ data.author }}</span>
+          &nbsp;
+          <ng-container *ngIf="data.verified">
+            <svg-icon class="verification-icon" [applyClass]="true" name="verified"></svg-icon>
+          </ng-container>
+          <ng-container *ngIf="!data.verified">
+            <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
+          </ng-container>
+          &nbsp;
+          <span class="category">
+            {{ data.category }}
+          </span>
         </div>
       </div>
-      <div class="bookmark">
-        <i class="fa-solid fa-bookmark"></i>
+      <div class="bookmark" (click)="toggleFollowingStatus()">
+        <ng-container *ngIf="!data.isFollowed">
+          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
+        </ng-container>
+        <ng-container *ngIf="data.isFollowed">
+          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
+        </ng-container>
       </div>
     </div>
     <div class="post-content">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi architecto at exercitationem rem natus temporibus, totam modi. Voluptatum cumque iusto vitae adipisci ut consequuntur, harum odit rerum.
+      {{ data.content }}
     </div>
     <div class="tag-section">
-      <div class="tag orange">
-        Złamania
-      </div>
-      <div class="tag blue">
-        Wylew
-      </div>
-      <div class="tag purple">
-        Mózg
-      </div>
-      <div class="show-more-tags">
-        +2
-      </div>
+      <ng-container *ngIf="data.tags.length > 3 && !showAllTags">
+        <ng-container *ngFor="let tag of data.tags | slice:0:3">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+        <div class="show-more-tags" (click)="toggleMoreTags()">
+          +{{ data.tags.length - 3 }}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.tags.length <= 3 || showAllTags">
+        <ng-container *ngFor="let tag of data.tags">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+        <div 
+          *ngIf="data.tags.length > 3"
+          class="show-more-tags" 
+          (click)="toggleMoreTags()">
+          Ukryj
+        </div>
+      </ng-container>
       <img 
       class="images"
-      src="../../../assets/Images/placeholders/post-placeholder.png" 
+      [src]='data.image' 
       alt="placeholder">
     </div>
   </div>

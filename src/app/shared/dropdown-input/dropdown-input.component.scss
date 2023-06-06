@@ -1,5 +1,3 @@
-@import "src/variables.scss";
-
 :host {
     color: #656c7f;
     position: relative;
@@ -7,13 +5,13 @@
 
 :host.ng-invalid.ng-touched {
   .menu-trigger {
-    border-color: $error-color;
+    border-color: var(--error-color);
   }
 }
 
 :host.ng-valid.ng-touched {
   .menu-trigger {
-    border-color: $success-color;
+    border-color: var(--success-color);
   }
 }
 
