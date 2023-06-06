@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
+import { PostComponent } from '../post/post.component';
+import { PostCommentsSectionComponent } from './post-comments-section/post-comments-section.component';
 
 @Component({
   selector: 'app-post-detailed',
@@ -9,6 +11,14 @@ export class PostDetailedComponent {
   @Output() close = new EventEmitter<boolean>;
   @Input() data;
 
+  @ViewChild('content') content: ElementRef; ElementRef;
+
+  @HostListener('click', ['$event'])
+  clickout(event) {
+    if(event.target === this.content.nativeElement) {
+      this.close.emit(true)
+    }
+  }
 }
 
 const post = {
