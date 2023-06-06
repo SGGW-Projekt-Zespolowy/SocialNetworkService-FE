@@ -6,11 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post-comment.component.scss']
 })
 export class PostCommentComponent {
-  @Input() data: PostModel 
+  @Input() data: CommentModel 
 }
 
-export interface PostModel {
+export interface CommentModel {
   opTitle: string,
   opName: string,
-  content: string
+  opAvatar: string,
+  content: string,
 }
