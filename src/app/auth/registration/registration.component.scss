@@ -1,0 +1,34 @@
+.content {
+  background-image: url('../../../assets/Images/backgrounds/registration-back.png');
+}
+
+.auth-form {
+  form {
+    .form-inputs {
+      width: 140%;
+      display: grid;
+      grid-template-columns: repeat(2, 0.5fr);
+      gap: 0px 1.5em;
+
+      .email {
+        grid-column: span 2;
+      }
+
+      .title {
+        grid-column: span 2;
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) { 
+  .form-inputs {
+    display: block !important;
+    width: auto !important;
+  }
+
+}
+

@@ -1,0 +1,54 @@
+name: Deploy Node.js to Azure Web App
+
+on:
+  workflow_dispatch:
+  pull_request:
+   branches:
+    - Release
+
+env:
+  AZURE_WEBAPP_NAME: 'SocialNetworkService'    # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: './dist/social-network-service'      # set this to the path to your web app project
+  NODE_VERSION: '18.x'                # set this to the node version to use
+  AZURE_APIM_RESOURCEGROUP: 'SGGW-PZ-2023'
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: npm install and build
+      run: |
+        npm install
+        npm run build       
+        
+    - name: Azure Login
+      run: |
+          sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
+          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+          AZ_REPO=$(lsb_release -cs)
+          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+          sudo apt-get update
+          sudo apt-get install azure-cli
+    - uses: Azure/login@v1
+      with:
+        creds: '{"clientId":"${{ secrets.CLIENT_ID }}","clientSecret":"${{ secrets.CLIENT_SECRET }}","subscriptionId":"${{ secrets.SUBSCRIPTION_ID }}","tenantId":"${{ secrets.TENANT_ID }}"}'
+    - name: Modify deployment target for WebApp
+      run: az webapp config appsettings set --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ env.AZURE_APIM_RESOURCEGROUP }} --settings DEPLOYMENT_TARGET="C:\home\site\wwwroot\wwwroot"
+    - name: Restart WebApp after re-config
+      run: az webapp restart --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ env.AZURE_APIM_RESOURCEGROUP }}
+    - name: Logout from Azure
+      run: >
+        az logout
+        
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v1
+      with: 
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

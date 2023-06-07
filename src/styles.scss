@@ -1,18 +1,49 @@
 @import "src/variables.scss";
 
-form {
-    margin-top: 10px;
+// zmienić potem na assets
+@import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap');
 
-    * {
-        display: block;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+html {
+    font-size: 12px
 }
 
-.errors {
-    margin-top: 10px;
+body {
+    margin: 0px;
+    font-family: 'Arya', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+}
 
-    .error {
-        background-color: $primary-color;
-        text-align: center;
+button:hover {
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0px;
+}
+
+p {
+    margin: 0px;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.nav-content {
+    padding-top: var(--navbar-height);
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+      --post-font-size: 1.6vw;
+    }
+}  
+
+@media screen and (max-width: 300px) { 
+    :root {
+      --post-margin: 10px 5px;
     }
 }

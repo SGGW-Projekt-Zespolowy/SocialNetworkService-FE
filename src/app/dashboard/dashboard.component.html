@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<div class="nav-content">
+  <app-control-section *ngIf="controlIsVisible"></app-control-section>
+
+  <app-posts-section></app-posts-section>
+
+  <app-friends-section *ngIf="friendsIsVisible"></app-friends-section>
+</div>
+
