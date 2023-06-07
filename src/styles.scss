@@ -16,6 +16,10 @@ body {
     font-size: 12px;
 }
 
+.block-scrolling {
+    overflow: hidden;
+}
+
 button:hover {
     cursor: pointer;
 }
