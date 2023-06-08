@@ -77,6 +77,13 @@ span{
   width: 0px;
 }
 
+.drop-down-arrow-icon{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 3px;
+}
+
 
 @media screen and (max-width: 500px) { 
   .menu-trigger {
