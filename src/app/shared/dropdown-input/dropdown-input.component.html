@@ -1,6 +1,6 @@
 <div class="menu-trigger" (click)="isOpen = !isOpen">
     <span *ngIf="selectedTitle">{{ selectedTitle }}</span>
-    <svg-icon class="drop-down-arrow-icon" [applyClass]="true" name="drop-down-arrow"></svg-icon>
+    <svg-icon class="drop-down-arrow-icon" [applyClass]="true" [name]="isOpen ? 'drop-up-arrow' : 'drop-down-arrow'"></svg-icon>
 </div>
 <div class="menu" *ngIf="isOpen" [@dropDownMenu]>
     <div

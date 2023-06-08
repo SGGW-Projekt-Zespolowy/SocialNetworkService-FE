@@ -51,5 +51,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/sort-down-clicked.svg', 'sort-down-clicked').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/drop-down-arrow.svg', 'drop-down-arrow').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/drop-up-arrow.svg', 'drop-up-arrow').subscribe();
   }
 }
