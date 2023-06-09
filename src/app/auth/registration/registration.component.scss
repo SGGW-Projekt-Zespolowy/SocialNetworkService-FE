@@ -14,6 +14,17 @@
         grid-column: span 2;
       }
 
+      .relative-wrap{
+        position: relative;
+      }
+
+      .eye-icon{
+        position: absolute;
+        top: -17px;
+        left: 80%;
+        cursor: pointer;
+      }
+
       .title {
         grid-column: span 2;
         select {
@@ -30,5 +41,8 @@
     width: auto !important;
   }
 
+  .eye-icon{
+    left: 85% !important;
+  }
 }
 

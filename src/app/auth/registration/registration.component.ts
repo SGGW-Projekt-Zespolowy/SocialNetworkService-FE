@@ -9,6 +9,7 @@ import { CustomAuthValidators } from '../custom-auth-validators';
 })
 export class RegistrationComponent implements OnInit {
   titles = ['Student', 'Lek. stażysta', 'Lek. rezydent', 'Lek. med.', 'Lek. dent.', 'Dr n. med.', 'Dr hab n. med.', 'Prof dr hab n. med.'];
+  showPassword = false;
   registrationForm: FormGroup 
 
   ngOnInit() {
@@ -37,6 +38,10 @@ export class RegistrationComponent implements OnInit {
     }, {
       validators: [CustomAuthValidators.matchValidator('password', 'confirmPassword')]
     });
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
   onSubmitRegistrationForm() {

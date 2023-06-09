@@ -65,7 +65,7 @@
             <div class="form-input password">
                 <label for="password">Hasło</label>
                 <input 
-                    type="password"
+                    type="{{ showPassword ? 'text' : 'password' }}"
                     id="password"
                     formControlName="password"> 
                     
@@ -84,9 +84,17 @@
             <div class="form-input">
                 <label for="confirmPassword">Powtórz hasło</label>
                 <input 
-                    type="password"
+                    type="{{ showPassword ? 'text' : 'password' }}"
                     id="confirmPassword"
-                    formControlName="confirmPassword">  
+                    formControlName="confirmPassword">
+                <div class="relative-wrap">
+                    <svg-icon 
+                        class="eye-icon" 
+                        [applyClass]="true" 
+                        name="eye"
+                        (click)="togglePasswordVisibility()">
+                    </svg-icon>  
+                </div>
                 <div class="validation-errors" *ngIf="
                     registrationForm.get('confirmPassword').touched &&
                     registrationForm.get('confirmPassword').errors as errors">
