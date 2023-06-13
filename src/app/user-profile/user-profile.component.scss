@@ -51,5 +51,52 @@
     font-size: 20px;
     font-family: 'Quicksand';
   }
+
+  .full-name{
+    position: relative;
+    left: 85px;
+    margin-top: 28px;
+    font-family: "Arya";
+    font-size: 36px;
+    font-weight: 400;
+    color: #000000;
+    white-space: nowrap;
+    
+  }
+
+  .friends {
+    position: relative;
+    left: -160px;
+    margin-top: 7em;
+    margin-right: 1em;
+    margin-left: -5px;
+    min-height: 90vh;
+   
+    .friend {
+      display: flex;
+      align-items: center;
+      min-width: 25em;
+      margin-top: 10px;
+    
+        .name {
+          font-family: "Quicksand";
+          font-size: 20px;
+          font-weight: 400;
+          padding-left: 0.83333em;
+          color: #000000;
+        }
+    
+    }
+  }
+  
+  
+  @media screen and (max-width: 1200px) { 
+    .friends {
+      font-size: 10px;
+      .friend {
+        min-width: 26em;
+      }
+    }
+  }
   
   
