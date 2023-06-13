@@ -1,0 +1,55 @@
+.content{
+  display: flex;
+  background: rgba(238, 236, 248, 0.3);
+}
+
+.user-profile-container {
+    font-size: var(--post-font-size);
+    background: var(--post-background-color);
+    box-shadow: var(--post-box-shadow);
+    border-radius: var(--post-border-radius);  
+    padding: var(--post-padding);
+   //margin: 0px 2em;
+    margin: var(--post-margin);
+    display: flex;
+    margin: 100px auto;
+    max-width: 1500px;
+    width: 80%;
+    height: 350px;
+  }
+
+  .photo{
+    width: 300px;
+    height: 300px;
+  }
+  
+  .profile-picture {
+    width: 289px;
+    height: 283px;
+    border-radius: 13px;
+    object-fit: cover;
+    margin-top: 30px;
+    margin-left: 45px;
+  }
+
+  .button-overlay {
+    width: 205px;
+    height: 43px;
+    background-color: #022B9B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid white 10px;
+    position: relative;
+    top: -42px;
+    left: 76px;
+  }
+  
+  .button-text {
+    color: white;
+    font-size: 20px;
+    font-family: 'Quicksand';
+  }
+  
+  
