@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserProfileComponent } from './user-profile.component';
 import { UserProfileRoutingModule } from './user-profile-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
     imports: [
         CommonModule,
         UserProfileRoutingModule,
-        SharedModule
+        SharedModule,
+        AngularSvgIconModule.forRoot()
     ]
 })
 export class UserProfileModule { }
