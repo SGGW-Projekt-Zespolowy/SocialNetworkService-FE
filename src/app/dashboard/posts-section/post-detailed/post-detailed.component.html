@@ -1,12 +1,4 @@
-<div
-  class="pop-up-background"
-  (click)="close.emit(true)">
-</div>
-<div class="pop-up-content">
-  <div class="fixed-wrap" #content>
-    <app-post
-      [data]="data">
-    </app-post>
-    <app-post-comments-section></app-post-comments-section>
-  </div>
-</div>
+<app-post
+[data]="data">
+</app-post>
+<app-post-comments-section></app-post-comments-section>

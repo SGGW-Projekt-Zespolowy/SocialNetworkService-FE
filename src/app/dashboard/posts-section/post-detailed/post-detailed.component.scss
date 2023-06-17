@@ -1,16 +1,5 @@
 @import '../../../../styles/scrollbar.scss';
 
-.pop-up-background {
-  position: fixed;
-  z-index: 40;
-  top: 0px;
-  left: 0px;
-
-  background: rgba(245, 245, 245, 0.65);
-  width: 100%;
-  min-height: 100%;
-}
-
 :host ::ng-deep .post {
   max-width: var(--post-pop-up-max-width) !important;
   box-sizing: border-box !important;
@@ -20,20 +9,10 @@
   }
 }
 
-
-.pop-up-content {
-  z-index: 41;
-  position: absolute;
-  width: 100%;
+:host {
+  height: 90vh;
   display: flex;
-  justify-content: center;
-
-  .fixed-wrap {
-    position: fixed;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-  }
+  flex-direction: column;
 }
 
 app-post {
