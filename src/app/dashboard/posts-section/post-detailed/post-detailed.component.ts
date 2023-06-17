@@ -1,11 +1,9 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewChild } from '@angular/core';
-import { PostComponent } from '../post/post.component';
-import { PostCommentsSectionComponent } from './post-comments-section/post-comments-section.component';
 
 @Component({
   selector: 'app-post-detailed',
   templateUrl: './post-detailed.component.html',
-  styleUrls: ['./post-detailed.component.scss']
+  styleUrls: ['./post-detailed.component.scss'],
 })
 export class PostDetailedComponent {
   @Output() close = new EventEmitter<boolean>;
