@@ -1,0 +1,9 @@
+<div
+  class="pop-up-background"
+  (click)="close.emit(true)">
+</div>
+<div class="pop-up-content">
+  <div class="fixed-wrap" #content>
+    <ng-content></ng-content>
+  </div>
+</div>

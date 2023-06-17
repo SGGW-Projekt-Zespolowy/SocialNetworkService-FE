@@ -1,9 +1,16 @@
 <div class="relative-wrap" *ngIf="isPopUpVisible">
-  <app-post-detailed
+  <!-- <app-post-detailed
     PopUp
     [data]="postDetailed"
     (close)="isPopUpVisible = false">
-  </app-post-detailed>
+  </app-post-detailed> -->
+  <app-pop-up
+    PopUp
+    (close)="isPopUpVisible = false">
+    <app-post
+      [data]="postDetailed">
+    </app-post>
+  </app-pop-up>
 </div>
 
 <div class="posts">

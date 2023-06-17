@@ -7,6 +7,7 @@ import { SearchBarInputComponent } from './search-bar-input/search-bar-input.com
 import { SearchPhoneViewComponent } from './search-phone-view/search-phone-view.component';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PopUpDirective } from './directives/pop-up.directive';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PopUpDirective } from './directives/pop-up.directive';
     SearchBarComponent,
     SearchBarInputComponent,
     SearchPhoneViewComponent,
-    PopUpDirective
+    PopUpDirective,
+    PopUpComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { PopUpDirective } from './directives/pop-up.directive';
   exports: [
     PopUpDirective,
     DropdownInputComponent,
-    NavbarComponent
+    NavbarComponent,
+    PopUpComponent
   ]
 })
 export class SharedModule { }
