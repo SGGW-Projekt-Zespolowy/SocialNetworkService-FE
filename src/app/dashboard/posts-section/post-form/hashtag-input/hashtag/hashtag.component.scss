@@ -8,6 +8,11 @@
   width: 20px;
   height: 20px;
   position: absolute;
+  top: -2px;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
 }
 
 .tag {
