@@ -15,6 +15,7 @@ import { PostFormComponent } from './posts-section/post-form/post-form.component
 import { CreatePostComponent } from './posts-section/create-post/create-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashtagInputComponent } from './posts-section/post-form/hashtag-input/hashtag-input.component';
+import { HashtagComponent } from './posts-section/post-form/hashtag-input/hashtag/hashtag.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HashtagInputComponent } from './posts-section/post-form/hashtag-input/h
     PostCommentComponent,
     PostFormComponent,
     CreatePostComponent,
-    HashtagInputComponent
+    HashtagInputComponent,
+    HashtagComponent
   ],
   imports: [
     CommonModule,

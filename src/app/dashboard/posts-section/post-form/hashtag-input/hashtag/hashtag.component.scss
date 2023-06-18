@@ -1,0 +1,15 @@
+.relative-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.tag {
+  box-sizing: border-box;
+}

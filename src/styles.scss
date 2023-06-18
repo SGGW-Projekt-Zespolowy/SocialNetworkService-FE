@@ -54,6 +54,39 @@ button {
     border-radius: 28px;
 }
 
+.tag {
+    border: 2px solid;
+    border-radius: 17px;
+
+    padding: 0.35em 0.7em;
+    //padding: 7px 14px;
+
+    font-family: "Quicksand";
+    font-weight: 500;
+
+    font-size: 1.6666em;
+    //font-size: 20px;
+}
+
+.orange {
+    background-color: rgba(239, 129, 14, 0.3);
+    
+    border-color: #EF810E;
+    color: #EF810E;
+}
+
+.blue {
+    background-color: rgba(92, 180, 253, 0.3);
+    border-color: #5CB4FD;
+    color: #5CB4FD;
+}
+
+.purple {
+    background-color: rgba(116, 64, 217, 0.3);
+    border-color: #7440D9;
+    color: #7440D9;
+}
+
 @media screen and (max-width: 500px) {
     :root {
       --post-font-size: 1.6vw;

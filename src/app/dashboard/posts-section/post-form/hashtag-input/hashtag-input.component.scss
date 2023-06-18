@@ -32,3 +32,11 @@ input:focus-visible {
 .add-icon:hover {
   cursor: pointer;
 }
+
+.hashtags {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}

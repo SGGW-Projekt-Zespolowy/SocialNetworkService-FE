@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TagModel } from '../../post/post.component';
 
 @Component({
   selector: 'hashtag-input',
@@ -7,11 +8,17 @@ import { Component } from '@angular/core';
 })
 export class HashtagInputComponent {
   newHashtag: string = "";
-  hashtags: string[] = [];
+  hashtags: TagModel[] = [];
 
   addHashtag() {
-    const hashtag = this.newHashtag;
-    console.log(hashtag);
-    this.hashtags.push(hashtag);
+    const hashtagName = this.newHashtag;
+    const hashtagColor = 'orange';
+    this.newHashtag = "";
+
+    this.hashtags.push({content: hashtagName, color: hashtagColor});
+  }
+
+  onDeleteHashtag(id: number) {
+    this.hashtags.splice(id, 1);
   }
 }
