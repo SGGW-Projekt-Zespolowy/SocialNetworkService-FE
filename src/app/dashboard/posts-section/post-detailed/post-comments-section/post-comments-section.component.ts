@@ -35,3 +35,4 @@ const comments: CommentModel[] = [
     opAvatar: 'https://thumbs.dreamstime.com/b/lekarz-medycyny-z-pastylkami-27402514.jpg'
   },
 ];
+

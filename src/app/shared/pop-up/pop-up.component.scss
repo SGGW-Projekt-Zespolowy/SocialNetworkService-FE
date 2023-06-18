@@ -20,6 +20,10 @@
 
   .fixed-wrap {
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: var(--post-pop-up-max-width);
+    max-width: -webkit-fill-available;
   }
 }
 

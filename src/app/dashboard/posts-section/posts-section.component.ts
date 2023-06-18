@@ -8,11 +8,12 @@ import { PostModel } from './post/post.component';
 })
 export class PostsSectionComponent {
   posts = posts;
-  isPopUpVisible: boolean = false;
+  isPostDetailsVisible: boolean = false;
+  isCreatePostVisible: boolean = true;
   postDetailed: PostModel;
 
   showPostDetails(post) {
-    this.isPopUpVisible = true;
+    this.isPostDetailsVisible = true;
     this.postDetailed = post;
   }
 }
@@ -73,6 +74,25 @@ const posts: PostModel[] = [
     tags: [
       {content: 'Złamanie', color: 'orange'},
       {content: 'Wylew', color: 'blue'},
+    ],
+    image: 'https://media.istockphoto.com/id/499285748/pl/zdj%C4%99cie/serca-i-p%C5%82uca-w%C4%85troba-tk.jpg?s=612x612&w=is&k=20&c=EL-6YbOllBN528RFL4_HLz_wz1wsTofukgHPwNZAFuk=',
+    verified: false,
+    category: 'Kardiologia',
+    degree: 'Dr n. med.',
+    isFollowed: false,
+    isUpVoted: false,
+    isDownVoted: false,
+  },
+
+  {
+    title: 'Przesz',
+    author: 'Jan',
+    content: 'Lorem',
+    rate: 222,
+    commentsCount: 15,
+    followersCount: 98,
+    tags: [
+      {content: 'Złamanie', color: 'orange'},
     ],
     image: 'https://media.istockphoto.com/id/499285748/pl/zdj%C4%99cie/serca-i-p%C5%82uca-w%C4%85troba-tk.jpg?s=612x612&w=is&k=20&c=EL-6YbOllBN528RFL4_HLz_wz1wsTofukgHPwNZAFuk=',
     verified: false,

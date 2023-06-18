@@ -11,6 +11,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PostDetailedComponent } from './posts-section/post-detailed/post-detailed.component';
 import { PostCommentsSectionComponent } from './posts-section/post-detailed/post-comments-section/post-comments-section.component';
 import { PostCommentComponent } from './posts-section/post-detailed/post-comments-section/post-comment/post-comment.component';
+import { PostFormComponent } from './posts-section/post-form/post-form.component';
+import { CreatePostComponent } from './posts-section/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PostCommentComponent } from './posts-section/post-detailed/post-comment
     ControlSectionComponent,
     PostDetailedComponent,
     PostCommentsSectionComponent,
-    PostCommentComponent
+    PostCommentComponent,
+    PostFormComponent,
+    CreatePostComponent
   ],
   imports: [
     CommonModule,
