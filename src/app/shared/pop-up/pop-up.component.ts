@@ -12,8 +12,6 @@ export class PopUpComponent {
 
   @HostListener('click', ['$event'])
   clickout(event) {
-    console.log(event.target)
-    console.log(this.content.nativeElement.children)
 
     if(event.target === this.content.nativeElement.children[0]) {
       this.close.emit(true)

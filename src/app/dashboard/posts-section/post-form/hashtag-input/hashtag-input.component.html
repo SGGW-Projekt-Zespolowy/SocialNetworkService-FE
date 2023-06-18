@@ -1,0 +1,17 @@
+<div class="input-wrap">
+  <input 
+    type="text" 
+    maxlength="13"
+    placeholder="Wpisz Hashtag"
+    [(ngModel)]="newHashtag">
+  <svg-icon 
+    (click)="addHashtag()"
+    *ngIf="newHashtag.length > 0"
+    class="add-icon" 
+    [applyClass]="true" 
+    name="add">
+  </svg-icon>
+</div>
+<div class="hashtags">
+  <span *ngFor="let hashtag of hashtags">{{ hashtag }}</span>
+</div>

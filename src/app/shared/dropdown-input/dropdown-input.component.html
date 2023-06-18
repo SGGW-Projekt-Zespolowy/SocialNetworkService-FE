@@ -1,4 +1,5 @@
 <div class="menu-trigger" (click)="isOpen = !isOpen">
+    <span *ngIf="!selectedTitle">{{ placeholder }}</span>
     <span *ngIf="selectedTitle">{{ selectedTitle }}</span>
 </div>
 <div class="menu" *ngIf="isOpen" [@dropDownMenu]>

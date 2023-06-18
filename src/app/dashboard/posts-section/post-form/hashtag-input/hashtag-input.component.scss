@@ -1,0 +1,34 @@
+.input-wrap {
+  border-bottom: 4px solid #b9cffb;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 10px;
+  color: #02237E;
+  border: none;
+}
+
+::placeholder {
+  color: #02237E;
+}
+
+input:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.add-icon {
+  vertical-align: middle;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+}

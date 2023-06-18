@@ -2,7 +2,7 @@
   <div class="controls">
     <svg-icon class="cancel-icon" [applyClass]="true" name="cancel"></svg-icon>
   </div>
-  <form>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="title">
       Wpisz tytuł
     </div>
@@ -11,11 +11,18 @@
       Wpisz treść
     </div>
     <div class="other-content">
-      <span>Okulistyka</span>
-      <span>Okulistyka</span>
-      <span>Okulistyka</span>
-      <span>Okulistyka</span>
-      <span>Okulistyka</span>
+      <dropdown-input
+        placeholder="kategorie"
+        [titles]="titles">
+      </dropdown-input>
+      <!-- <span class="post-form-input">
+        Wpisz Hashtag
+      </span> -->
+      <hashtag-input></hashtag-input>
+      <span class="post-form-input">
+        Dodaj zdjęcie
+      </span>
+      <button type="submit">Opublikuj</button>
     </div>
   </div>
   </form>

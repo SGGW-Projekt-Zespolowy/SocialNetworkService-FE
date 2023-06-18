@@ -40,6 +40,20 @@ p {
     padding-top: var(--navbar-height);
 }
 
+button {
+    color: #FFFFFF;
+    //font-size: 20px;
+    font-size: 1em;
+    line-height: 40px;
+
+    align-self: stretch;
+    margin-top: 2em;
+
+    background: #022B9B;
+    border: 5px solid rgba(2, 35, 126, 0.7);
+    border-radius: 28px;
+}
+
 @media screen and (max-width: 500px) {
     :root {
       --post-font-size: 1.6vw;

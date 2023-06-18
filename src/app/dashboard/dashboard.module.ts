@@ -13,6 +13,8 @@ import { PostCommentsSectionComponent } from './posts-section/post-detailed/post
 import { PostCommentComponent } from './posts-section/post-detailed/post-comments-section/post-comment/post-comment.component';
 import { PostFormComponent } from './posts-section/post-form/post-form.component';
 import { CreatePostComponent } from './posts-section/create-post/create-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HashtagInputComponent } from './posts-section/post-form/hashtag-input/hashtag-input.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,13 @@ import { CreatePostComponent } from './posts-section/create-post/create-post.com
     PostCommentsSectionComponent,
     PostCommentComponent,
     PostFormComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    HashtagInputComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     DashboardRoutingModule,
     SharedModule,
     AngularSvgIconModule.forRoot()

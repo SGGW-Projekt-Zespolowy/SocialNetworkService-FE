@@ -18,6 +18,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export class DropdownInputComponent implements ControlValueAccessor {
   isOpen = false;
+  @Input() placeholder: string = "";
   
   @Input() titles;
   
