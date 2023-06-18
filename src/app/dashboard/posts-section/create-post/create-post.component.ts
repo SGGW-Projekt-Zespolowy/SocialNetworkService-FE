@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-create-post',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent {
-
+  @Output() close = new EventEmitter<boolean>();
 }

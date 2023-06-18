@@ -12,7 +12,8 @@
     PopUp
     *ngIf="isCreatePostVisible"
     (close)="isCreatePostVisible = false">
-    <app-create-post></app-create-post>
+    <app-create-post (close)="isCreatePostVisible = false">
+    </app-create-post>
   </app-pop-up>
 </div>
 
