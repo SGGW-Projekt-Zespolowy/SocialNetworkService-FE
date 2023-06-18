@@ -10,8 +10,10 @@ input {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 1.5em;
+  // font-size: 18px;
+  padding: 0.83333em;
+  // padding: 10px;
   color: #02237E;
   border: none;
 }
@@ -26,6 +28,11 @@ input:focus-visible {
 }
 
 .add-icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.add-icon {
   vertical-align: middle;
 }
 
@@ -34,9 +41,11 @@ input:focus-visible {
 }
 
 .hashtags {
-  margin-top: 5px;
+  margin-top: 0.41666em;
+  // margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 5px;
+  gap: 0.41666em;
+  // gap: 5px;
 }

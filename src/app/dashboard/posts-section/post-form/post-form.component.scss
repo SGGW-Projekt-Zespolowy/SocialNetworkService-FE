@@ -17,7 +17,12 @@
 .controls {
   display: flex;
   justify-content: flex-end;
-  padding-top: 10px;
+  padding-top: 0.83333em;
+}
+
+.cancel-icon {
+  width: 1.75em;
+  height: 1.75em;
 }
 
 .cancel-icon:hover {
@@ -25,7 +30,7 @@
 }
 
 form {
-  padding: 20px;
+  padding: 1.666em;
   padding-top: 0px;
 }
 
@@ -33,8 +38,8 @@ form {
   font-family: 'Arya';
   font-style: normal;
   font-weight: 400;
-  font-size: 32px;
-  line-height: 58px;
+  font-size: 2.66666em;
+  //font-size: 32px;
 
   text-align: justify;
   letter-spacing: -0.03em;
@@ -46,7 +51,8 @@ form {
 
 .form-content {
   display: flex;
-  margin-top: 15px;
+  margin-top: 1.25em;
+  //margin-top: 15px;
 }
 
 .text-content {
@@ -54,7 +60,8 @@ form {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.6666em;
+  // font-size: 20px;
   line-height: 25px;
   text-align: justify;
   letter-spacing: -0.03em;
@@ -63,7 +70,8 @@ form {
 }
 
 .other-content {
-  margin-top: 30px;
+  margin-top: 2.5em;
+  // margin-top: 30px;
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -73,8 +81,10 @@ form {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 1.5em;
+  // font-size: 18px;
+  padding: 0.83333em;
+  // padding: 10px;
   color: #02237E;
   border-bottom: 4px solid #b9cffb;
 }
@@ -83,7 +93,8 @@ button {
   font-family: 'Arya';
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 2em;
+  // font-size: 24px;
 }
 
 :host ::ng-deep dropdown-input {
@@ -95,7 +106,8 @@ button {
     font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.5em;
+    // font-size: 18px;
     color: #02237E;
   }
 
