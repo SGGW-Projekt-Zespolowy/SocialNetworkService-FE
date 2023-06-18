@@ -1,24 +1,30 @@
 <div class="post">
   <div class="controls">
-    <svg-icon class="cancel-icon" [applyClass]="true" name="cancel"></svg-icon>
+    <svg-icon 
+      class="cancel-icon" 
+      [applyClass]="true" 
+      name="cancel">
+    </svg-icon>
   </div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="title">
-      Wpisz tytuł
-    </div>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <input
+      formControlName="title" 
+      class="title" 
+      placeholder="Wpisz tytuł">
   <div class="form-content">
-    <div class="text-content">
-      Wpisz treść
-    </div>
+    <textarea 
+      formControlName="content"
+      class="text-content" 
+      placeholder="Wpisz treść"></textarea>
     <div class="other-content">
       <dropdown-input
+        formControlName="category"
         placeholder="kategorie"
         [titles]="titles">
       </dropdown-input>
-      <!-- <span class="post-form-input">
-        Wpisz Hashtag
-      </span> -->
-      <hashtag-input></hashtag-input>
+      <hashtag-input
+        formControlName="hashtags">
+      </hashtag-input>
       <span class="post-form-input">
         Dodaj zdjęcie
       </span>
