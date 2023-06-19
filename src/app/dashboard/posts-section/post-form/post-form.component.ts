@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 
 @Component({
   selector: 'app-post-form',
@@ -7,9 +8,6 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent{
-
-  @Output() close = new EventEmitter<boolean>();
-
   titles = ['siema', 'jebany', 'chuju']
 
   postForm = this.fb.group({
@@ -21,6 +19,7 @@ export class PostFormComponent{
 
   constructor(
     private fb: FormBuilder,
+    public PostPopUpService: PostPopUpService
   ) {}
 
   onSubmit() {

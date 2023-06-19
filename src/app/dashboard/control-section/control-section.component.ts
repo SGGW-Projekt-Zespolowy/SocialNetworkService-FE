@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 
 @Component({
   selector: 'app-control-section',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class ControlSectionComponent {
 
+  constructor(
+    public popUpService: PostPopUpService
+  ) {}
 }

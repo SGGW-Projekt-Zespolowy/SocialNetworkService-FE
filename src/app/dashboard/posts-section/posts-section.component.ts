@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostModel } from './post/post.component';
+import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 
 @Component({
   selector: 'app-posts-section',
@@ -11,6 +12,10 @@ export class PostsSectionComponent {
   isPostDetailsVisible: boolean = false;
   isCreatePostVisible: boolean = true;
   postDetailed: PostModel;
+
+  constructor(
+    public popUpService: PostPopUpService
+  ) {}
 
   showPostDetails(post) {
     this.isPostDetailsVisible = true;
