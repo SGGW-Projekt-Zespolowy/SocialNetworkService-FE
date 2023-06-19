@@ -8,6 +8,7 @@ import { SearchPhoneViewComponent } from './search-phone-view/search-phone-view.
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PopUpDirective } from './directives/pop-up.directive';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     SearchBarInputComponent,
     SearchPhoneViewComponent,
     PopUpDirective,
-    PopUpComponent
+    PopUpComponent,
+    SafeUrlPipe
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     PopUpDirective,
     DropdownInputComponent,
     NavbarComponent,
-    PopUpComponent
+    PopUpComponent,
+    SafeUrlPipe
   ]
 })
 export class SharedModule { }

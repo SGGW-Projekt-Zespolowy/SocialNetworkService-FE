@@ -12,7 +12,9 @@
     name="add">
   </svg-icon>
 </div>
-<div class="hashtags">
+<div 
+  class="hashtags"
+  *ngIf="hashtags.length > 0">
   <ng-container *ngFor="let tag of hashtags; let i = index">
     <hashtag 
       [tag]="tag"
