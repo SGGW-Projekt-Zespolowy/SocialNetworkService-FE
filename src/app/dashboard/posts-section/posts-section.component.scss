@@ -7,3 +7,21 @@
 .relative-wrap {
   position: relative;
 }
+
+.flex-wrap {
+  display: flex;
+  justify-content: center;
+  font-size: var(--post-font-size);
+}
+
+.add-new-post {
+  width: auto;
+  margin-top: 1rem;
+  font-size: 2em;
+
+  .new-post-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+  }
+}

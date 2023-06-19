@@ -16,6 +16,18 @@
   </app-pop-up>
 </div>
 
+
+<div class="flex-wrap">
+  <div 
+    *ngIf="isAddPostVisible"
+    class="add-new-post" 
+    (click)="popUpService.openCreatePostModal()">
+    <svg-icon 
+    class="new-post-icon" [applyClass]="true" name="message-plus"></svg-icon>
+    <span>Dodaj Post</span>
+  </div>
+</div>
+
 <div class="posts">
   <ng-container *ngFor="let post of posts">
     <app-post

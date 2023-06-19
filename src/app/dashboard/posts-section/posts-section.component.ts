@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PostModel } from './post/post.component';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { AppBreakpoints } from 'src/app/app-breakpoints';
 
 @Component({
   selector: 'app-posts-section',
@@ -12,10 +14,22 @@ export class PostsSectionComponent {
   isPostDetailsVisible: boolean = false;
   isCreatePostVisible: boolean = true;
   postDetailed: PostModel;
+  isAddPostVisible: boolean = false;
 
   constructor(
-    public popUpService: PostPopUpService
+    public popUpService: PostPopUpService,
+    private responsive: BreakpointObserver
   ) {}
+
+  ngOnInit() {
+    this.responsive.observe([AppBreakpoints.Large])
+      .subscribe(screen => {
+        this.isAddPostVisible = false;
+        if(screen.matches) {
+          this.isAddPostVisible = true;
+        }
+      });
+  }
 
   showPostDetails(post) {
     this.isPostDetailsVisible = true;

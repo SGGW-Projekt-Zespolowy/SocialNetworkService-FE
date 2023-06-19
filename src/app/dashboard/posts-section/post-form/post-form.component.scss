@@ -1,3 +1,5 @@
+@import '../../../../styles/scrollbar.scss';
+
 .post {
   font-size: var(--post-font-size);
 
@@ -73,6 +75,7 @@ form {
 
 .other-content {
   margin-top: 2.5em;
+  margin-left: 1em;
   // margin-top: 30px;
   width: 40%;
   display: flex;

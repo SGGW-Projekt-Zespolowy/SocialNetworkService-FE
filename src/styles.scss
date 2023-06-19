@@ -87,6 +87,34 @@ button {
     color: #7440D9;
 }
 
+.add-new-post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  
+    background-color: #022B9B;
+    border-radius: 15px;
+    color: #FFFFFF;
+    padding: 3px 25px;
+    margin-top: 45px;
+  
+    font-family: "Arya";
+    font-size: 2rem;
+    font-weight: 400;
+    white-space: nowrap;
+  
+    .new-post-icon {
+      vertical-align: sub;
+      margin-right: 8px;
+    }
+  }
+  
+  .add-new-post:hover {
+    cursor: pointer;
+  }
+
 @media screen and (max-width: 500px) {
     :root {
       --post-font-size: 1.6vw;
