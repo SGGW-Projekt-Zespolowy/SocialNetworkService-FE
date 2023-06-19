@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TagModel } from '../../post/post.component';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { HashtagService } from 'src/app/services/hashtag.service';
 
 @Component({
   selector: 'hashtag-input',
@@ -18,9 +19,13 @@ export class HashtagInputComponent implements ControlValueAccessor {
   newHashtag: string = "";
   hashtags: TagModel[] = [];
 
+  constructor(
+    private hashtagService: HashtagService
+  ) {}
+
   addHashtag() {
     const hashtagName = this.newHashtag;
-    const hashtagColor = 'orange';
+    const hashtagColor = this.hashtagService.getRandomColor();
     this.newHashtag = "";
 
     this.hashtags.push({content: hashtagName, color: hashtagColor});
