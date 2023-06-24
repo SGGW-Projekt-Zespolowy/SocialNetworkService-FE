@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpClientHelper } from './http-client-helper';
 import { CookieService } from 'ngx-cookie-service';
@@ -13,7 +13,6 @@ import { ContextService } from './context.service';
 })
 export class AuthService {
 
-  user = new BehaviorSubject<UserModel>(null);
   tokenExpirationTimer: any;
   URL = 'users/user';
 
@@ -36,6 +35,20 @@ export class AuthService {
     )
   }
 
+  register(registerModel) {
+    return this.http.post(this.URL, registerModel);
+  }
+
+  getUserData(id: string) {
+    return this.http.get<UserModel>(this.URL + `/${id}`);
+  }
+
+  isEmailUnique(email: string) {
+    return this.http.get(this.URL + '/email', {
+      params: new HttpParams().set('email', email)
+    });
+  }
+
   handleAuthentication(token: string) {
     const decoded: any = jwt_decode(token);
     const expiresIn = decoded.exp * 1000;
@@ -48,10 +61,6 @@ export class AuthService {
       //tap(res => this.user.next(res))
       tap(res => this.contextService.user.next(res))
     )
-  }
-
-  getUserData(id: string) {
-    return this.http.get<UserModel>(this.URL + `/${id}`);
   }
 
   setAuthCookie(token: string) {

@@ -8,3 +8,4 @@ export interface UserModel {
   isVerified: boolean,
   profilePictore: string,
 }
+
