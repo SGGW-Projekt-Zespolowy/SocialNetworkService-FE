@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode'
 import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { Router } from '@angular/router';
+import { ContextService } from './context.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthService {
   constructor(
     protected http: HttpClient,
     protected cookieService: CookieService,
-    private router: Router
+    private router: Router,
+    private contextService: ContextService
   ) { 
     this.URL = HttpClientHelper.baseURL + this.URL;
   }
@@ -43,7 +45,8 @@ export class AuthService {
     //this.autoLogout(10000);
 
     return this.getUserData(id).pipe(
-      tap(res => this.user.next(res))
+      //tap(res => this.user.next(res))
+      tap(res => this.contextService.user.next(res))
     )
   }
 
@@ -61,7 +64,8 @@ export class AuthService {
   }
 
   logout() {
-    this.user.next(null);
+    //this.user.next(null);
+    this.contextService.user.next(null)
     this.cookieService.delete('Authorization');
 
     if(this.tokenExpirationTimer) {
