@@ -40,6 +40,7 @@ export class AuthService {
     const id = decoded.sub;
 
     this.autoLogout(expiresIn - new Date().getTime());
+    //this.autoLogout(10000);
 
     return this.getUserData(id).pipe(
       tap(res => this.user.next(res))
@@ -67,6 +68,7 @@ export class AuthService {
       clearTimeout(this.tokenExpirationTimer);
     }
     this.tokenExpirationTimer = null;
+    this.router.navigate(['login'])
   }
   
   autoLogout(expirationDuration: number) {
