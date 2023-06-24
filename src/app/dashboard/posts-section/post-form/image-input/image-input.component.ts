@@ -22,11 +22,7 @@ export class ImageInputComponent {
       }
     }
   }
-
-  createObjectURL(file: File) {
-    return URL.createObjectURL(file);
-  }
-
+  
   deleteImage(id: number) {
     this.images.splice(id, 1);
   }
