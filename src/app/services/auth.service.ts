@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClientHelper } from './http-client-helper';
 import { CookieService } from 'ngx-cookie-service';
 import jwt_decode from 'jwt-decode'
-import { BehaviorSubject, map, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, catchError, map, switchMap, tap, throwError } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { Router } from '@angular/router';
 import { ContextService } from './context.service';
@@ -30,6 +30,9 @@ export class AuthService {
       responseType: 'text'
     }).pipe(
       tap(token => this.setAuthCookie(token)),
+      catchError(error => {
+        return throwError(() => error.statusText);
+      }),
       switchMap(token => this.handleAuthentication(token)),
       tap(res => this.router.navigate(['dashboard']))
     )
