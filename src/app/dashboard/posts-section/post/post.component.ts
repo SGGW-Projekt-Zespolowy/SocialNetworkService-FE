@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PostModel } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-post',
@@ -57,26 +58,4 @@ export class PostComponent {
     this.data.isDownVoted = false;
     this.data.isUpVoted = !this.data.isUpVoted;
   }
-}
-
-export interface PostModel {
-  title: string;
-  author: string;
-  content: string;
-  rate: number;
-  commentsCount: number;
-  followersCount: number;
-  tags: TagModel[]
-  image: string,
-  category: string,
-  verified: boolean,
-  degree: string,
-  isFollowed: boolean
-  isUpVoted: boolean
-  isDownVoted: boolean
-}
-
-export interface TagModel {
-  content: string,
-  color: string,
 }

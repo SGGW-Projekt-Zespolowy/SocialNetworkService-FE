@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { TagModel } from '../../post/post.component';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { TagModel } from 'src/app/models/post.model';
 import { HashtagService } from 'src/app/services/hashtag.service';
 
 @Component({

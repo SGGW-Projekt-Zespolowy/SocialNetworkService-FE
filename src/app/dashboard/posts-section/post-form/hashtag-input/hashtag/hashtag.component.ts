@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TagModel } from '../../../post/post.component';
+import { TagModel } from 'src/app/models/post.model';
 
 @Component({
   selector: 'hashtag',

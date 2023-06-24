@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { PostModel } from './post/post.component';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AppBreakpoints } from 'src/app/app-breakpoints';
+import { PostModel } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-posts-section',
