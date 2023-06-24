@@ -61,5 +61,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/message-profile.svg', 'message-profile').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/phone-profile.svg', 'phone').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/medical-s.svg', 'medical').subscribe();
   }
 }
