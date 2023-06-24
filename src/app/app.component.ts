@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgIconRegistryService } from 'angular-svg-icon';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,12 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private iconReg: SvgIconRegistryService) { }
+  constructor(
+    private iconReg: SvgIconRegistryService,
+    private authService: AuthService
+  ) { 
+    
+  }
 
   ngOnInit(): void {
     this.iconReg.loadSvg('../assets/Icons/test-icon.svg', 'test').subscribe();
@@ -55,5 +61,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/add.svg', 'add').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/delete.svg', 'delete').subscribe();
+
+    this.authService.autoLogin()
   }
 }
