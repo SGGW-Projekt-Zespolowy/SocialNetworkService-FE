@@ -23,6 +23,7 @@
   <div class="comments-list">
     <ng-container *ngFor="let comment of comments">
       <app-post-comment
+        (delete)="onDeleteComment($event)"
         [data]="comment">
       </app-post-comment>
     </ng-container>
