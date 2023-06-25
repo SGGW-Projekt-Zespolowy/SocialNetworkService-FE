@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, map, throwError } from 'rxjs';
 import { UserModel } from '../models/user.model';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { UserModel } from '../models/user.model';
 })
 export class ContextService {
 
-  user = new BehaviorSubject<UserModel>(null);
+  user = new BehaviorSubject<UserModel>(null)
 
   constructor() { }
 }

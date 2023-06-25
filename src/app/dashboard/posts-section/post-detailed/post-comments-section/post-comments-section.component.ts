@@ -1,19 +1,18 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CommentModel } from './post-comment/post-comment.component';
 import { ContextService } from 'src/app/services/context.service';
-import { Subscription } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 
 @Component({
   selector: 'app-post-comments-section',
   templateUrl: './post-comments-section.component.html',
   styleUrls: ['./post-comments-section.component.scss']
 })
-export class PostCommentsSectionComponent implements OnDestroy {
+export class PostCommentsSectionComponent {
 
   newComment: string = "";
 
   comments = comments;
-  userSub: Subscription;
 
   constructor(
     public contextService: ContextService
@@ -22,7 +21,11 @@ export class PostCommentsSectionComponent implements OnDestroy {
   addComment() {
     if(this.newComment.length > 0) {
       console.log(this.newComment)
-      this.userSub = this.contextService.user.subscribe(user => {
+      this.contextService.user.pipe(take(1))
+      .subscribe(user => {
+        if(!user) {
+          return;
+        }
         const comment = {
           id: (comments.length + 1).toString(),
           opTitle: user.degree,
@@ -40,12 +43,6 @@ export class PostCommentsSectionComponent implements OnDestroy {
   onDeleteComment(comment: CommentModel) {
     const index = this.comments.indexOf(comment);
     this.comments.splice(index, 1); 
-  }
-
-  ngOnDestroy() {
-    if(this.userSub) {
-      this.userSub.unsubscribe();
-    }
   }
 }
 
