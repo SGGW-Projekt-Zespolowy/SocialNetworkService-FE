@@ -82,7 +82,7 @@ const posts: PostModel[] = [
     isFollowed: true,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date()
+    creationDate: new Date('June  20, 2023 12:30:00')
   },
 
   {
@@ -103,7 +103,7 @@ const posts: PostModel[] = [
     isFollowed: false,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date()
+    creationDate: new Date('June  18, 2023 12:30:00')
   },
 
   {
@@ -123,6 +123,6 @@ const posts: PostModel[] = [
     isFollowed: false,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date()
+    creationDate: new Date('June  18, 2021 12:30:00')
   },
 ]
