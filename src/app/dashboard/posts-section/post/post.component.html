@@ -63,18 +63,18 @@
           &nbsp;
           <span class="author">{{ data.author }}</span>
           &nbsp;
-          <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
-          &nbsp;
-          <span class="date">
-            {{ data.creationDate | roundedDate }}
-          </span>
-          &nbsp;
           <ng-container *ngIf="data.verified">
             <svg-icon class="verification-icon" [applyClass]="true" name="verified"></svg-icon>
           </ng-container>
           <ng-container *ngIf="!data.verified">
             <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
           </ng-container>
+          &nbsp;
+          <span class="date">
+            {{ data.creationDate | roundedDate }}
+          </span>
+          &nbsp;
+          <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
           &nbsp;
           <span class="category">
             {{ data.category }}
