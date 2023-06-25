@@ -14,7 +14,8 @@ export class PostFormComponent{
     title: [null, [Validators.required]],
     content: [null, [Validators.required]],
     category: [null, [Validators.required]],
-    hashtags: [[], [Validators.required]]
+    hashtags: [[], [Validators.required]],
+    images: [[], [Validators.required]]
   });
 
   constructor(

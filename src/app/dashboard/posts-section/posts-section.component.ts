@@ -22,7 +22,7 @@ export class PostsSectionComponent {
   ) {}
 
   ngOnInit() {
-    this.responsive.observe([AppBreakpoints.Large])
+    this.responsive.observe([AppBreakpoints.Medium])
       .subscribe(screen => {
         this.isAddPostVisible = false;
         if(screen.matches) {
