@@ -1,0 +1,49 @@
+<ng-container *ngIf="contextService.user | async as vm">
+<div class="triangle-wrap">
+  <div class="triangle"></div>
+</div>
+<div class="dialog-content">
+  <div class="avatar-container">
+    <div class="avatar-wrap">
+      <ng-container *ngIf="vm.profilePictore.length === 0">
+        <img 
+        class="avatar"
+        src="./../../../assets/Images/placeholders/avatar-placeholder.jpg" 
+        [alt]="vm.firstName + vm.lastName">
+      </ng-container>
+      <ng-container *ngIf="vm.profilePictore.length > 0">
+        <img 
+          class="avatar"
+          src="vm.profilePictore" 
+          [alt]="vm.firstName + vm.lastName">
+      </ng-container>
+      <div class="relative-wrap">
+        <div class="degree-wrap">
+          <div class="degree">
+            {{ vm.degree }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="info">
+    <div class="name">
+      {{ vm.firstName }} 
+      {{ vm.lastName }}
+    </div>
+    <div class="additional-infos">
+      <div class="additional-info">
+        <svg-icon class="ad-icon" [applyClass]="true" name="mail"></svg-icon>
+        &nbsp;
+        {{ vm.email }}
+      </div>
+
+      <div class="additional-info">
+        <svg-icon class="ad-icon" [applyClass]="true" name="mail"></svg-icon>
+        &nbsp;
+        {{ vm.email }}
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>

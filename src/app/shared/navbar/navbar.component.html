@@ -6,8 +6,17 @@
     <span class="nav-item">
       <svg-icon class="nav-icon" [applyClass]="true" name="messages"></svg-icon>
     </span>
-    <span class="nav-item" routerLink="/profile">
+    <span 
+      class="nav-item" 
+      routerLink="/profile" 
+      (mouseenter)="showProfileDetails()"
+      (mouseleave)="hideProfileDetails()">
       <svg-icon class="nav-icon" [applyClass]="true" name="profile"></svg-icon>
+      <div 
+        *ngIf="isProfileDetailsVisible"
+        class="relative-wrap">
+        <app-user-dialog></app-user-dialog>
+      </div>
     </span>
     <span class="nav-item" (click)="logout()">
       <svg-icon class="nav-icon" [applyClass]="true" name="sign-out"></svg-icon>

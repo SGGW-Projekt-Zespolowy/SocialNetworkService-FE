@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent {
 
+  isProfileDetailsVisible: boolean = false
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -16,5 +18,13 @@ export class NavbarComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  showProfileDetails() {
+    this.isProfileDetailsVisible = true;
+  }
+
+  hideProfileDetails() {
+    this.isProfileDetailsVisible = false;
   }
 }

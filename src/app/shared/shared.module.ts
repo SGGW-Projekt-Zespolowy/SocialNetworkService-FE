@@ -11,6 +11,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { RoundedDatePipe } from './pipes/rounded-date.pipe';
 import { RouterModule } from '@angular/router';
+import { UserDialogComponent } from './user-dialog/user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RouterModule } from '@angular/router';
     PopUpDirective,
     PopUpComponent,
     SafeUrlPipe,
-    RoundedDatePipe
+    RoundedDatePipe,
+    UserDialogComponent
   ],
   imports: [
     CommonModule,
