@@ -12,6 +12,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { RoundedDatePipe } from './pipes/rounded-date.pipe';
 import { RouterModule } from '@angular/router';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
+import { AddLineBreaksPipe } from './pipes/add-line-breaks.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
     PopUpComponent,
     SafeUrlPipe,
     RoundedDatePipe,
-    UserDialogComponent
+    UserDialogComponent,
+    AddLineBreaksPipe
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
     NavbarComponent,
     PopUpComponent,
     SafeUrlPipe,
-    RoundedDatePipe
+    RoundedDatePipe,
+    AddLineBreaksPipe
   ]
 })
 export class SharedModule { }
