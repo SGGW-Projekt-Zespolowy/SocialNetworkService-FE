@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.controlDisapearSub = this.responsive.observe([
-      AppBreakpoints.Large
+      AppBreakpoints.Medium
       ])
       .subscribe(result => {
         this.controlIsVisible = true;
@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     });
 
     this.friendsDisapearSub = this.responsive.observe([
-      AppBreakpoints.Medium
+      AppBreakpoints.Large
       ])
       .subscribe(result => {
         this.friendsIsVisible = true;

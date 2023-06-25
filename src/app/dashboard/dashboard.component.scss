@@ -24,18 +24,10 @@ app-friends-section {
   .nav-content {
     justify-content: center;
   }
-
-  // app-control-section {
-  //   display: none !important;
-  // } 
-
-  // app-friends-section {
-  //   display: none !important;
-  // }
 }
 
-// @media screen and (max-width: 1330px) { 
-//   app-control-section {
-//     display: none !important;
-//   } 
-// }
+@media screen and (max-width: 1330px) { 
+  app-posts-section {
+    width: 100%;
+  }
+}
