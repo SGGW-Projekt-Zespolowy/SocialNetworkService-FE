@@ -62,7 +62,7 @@ export class AuthService {
 
     return this.getUserData(id).pipe(
       //tap(res => this.user.next(res))
-      tap(res => this.contextService.user.next(res))
+      tap(res => this.setContext(res))
     )
   }
 
@@ -111,6 +111,13 @@ export class AuthService {
       }
       return this.handleAuthentication(token[1])
     }));
+  }
+
+  setContext(res: UserModel) {
+    if(res.profilePictore.length === 0) {
+      res.profilePictore = HttpClientHelper.avatarPlaceholder;
+    }
+    this.contextService.user.next(res)
   }
 }
 
