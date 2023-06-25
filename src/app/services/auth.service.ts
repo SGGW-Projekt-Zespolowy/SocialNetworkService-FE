@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClientHelper } from './http-client-helper';
 import { CookieService } from 'ngx-cookie-service';
 import jwt_decode from 'jwt-decode'
-import { BehaviorSubject, catchError, map, switchMap, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, map, of, switchMap, tap, throwError } from 'rxjs';
 import { UserModel } from '../models/user.model';
 import { Router } from '@angular/router';
 import { ContextService } from './context.service';
@@ -98,14 +98,19 @@ export class AuthService {
     let authCookie = this.cookieService.get('Authorization');
 
     if(!authCookie) {
-      return;
+      return throwError(() => new Error())
     }
     const token = authCookie.split(' ');
     if(token.length < 2) {
-      return 
+      return throwError(() => new Error());
     }
 
-    this.handleAuthentication(token[1]).subscribe();
+    return this.contextService.user.pipe(switchMap(user => {
+      if(user) {
+        return of(true);
+      }
+      return this.handleAuthentication(token[1])
+    }));
   }
 }
 

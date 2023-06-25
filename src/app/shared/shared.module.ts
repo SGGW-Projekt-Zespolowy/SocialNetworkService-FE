@@ -9,6 +9,8 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { PopUpDirective } from './directives/pop-up.directive';
 import { PopUpComponent } from './pop-up/pop-up.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { RoundedDatePipe } from './pipes/rounded-date.pipe';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,18 +21,21 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     SearchPhoneViewComponent,
     PopUpDirective,
     PopUpComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    RoundedDatePipe
   ],
   imports: [
     CommonModule,
-    AngularSvgIconModule.forRoot()
+    AngularSvgIconModule.forRoot(),
+    RouterModule,
   ],
   exports: [
     PopUpDirective,
     DropdownInputComponent,
     NavbarComponent,
     PopUpComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    RoundedDatePipe
   ]
 })
 export class SharedModule { }

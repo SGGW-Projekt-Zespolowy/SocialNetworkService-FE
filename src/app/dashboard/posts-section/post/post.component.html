@@ -73,6 +73,10 @@
           <span class="category">
             {{ data.category }}
           </span>
+          &nbsp;
+          <span class="date">
+            {{ data.creationDate | roundedDate }}
+          </span>
         </div>
       </div>
       <div class="bookmark" (click)="toggleFollowingStatus()">
