@@ -14,7 +14,7 @@
       <ng-container *ngIf="vm.profilePictore.length > 0">
         <img 
           class="avatar"
-          src="vm.profilePictore" 
+          [src]="vm.profilePictore" 
           [alt]="vm.firstName + vm.lastName">
       </ng-container>
       <div class="relative-wrap">
