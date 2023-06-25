@@ -1,13 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { CommentModel } from './post-comment/post-comment.component';
+import { ContextService } from 'src/app/services/context.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-post-comments-section',
   templateUrl: './post-comments-section.component.html',
   styleUrls: ['./post-comments-section.component.scss']
 })
-export class PostCommentsSectionComponent {
+export class PostCommentsSectionComponent implements OnDestroy {
+
+  newComment: string = "";
+
   comments = comments;
+  userSub: Subscription;
+
+  constructor(
+    public contextService: ContextService
+  ) {}
+
+  addComment() {
+    if(this.newComment.length > 0) {
+      console.log(this.newComment)
+      this.userSub = this.contextService.user.subscribe(user => {
+        const comment = {
+          opTitle: user.degree,
+          opName: `${user.firstName} ${user.lastName}`,
+          content: this.newComment,
+          opAvatar: user.profilePictore
+        };
+        this.comments.unshift(comment);
+        this.newComment = "";
+      });
+    }
+  }
+
+  ngOnDestroy() {
+    if(this.userSub) {
+      this.userSub.unsubscribe();
+    }
+  }
 }
 
 const comments: CommentModel[] = [

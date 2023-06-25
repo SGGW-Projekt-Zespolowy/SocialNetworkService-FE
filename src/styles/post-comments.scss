@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   //padding-bottom: 20px;
-  padding-bottom: 1.66666em;
+  padding-bottom: 1em;
   border-bottom: 1px solid #D9D9D9;
 
   .vertical-line {
@@ -41,6 +41,10 @@
     font-weight: 400;
     //font-size: 15px;
     font-size: 1.25em;
+    width: 100%;
+    padding-top: 1.5em;
+    box-sizing: border-box;
+    margin-right: 2em;
   }
 }
 
@@ -120,4 +124,14 @@
 ::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-top: calc(40px + 2em); 
+}
+
+.add-icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+.add-icon:hover {
+  cursor: pointer;
 }

@@ -1,15 +1,25 @@
-<div class="comments-section">
+<div
+  *ngIf="contextService.user | async as vm"
+  class="comments-section">
   <div class="create-new-comment">
     <img 
       class="avatar"
-      src="https://lastfm.freetls.fastly.net/i/u/ar0/efbf5c08292a4186c1b13cb392cdd18b.jpg" 
+      [src]="vm.profilePictore" 
       alt="your-avatar">
       <div class="vertical-line">
 
       </div>
-      <div class="comment-input">
-        Napisz co myślisz...
-      </div>
+      <textarea 
+      [(ngModel)]="newComment"
+      class="comment-input" 
+      placeholder="Napisz co myślisz..."></textarea>
+      <svg-icon 
+      (click)="addComment()"
+      *ngIf="newComment.length > 0"
+      class="add-icon" 
+      [applyClass]="true" 
+      name="add">
+    </svg-icon>
   </div>
   <div class="comments-list">
     <ng-container *ngFor="let comment of comments">
