@@ -3,5 +3,6 @@
 </app-post>
 <app-post-comments-section
   [postId]="data.id"
-  [postAuthorId]="data.authorId">
+  [postAuthorId]="data.authorId"
+  (commentCounterChange)="onCommentCounterChange($event)">
 </app-post-comments-section>

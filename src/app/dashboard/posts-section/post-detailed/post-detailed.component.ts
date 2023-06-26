@@ -7,6 +7,9 @@ import { PostModel } from 'src/app/models/post.model';
   styleUrls: ['./post-detailed.component.scss'],
 })
 export class PostDetailedComponent {
-   @Input() data: PostModel;
+  @Input() data: PostModel;
 
+  onCommentCounterChange(commentStatus: number) {
+    this.data.commentsCount = this.data.commentsCount + commentStatus;
+  }
 }
