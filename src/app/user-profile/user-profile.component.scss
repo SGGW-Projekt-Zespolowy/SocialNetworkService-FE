@@ -92,31 +92,51 @@
     }
   }
   
-  .informations {
+
+  .container {
+    display: flex;
     position: relative;
-    left: 3em;
-    top: -4em;
-    margin-top: 73px;
+    left: -17%;
+    top: -10%;
+    margin-top: 70px;
     margin-right: 1em;
     margin-left: 18em;
-    border-left: 2px solid rgba(217, 217, 217, 0.4);
-   
-    .information {
-      display: flex;
-      align-items: center;
-      min-width: 23em;
-      margin-top: 29px;
-    
-        .name {
-          font-family: "Quicksand";
-          font-size: 20px;
-          font-weight: 500;
-          padding-left: 3em;
-          color: #000000;
-        }
-    }
+    margin-bottom: 5px;
+    border-left: 2px solid #02237E;
+    color: #022B9B;
+    font-size: 27px;
+    font-family: "Arya";
+    font-weight: 700;
+    letter-spacing: -0.81px;
   }
   
+  .column {
+    flex: 1;
+    margin-right: 17%;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-left: 50px;
+  }
+
+  .row-2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    direction: rtl;
+    margin-bottom: 5px;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
   @media screen and (max-width: 1200px) { 
     .infos {
       font-size: 10px;
