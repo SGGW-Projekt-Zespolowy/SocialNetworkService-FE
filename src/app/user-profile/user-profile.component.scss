@@ -1,3 +1,4 @@
+
 .content{
   display: flex;
   background: rgba(238, 236, 248, 0.3);
@@ -68,13 +69,13 @@
     position: relative;
     left: -130px;
     margin-top: 7em;
-    margin-right: 1em;
+    margin-right: 2em;
     margin-left: -5px;
     
     .info {
       display: flex;
       align-items: center;
-      min-width: 25em;
+      min-width: 31em;
       margin-top: 23px;
     
         .name {
@@ -92,11 +93,10 @@
     }
   }
   
-
   .container {
     display: flex;
     position: relative;
-    left: -17%;
+    left: -23%;
     top: -10%;
     margin-top: 70px;
     margin-right: 1em;
@@ -135,7 +135,85 @@
     display: flex;
     flex-direction: column;
   }
+
+  .navigation-bar-container {
+    display: flex;
+    width: 90%;
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    align-items: center;
+    margin: -57px auto;
+    border-bottom: 2px solid #B9CFFB;
+    padding-bottom: 10px;
+  }
+
   
+.nav-items {
+  font-size: 1.3em;
+  color: #02237E;
+  font-size: 25px;
+  font-family: "Arya";
+  display: flex;
+
+  .nav-item {
+    margin-left: 65px;
+    cursor: pointer;
+    position: relative;
+    left: 5%;
+  }
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: -10px;
+  margin-bottom: -13px;
+  background-color: #B9CFFB;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+  .content-2 {
+    display: flex;
+    width: 100%;
+    height: 39vh;
+    background: rgba(238, 236, 248, 0.3);
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    align-items: center;
+    margin: -57px auto;
+    margin-top: 55px;
+    padding-bottom: 10px;
+  }
+
+  @media screen and (max-width: 500px) { 
+    .navigation-bar-container {
+      padding: 0px 10px;
+    }
+  
+    .nav-item {
+      margin-left: 0.5em;
+    }
+  
+    .nav-items {
+      margin-right: 0px;
+    }
+}
 
   @media screen and (max-width: 1200px) { 
     .infos {

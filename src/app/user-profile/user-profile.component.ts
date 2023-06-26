@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent {
+  selectedTab: string;
 
+  selectTab(tab: string): void {
+    this.selectedTab = tab;
+  }
 }

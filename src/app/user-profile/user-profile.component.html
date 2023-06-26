@@ -72,3 +72,43 @@
         </div>
     </div>
 </div>
+    <div class="navigation-bar-container">
+        <div class="nav-items">
+          <span class="nav-item" [class.selected]="selectedTab === 'posty'" (click)="selectTab('posty')">Posty</span>
+          <span class="nav-item" [class.selected]="selectedTab === 'publikacje'" (click)="selectTab('publikacje')">Publikacje</span>
+          <span class="nav-item" (click)="selectTab('zapisane')">Zapisane</span>
+          <span class="nav-item" (click)="selectTab('aktywnosc')">Aktywność</span>
+          <span class="nav-item" (click)="selectTab('obserwowani')">Obserwowani</span>
+          <span class="nav-item" (click)="selectTab('obserwujacy')">Obserwujący</span>
+          <span class="nav-item" (click)="selectTab('kontakty')">Kontakty</span>
+          <span class="nav-item" (click)="selectTab('ustawienia')">Ustawienia</span>
+        </div>
+    </div>
+      
+      <div class="content-2">
+        <div *ngIf="selectedTab === 'posty'">
+          <!-- Komponent Posty -->Siema
+        </div>
+        <div *ngIf="selectedTab === 'publikacje'">
+          <!-- Komponent Publikacje -->Elo
+        </div>
+        <div *ngIf="selectedTab === 'zapisane'">
+          <!-- Komponent Zapisane -->
+        </div>
+        <div *ngIf="selectedTab === 'aktywnosc'">
+          <!-- Komponent Aktywność -->
+        </div>
+        <div *ngIf="selectedTab === 'obserwowani'">
+          <!-- Komponent Obserwowani -->
+        </div>
+        <div *ngIf="selectedTab === 'obserwujacy'">
+          <!-- Komponent Obserwujący -->
+        </div>
+        <div *ngIf="selectedTab === 'kontakty'">
+          <!-- Komponent Kontakty -->
+        </div>
+        <div *ngIf="selectedTab === 'ustawienia'">
+          <!-- Komponent Ustawienia -->
+        </div>
+      </div>
+    
