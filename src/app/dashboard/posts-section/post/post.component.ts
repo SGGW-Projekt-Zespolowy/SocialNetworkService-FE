@@ -11,6 +11,7 @@ export class PostComponent {
   @Input() data: PostModel;
   @Output() showDetails = new EventEmitter<PostModel>()
   showAllTags: boolean = false;
+  isPostOptionsVisible: boolean = false;
 
   constructor(
     public contextService: ContextService

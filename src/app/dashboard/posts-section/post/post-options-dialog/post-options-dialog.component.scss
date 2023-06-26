@@ -1,4 +1,19 @@
+:host {
+  font-size: var(--post-font-size);
+}
+
 .dialog-content {
+  width: var(--post-options-dialog-width);
   font-family: 'Quicksand';
   color: #02237E;
+  background-color: #ffff;
+  box-shadow: var(--post-box-shadow);
+  padding: 1em;
+  border-radius: 11px;
+  box-sizing: border-box;
+
+  * {
+    font-size: 1.666666em;
+  }
 }
+

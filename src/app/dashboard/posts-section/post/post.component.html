@@ -82,22 +82,32 @@
         </div>
       </div>
       <ng-container *ngIf="data.authorId !== vm.id">
-        <div class="bookmark" (click)="toggleFollowingStatus()">
-          <ng-container *ngIf="!data.isFollowed">
-            <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
-          </ng-container>
-          <ng-container *ngIf="data.isFollowed">
-            <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
-          </ng-container>
+        <div 
+          class="bookmark pointer" 
+          (click)="toggleFollowingStatus()">
+          <svg-icon 
+            class="bookmark-icon" 
+            [applyClass]="true" 
+            [name]="data.isFollowed ? 'bookmark' : 'bookmark2'">
+          </svg-icon>
         </div>
       </ng-container>
       <ng-container *ngIf="data.authorId === vm.id">
-        <div class="bookmark">
+        <div 
+          class="bookmark"
+          (click)="isPostOptionsVisible = !isPostOptionsVisible"
+          (mouseleave)="isPostOptionsVisible = false">
           <svg-icon 
-          class="bookmark-icon pointer" 
-          [applyClass]="true" 
-          name="options">
-        </svg-icon>
+            class="options-icon pointer" 
+            [applyClass]="true" 
+            name="options">
+          </svg-icon>
+          <div 
+            *ngIf="isPostOptionsVisible"
+            class="relative-wrap">
+            <app-post-options-dialog>
+            </app-post-options-dialog>
+          </div>
         </div>
       </ng-container>
     </div>

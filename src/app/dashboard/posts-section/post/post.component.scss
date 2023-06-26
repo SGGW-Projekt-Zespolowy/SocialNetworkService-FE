@@ -146,10 +146,12 @@
         width: 1.6666em;
         height: 3.06666666em;
       }
-    }
 
-    .bookmark:hover {
-      cursor: pointer;
+      .options-icon {
+        margin-top: 1em;
+        width: 2.2em;
+        height: 2.2em;
+      }
     }
   }
 
@@ -231,6 +233,11 @@
       height: 6em;
     }
   }
+}
+
+app-post-options-dialog {
+  position: absolute;
+  left: calc(calc(-1 * var(--post-options-dialog-width)) + 3em);
 }
 
 @media screen and (max-width: 1300px) {
