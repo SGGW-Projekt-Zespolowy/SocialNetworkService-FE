@@ -1,1 +1,9 @@
 @import '../../../../../styles/post-comments.scss';
+
+.center {
+  margin: 2em 0px;
+}
+
+.loader {
+  font-size: var(--post-font-size);
+}

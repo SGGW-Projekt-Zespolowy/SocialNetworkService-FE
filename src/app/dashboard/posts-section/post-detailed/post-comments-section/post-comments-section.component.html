@@ -14,19 +14,26 @@
       placeholder="Napisz co myślisz..."></textarea>
       <svg-icon 
       (click)="addComment()"
-      *ngIf="newComment.length > 0"
+      *ngIf="newComment.length > 0 && comments"
       class="add-icon" 
       [applyClass]="true" 
       name="add">
     </svg-icon>
   </div>
   <div class="comments-list">
-    <ng-container *ngFor="let comment of comments">
-      <app-post-comment
-        [isAuthorReading]="vm.id === postAuthorId"
-        (delete)="onDeleteComment($event)"
-        [data]="comment">
-      </app-post-comment>
+    <ng-container *ngIf="comments; else loading">
+      <ng-container *ngFor="let comment of comments">
+        <app-post-comment
+          [isAuthorReading]="vm.id === postAuthorId"
+          (delete)="onDeleteComment($event)"
+          [data]="comment">
+        </app-post-comment>
+      </ng-container>
     </ng-container>
+    <ng-template #loading>
+      <div class="center">
+        <div class="loader"></div>
+      </div>
+    </ng-template>
   </div>
 </div>

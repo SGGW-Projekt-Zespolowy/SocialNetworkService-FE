@@ -87,6 +87,16 @@ button {
     color: #7440D9;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .add-new-post {
     display: flex;
     align-items: center;
@@ -137,4 +147,21 @@ textarea {
     box-shadow: none;
   
     resize: none;
-  }
+}
+
+//loader
+
+.loader {
+    font-size: 12px;
+    border: 0.75em solid #022B9B;
+    border-left: 0.75em solid transparent;
+    border-radius: 50%;
+    width: 4.16666em;
+    height: 4.16666em;
+    animation: spin 1.2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
