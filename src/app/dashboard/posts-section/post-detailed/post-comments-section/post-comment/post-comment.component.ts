@@ -7,6 +7,8 @@ import { ContextService } from 'src/app/services/context.service';
   styleUrls: ['./post-comment.component.scss']
 })
 export class PostCommentComponent {
+
+  @Input() isAuthorReading: boolean
   @Input() data: CommentModel;
   @Output() delete = new EventEmitter();
 

@@ -1,4 +1,6 @@
 <app-post
 [data]="data">
 </app-post>
-<app-post-comments-section></app-post-comments-section>
+<app-post-comments-section
+  [postAuthorId]="data.authorId">
+</app-post-comments-section>

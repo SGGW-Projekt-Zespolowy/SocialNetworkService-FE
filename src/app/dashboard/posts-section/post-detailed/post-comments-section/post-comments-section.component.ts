@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { CommentModel } from './post-comment/post-comment.component';
 import { ContextService } from 'src/app/services/context.service';
 import { Subscription, take } from 'rxjs';
@@ -10,6 +10,7 @@ import { Subscription, take } from 'rxjs';
 })
 export class PostCommentsSectionComponent {
 
+  @Input() postAuthorId: string;
   newComment: string = "";
 
   comments = comments;

@@ -16,7 +16,7 @@
 
     <div class="controls">
       <svg-icon
-        *ngIf="vm.id === data.authorId"
+        *ngIf="vm.id === data.authorId || isAuthorReading"
         (click)="delete.emit(data)"
         class="delete-icon" 
         [applyClass]="true" 

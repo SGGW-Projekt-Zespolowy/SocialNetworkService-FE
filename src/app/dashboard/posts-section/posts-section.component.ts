@@ -31,7 +31,7 @@ export class PostsSectionComponent {
       });
   }
 
-  showPostDetails(post) {
+  showPostDetails(post: PostModel) {
     this.isPostDetailsVisible = true;
     this.postDetailed = post;
   }
@@ -39,6 +39,8 @@ export class PostsSectionComponent {
 
 const posts: PostModel[] = [
   {
+    id: "1",
+    authorId: "1",
     title: 'Skok nadciśnienia czaszkowego',
     author: 'Tomasz Budny',
     content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi architecto at exercitationem rem natus temporibus, totam modi. Voluptatum cumque iusto vitae adipisci ut consequuntur, harum odit rerum.',
@@ -65,6 +67,8 @@ const posts: PostModel[] = [
   },
 
   {
+    id: "1",
+    authorId: "1",
     title: 'Przerost mięśnia sercowego',
     author: 'John Doe',
     content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi. , corporis non placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus.',
@@ -86,6 +90,8 @@ const posts: PostModel[] = [
   },
 
   {
+    id: "1",
+    authorId: "f6e2d04a-0524-485b-e7ad-08db7590bc89",
     title: 'Przeszczep wątroby u cukrzyka',
     author: 'Janek Paweł Wypych',
     content: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum maiores ad eaque, officia dignissimos quasi, omnis dolore cum commodi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vitae voluptate vero sunt magnam officiis laboriosam fugit perspiciatis nemo culpa quos consectetur, illo quaerat quibusdam eius architecto id ratione dolores? Blanditiis id aut iste quas eligendi. Similique dolor, corporis non placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus. Blanditiis id aut iste quas eligendi. Similique dolor, corporis non placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus. placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus. Blanditiis id aut iste quas eligendi. Similique dolor, corporis non placeat fugiat cum quia? Deserunt molestiae ipsam sint distinctio possimus.',
@@ -107,6 +113,8 @@ const posts: PostModel[] = [
   },
 
   {
+    id: "1",
+    authorId: "1",
     title: 'Przesz',
     author: 'Jan',
     content: 'Lorem',
