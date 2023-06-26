@@ -21,6 +21,11 @@
     </svg-icon>
   </div>
   <div class="comments-list">
+    <ng-container *ngIf="comments && comments.length === 0">
+      <div class="text-center">
+        Ten wpis nie posiada żadnych komentarzy!
+      </div>
+    </ng-container>
     <ng-container *ngIf="comments; else loading">
       <ng-container *ngFor="let comment of comments">
         <app-post-comment
