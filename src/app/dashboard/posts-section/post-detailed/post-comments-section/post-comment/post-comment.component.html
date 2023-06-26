@@ -18,9 +18,9 @@
       <svg-icon
         *ngIf="vm.id === data.authorId || isAuthorReading"
         (click)="delete.emit(data)"
-        class="delete-icon" 
+        class="delete-icon pointer" 
         [applyClass]="true" 
-        name="delete">
+        name="bin">
       </svg-icon>
       <svg-icon
         *ngIf="isAuthorReading"
