@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostModel } from 'src/app/models/post.model';
+import { ContextService } from 'src/app/services/context.service';
 
 @Component({
   selector: 'app-post',
@@ -10,6 +11,10 @@ export class PostComponent {
   @Input() data: PostModel;
   @Output() showDetails = new EventEmitter<PostModel>()
   showAllTags: boolean = false;
+
+  constructor(
+    public contextService: ContextService
+  ) {}
 
   toggleFollowingStatus() {
     if(this.data.isFollowed) {

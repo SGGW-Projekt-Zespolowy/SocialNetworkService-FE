@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" *ngIf="contextService.user | async as vm">
   <div class="stats">
     <div class="vote-section">
       <ng-container *ngIf="!data.isUpVoted">
@@ -81,14 +81,25 @@
           </span>
         </div>
       </div>
-      <div class="bookmark" (click)="toggleFollowingStatus()">
-        <ng-container *ngIf="!data.isFollowed">
-          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
-        </ng-container>
-        <ng-container *ngIf="data.isFollowed">
-          <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
-        </ng-container>
-      </div>
+      <ng-container *ngIf="data.authorId !== vm.id">
+        <div class="bookmark" (click)="toggleFollowingStatus()">
+          <ng-container *ngIf="!data.isFollowed">
+            <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark2"></svg-icon>
+          </ng-container>
+          <ng-container *ngIf="data.isFollowed">
+            <svg-icon class="bookmark-icon" [applyClass]="true" name="bookmark"></svg-icon>
+          </ng-container>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.authorId === vm.id">
+        <div class="bookmark">
+          <svg-icon 
+          class="bookmark-icon pointer" 
+          [applyClass]="true" 
+          name="options">
+        </svg-icon>
+        </div>
+      </ng-container>
     </div>
     <div class="post-content">
       {{ data.content }}
