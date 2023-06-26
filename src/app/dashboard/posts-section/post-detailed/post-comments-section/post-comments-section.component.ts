@@ -15,7 +15,7 @@ export class PostCommentsSectionComponent {
   @Input() postId: string;
   newComment: string = "";
 
-  comments;
+  comments: CommentModel[];
 
   constructor(
     public commentService: CommentService,
@@ -36,13 +36,14 @@ export class PostCommentsSectionComponent {
         if(!user) {
           return;
         }
-        const comment = {
+        const comment: CommentModel = {
           id: (this.comments.length + 1).toString(),
-          opTitle: user.degree,
-          opName: `${user.firstName} ${user.lastName}`,
+          authorDegree: user.degree,
+          authorName: `${user.firstName} ${user.lastName}`,
           content: this.newComment,
-          opAvatar: user.profilePictore,
-          authorId: user.id
+          authorAvatar: user.profilePictore,
+          authorId: user.id,
+          isHelpful: false
         };
         this.comments.unshift(comment);
         this.newComment = "";
