@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy } from '@angular/core';
 import { CommentModel } from './post-comment/post-comment.component';
 import { ContextService } from 'src/app/services/context.service';
 import { Subscription, take } from 'rxjs';
+import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-post-comments-section',
@@ -11,24 +12,32 @@ import { Subscription, take } from 'rxjs';
 export class PostCommentsSectionComponent {
 
   @Input() postAuthorId: string;
+  @Input() postId: string;
   newComment: string = "";
 
-  comments = comments;
+  comments;
 
   constructor(
+    public commentService: CommentService,
     public contextService: ContextService
   ) {}
 
+  ngOnInit() {
+    this.commentService.getCommentForPost(this.postId)
+      .subscribe(comments => {
+        this.comments = comments;
+      })
+  }
+
   addComment() {
     if(this.newComment.length > 0) {
-      console.log(this.newComment)
       this.contextService.user.pipe(take(1))
       .subscribe(user => {
         if(!user) {
           return;
         }
         const comment = {
-          id: (comments.length + 1).toString(),
+          id: (this.comments.length + 1).toString(),
           opTitle: user.degree,
           opName: `${user.firstName} ${user.lastName}`,
           content: this.newComment,
@@ -47,35 +56,35 @@ export class PostCommentsSectionComponent {
   }
 }
 
-const comments: CommentModel[] = [
-  {
-    id: '1',
-    opTitle: 'Student',
-    opName: 'Tomasz Budny',
-    content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati.',
+// const comments: CommentModel[] = [
+//   {
+//     id: '1',
+//     opTitle: 'Student',
+//     opName: 'Tomasz Budny',
+//     content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati.',
 
-    opAvatar: 'https://i.ytimg.com/vi/V8f-1olyC1s/maxresdefault.jpg',
-    authorId: '1'
-  },
+//     opAvatar: 'https://i.ytimg.com/vi/V8f-1olyC1s/maxresdefault.jpg',
+//     authorId: '1'
+//   },
 
-  {
-    id: '2',
-    opTitle: 'Student',
-    opName: 'Kowal Pawelczyk',
-    content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi! repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi!',
+//   {
+//     id: '2',
+//     opTitle: 'Student',
+//     opName: 'Kowal Pawelczyk',
+//     content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi! repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi!',
 
-    opAvatar: 'https://img.freepik.com/free-photo/portrait-black-man-isolated_53876-40305.jpg',
-    authorId: '1'
-  },
+//     opAvatar: 'https://img.freepik.com/free-photo/portrait-black-man-isolated_53876-40305.jpg',
+//     authorId: '1'
+//   },
 
-  {
-    id: '3',
-    opTitle: 'Dr n. med.',
-    opName: 'janek Paweł Wypych',
-    content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi!',
+//   {
+//     id: '3',
+//     opTitle: 'Dr n. med.',
+//     opName: 'janek Paweł Wypych',
+//     content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto consequatur nihil omnis eum molestias neque iste exercitationem sapiente? Ratione odio ut ab tenetur quis culpa, quo illo quasi sequi. Eveniet earum vero eligendi iusto repudiandae aspernatur dolore aliquam quo obcaecati dignissimos suscipit non exercitationem, beatae, est deserunt ab voluptas sequi!',
 
-    opAvatar: 'https://thumbs.dreamstime.com/b/lekarz-medycyny-z-pastylkami-27402514.jpg',
-    authorId: '1'
-  },
-];
+//     opAvatar: 'https://thumbs.dreamstime.com/b/lekarz-medycyny-z-pastylkami-27402514.jpg',
+//     authorId: '1'
+//   },
+// ];
 
