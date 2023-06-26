@@ -1,8 +1,8 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { CommentModel } from './post-comment/post-comment.component';
 import { ContextService } from 'src/app/services/context.service';
 import { Subscription, take } from 'rxjs';
 import { CommentService } from 'src/app/services/comment.service';
+import { CommentModel } from 'src/app/models/comment.model';
 
 @Component({
   selector: 'app-post-comments-section',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CommentModel } from '../dashboard/posts-section/post-detailed/post-comments-section/post-comment/post-comment.component';
 import { delay, of } from 'rxjs';
+import { CommentModel } from '../models/comment.model';
 
 @Injectable({
   providedIn: 'root'

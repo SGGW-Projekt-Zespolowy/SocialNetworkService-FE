@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommentModel } from 'src/app/models/comment.model';
 import { ContextService } from 'src/app/services/context.service';
 
 @Component({
@@ -15,13 +16,4 @@ export class PostCommentComponent {
   constructor(
     public contextService: ContextService
   ) {}
-}
-
-export interface CommentModel {
-  id: string,
-  opTitle: string,
-  opName: string,
-  opAvatar: string,
-  content: string,
-  authorId: string
 }
