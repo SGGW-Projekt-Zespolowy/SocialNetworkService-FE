@@ -16,4 +16,8 @@ export class PostCommentComponent {
   constructor(
     public contextService: ContextService
   ) {}
+
+  onIsHelpfulToggle() {
+    this.data.isHelpful = !this.data.isHelpful;
+  }
 }

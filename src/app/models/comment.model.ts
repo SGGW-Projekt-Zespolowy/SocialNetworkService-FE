@@ -4,5 +4,6 @@ export interface CommentModel {
   opName: string,
   opAvatar: string,
   content: string,
-  authorId: string
+  authorId: string,
+  isHelpful: boolean,
 }

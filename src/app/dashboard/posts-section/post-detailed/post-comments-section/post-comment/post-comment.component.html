@@ -22,6 +22,19 @@
         [applyClass]="true" 
         name="delete">
       </svg-icon>
+      <svg-icon
+        *ngIf="isAuthorReading"
+        (click)="onIsHelpfulToggle()"
+        class="helpful-icon pointer" 
+        [applyClass]="true" 
+        [name]="data.isHelpful ? 'helpful' : 'mark-as-helpful'">
+      </svg-icon>
+      <svg-icon
+        *ngIf="!isAuthorReading && data.isHelpful"
+        class="helpful-icon" 
+        [applyClass]="true" 
+        name="helpful">
+    </svg-icon>
     </div>
   </div>
   <div 
