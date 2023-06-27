@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgIconRegistryService } from 'angular-svg-icon';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,12 @@ import { SvgIconRegistryService } from 'angular-svg-icon';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private iconReg: SvgIconRegistryService) { }
+  constructor(
+    private iconReg: SvgIconRegistryService,
+    private authService: AuthService
+  ) { 
+    
+  }
 
   ngOnInit(): void {
     this.iconReg.loadSvg('../assets/Icons/test-icon.svg', 'test').subscribe();
@@ -49,6 +55,26 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/unverified.svg', 'unverified').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/sort-down-clicked.svg', 'sort-down-clicked').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/cancel.svg', 'cancel').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/add.svg', 'add').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/delete.svg', 'delete').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/mail.svg', 'mail').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/mark-as-helpful.svg', 'mark-as-helpful').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/helpful.svg', 'helpful').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/bin.svg', 'bin').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/options.svg', 'options').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/edit.svg', 'edit').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/solved.svg', 'solved').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/drop-down-arrow.svg', 'drop-down-arrow').subscribe();
 

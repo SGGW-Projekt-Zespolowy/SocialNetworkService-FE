@@ -1,0 +1,44 @@
+<div class="comment" *ngIf="contextService.user | async as vm">
+  <div class="commenter-info">
+    <img 
+    class="avatar"
+    [src]="data.authorAvatar" 
+    alt="your-avatar">
+
+    <div class="name-and-title">
+      <span class="title">
+        {{ data.authorDegree }}
+      </span>
+      <span class="name">
+        {{ data.authorName }}
+      </span>
+    </div>
+
+    <div class="controls">
+      <svg-icon
+        *ngIf="vm.id === data.authorId || isAuthorReading"
+        (click)="delete.emit(data)"
+        class="delete-icon pointer" 
+        [applyClass]="true" 
+        name="bin">
+      </svg-icon>
+      <svg-icon
+        *ngIf="isAuthorReading"
+        (click)="onIsHelpfulToggle()"
+        class="helpful-icon pointer" 
+        [applyClass]="true" 
+        [name]="data.isHelpful ? 'helpful' : 'mark-as-helpful'">
+      </svg-icon>
+      <svg-icon
+        *ngIf="!isAuthorReading && data.isHelpful"
+        class="helpful-icon" 
+        [applyClass]="true" 
+        name="helpful">
+    </svg-icon>
+    </div>
+  </div>
+  <div 
+    class="comment-content" 
+    [innerHTML]="data.content | addLineBreaks">
+  </div>
+</div>

@@ -43,6 +43,7 @@ span{
   width: 112%;
   max-height: 200px;
   overflow-y: scroll;
+  z-index: 30;
 
   background: linear-gradient(
       0deg,
@@ -50,7 +51,7 @@ span{
       rgba(185, 207, 251, 0.7)
     ),
     #ffffff;
-  border-radius: 16px;
+  border-radius: 0px 0px 16px 16px;
 }
 
 .menu-item {
@@ -101,12 +102,12 @@ span{
 
 @media screen and (max-height: 1000px) { 
   .menu {
-    height: 180px;
+    max-height: 180px;
   }
 }
 
 @media screen and (max-height: 700px) { 
   .menu {
-    height: 110px;
+    max-height: 110px;
   }
 }

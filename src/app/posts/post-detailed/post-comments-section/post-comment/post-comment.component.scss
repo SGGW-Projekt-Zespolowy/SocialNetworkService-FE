@@ -1,0 +1,20 @@
+// @import '../../../../../../styles/post-comments.scss';
+@import '../../../../../styles/post-comments.scss';
+
+.controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.helpful-icon {
+  width: 2.08333em;
+  height: 2.08333em;
+}
+
+.delete-icon {
+  vertical-align: sub;
+  width: 2.08333em;
+  height: 2.08333em;
+}

@@ -40,6 +40,91 @@ p {
     padding-top: var(--navbar-height);
 }
 
+button {
+    color: #FFFFFF;
+    //font-size: 20px;
+    font-size: 1em;
+    line-height: 40px;
+
+    align-self: stretch;
+    margin-top: 2em;
+
+    background: #022B9B;
+    border: 5px solid rgba(2, 35, 126, 0.7);
+    border-radius: 28px;
+}
+
+.tag {
+    border: 2px solid;
+    border-radius: 17px;
+
+    padding: 0.35em 0.7em;
+    //padding: 7px 14px;
+
+    font-family: "Quicksand";
+    font-weight: 500;
+
+    font-size: 1.6666em;
+    //font-size: 20px;
+}
+
+.orange {
+    background-color: rgba(239, 129, 14, 0.3);
+    
+    border-color: #EF810E;
+    color: #EF810E;
+}
+
+.blue {
+    background-color: rgba(92, 180, 253, 0.3);
+    border-color: #5CB4FD;
+    color: #5CB4FD;
+}
+
+.purple {
+    background-color: rgba(116, 64, 217, 0.3);
+    border-color: #7440D9;
+    color: #7440D9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-new-post {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  
+    background-color: #022B9B;
+    border-radius: 15px;
+    color: #FFFFFF;
+    padding: 3px 25px;
+    margin-top: 45px;
+  
+    font-family: "Arya";
+    font-size: 2rem;
+    font-weight: 400;
+    white-space: nowrap;
+  
+    .new-post-icon {
+      vertical-align: sub;
+      margin-right: 8px;
+    }
+  }
+  
+  .add-new-post:hover {
+    cursor: pointer;
+  }
+
 @media screen and (max-width: 500px) {
     :root {
       --post-font-size: 1.6vw;
@@ -50,4 +135,49 @@ p {
     :root {
       --post-margin: 10px 5px;
     }
+}
+
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+  
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  
+    resize: none;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.relative-wrap {
+    position: relative;
+}
+
+.modal-background {
+    position: fixed;
+    z-index: 50;
+    background: rgba(245, 245, 245, 0.815);
+    width: 100%;
+    min-height: 100%;
+}
+
+//loader
+
+.loader {
+    font-size: 12px;
+    border: 0.75em solid #022B9B;
+    border-left: 0.75em solid transparent;
+    border-radius: 50%;
+    width: 4.16666em;
+    height: 4.16666em;
+    animation: spin 1.2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

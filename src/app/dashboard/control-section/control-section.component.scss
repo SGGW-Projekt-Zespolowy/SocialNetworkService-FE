@@ -31,26 +31,3 @@
   }
 }
 
-.add-new-post {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-
-  background-color: #022B9B;
-  border-radius: 15px;
-  color: #FFFFFF;
-  padding: 3px 25px;
-  margin-top: 45px;
-
-  font-family: "Arya";
-  font-size: 25px;
-  font-weight: 400;
-  white-space: nowrap;
-
-  .new-post-icon {
-    vertical-align: sub;
-    margin-right: 8px;
-  }
-}

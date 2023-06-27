@@ -1,0 +1,174 @@
+<div class="post" *ngIf="contextService.user | async as vm">
+  <div class="stats">
+    <div class="vote-section">
+      <ng-container *ngIf="!data.isUpVoted">
+        <svg-icon
+          (click)="upVoteToggle()" 
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-up">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="data.isUpVoted">
+        <svg-icon 
+          (click)="upVoteToggle()"
+          class="sort rotate-90" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
+      <span class="post-rate">{{ data.rate }}</span>
+
+      <ng-container *ngIf="!data.isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down">
+        </svg-icon>
+      </ng-container>
+      <ng-container *ngIf="data.isDownVoted">
+        <svg-icon 
+          (click)="downVoteToggle()"
+          class="sort" 
+          [applyClass]="true" 
+          name="sort-down-clicked">
+        </svg-icon>
+      </ng-container>
+
+    </div>
+    <div class="other-section">
+      <svg-icon 
+        class="eye-icon other-sec-icon" 
+        [applyClass]="true" 
+        name="eye">
+      </svg-icon>
+      <span>{{ data.followersCount }}</span>
+      <svg-icon 
+        (click)="PostPopUpService.openPostDetasilsModal(data)"
+        class="comment-icon other-sec-icon" 
+        [applyClass]="true" 
+        name="comment">
+      </svg-icon>
+      <span>{{ data.commentsCount }}</span>
+    </div>
+  </div>
+  <div class="main">
+    <div class="header">
+      <div class="basic-info">
+        <div class="title">
+          <ng-container *ngIf="data.isSolved">
+            <svg-icon 
+            class="solved-icon" 
+            [applyClass]="true" 
+            name="solved">
+          </svg-icon>
+          </ng-container>
+          {{ data.title }}
+        </div>
+        <div class="author-and-category">
+          <span class="degree">{{ data.degree }}</span>
+          &nbsp;
+          <span class="author">{{ data.author }}</span>
+          &nbsp;
+          <ng-container *ngIf="data.verified">
+            <svg-icon class="verification-icon" [applyClass]="true" name="verified"></svg-icon>
+          </ng-container>
+          <ng-container *ngIf="!data.verified">
+            <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
+          </ng-container>
+          &nbsp;
+          <span class="date">
+            {{ data.creationDate | roundedDate }}
+          </span>
+          &nbsp;
+          <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
+          &nbsp;
+          <span class="category">
+            {{ data.category }}
+          </span>
+        </div>
+      </div>
+      <ng-container *ngIf="data.authorId !== vm.id">
+        <div 
+          class="bookmark pointer" 
+          (click)="toggleFollowingStatus()">
+          <svg-icon 
+            class="bookmark-icon" 
+            [applyClass]="true" 
+            [name]="data.isFollowed ? 'bookmark' : 'bookmark2'">
+          </svg-icon>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.authorId === vm.id">
+        <div 
+          class="bookmark"
+          (click)="isPostOptionsVisible = !isPostOptionsVisible"
+          (mouseleave)="isPostOptionsVisible = false">
+          <svg-icon 
+            class="options-icon pointer" 
+            [applyClass]="true" 
+            name="options">
+          </svg-icon>
+          <div 
+            *ngIf="isPostOptionsVisible"
+            class="relative-wrap">
+            <app-post-options-dialog
+              (delete)="deletePost()"
+              (toggleFollowingStatus)="toggleFollowingStatus()"
+              [data]="data">
+            </app-post-options-dialog>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div 
+      [innerHTML]="data.content | addLineBreaks"
+      class="post-content">
+    </div>
+    <div class="tag-section">
+      <ng-container *ngIf="data.tags.length > 3 && !showAllTags">
+        <ng-container *ngFor="let tag of data.tags | slice:0:3">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+        <div class="show-more-tags" (click)="toggleMoreTags()">
+          +{{ data.tags.length - 3 }}
+        </div>
+      </ng-container>
+      <ng-container *ngIf="data.tags.length <= 3 || showAllTags">
+        <ng-container *ngFor="let tag of data.tags">
+          <div class="tag" [class]="tag.color">
+            {{ tag.content }}
+          </div>
+        </ng-container>
+        <div 
+          *ngIf="data.tags.length > 3"
+          class="show-more-tags" 
+          (click)="toggleMoreTags()">
+          Ukryj
+        </div>
+      </ng-container>
+      <div 
+        class="images pointer" 
+        (click)="PostPopUpService.openImagesPreviewModal(data.images)">
+        <div
+          *ngIf="data.images.length > 1" 
+          class="relative-wrap">
+          <div
+            class="more-images">
+          <span>
+            + {{ data.images.length - 1 }}
+          </span>
+        </div>
+        </div>
+        <img 
+        class="images"
+        [src]='data.images[0]' 
+        alt="placeholder">
+      </div>
+    </div>
+  </div>
+</div>

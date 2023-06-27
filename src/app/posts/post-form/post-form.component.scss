@@ -1,0 +1,159 @@
+@import '../../../styles/scrollbar.scss';
+
+.post {
+  font-size: var(--post-font-size);
+
+  background: var(--post-background-color);
+  box-shadow: var(--post-box-shadow);
+  border-radius: var(--post-border-radius);  
+  padding: var(--post-padding);
+  //margin: 0px 2em;
+  margin: var(--post-margin);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.83333em;
+}
+
+.cancel-icon {
+  width: 1.75em;
+  height: 1.75em;
+}
+
+.cancel-icon:hover {
+  cursor: pointer;
+}
+
+form {
+  padding: 1.666em;
+  padding-top: 0px;
+}
+
+.title {
+  font-family: 'Arya';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.66666em;
+  //font-size: 32px;
+  border: none;
+  width: 100%;
+
+  text-align: justify;
+  letter-spacing: -0.03em;
+
+  color: rgba(0, 0, 0, 0.6);
+
+  border-bottom: 2px solid #B9CFFB;
+}
+
+.form-content {
+  display: flex;
+  margin-top: 1.25em;
+  //margin-top: 15px;
+}
+
+.text-content {
+  margin-right: auto;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6666em;
+  // font-size: 20px;
+  letter-spacing: -0.03em;
+  width: 100%;
+  padding-right: 1em;
+  
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.other-content {
+  margin-top: 2.5em;
+  margin-left: 1em;
+  // margin-top: 30px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-form-input {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5em;
+  // font-size: 18px;
+  padding: 0.83333em;
+  // padding: 10px;
+  color: #02237E;
+  border-bottom: 4px solid #b9cffb;
+}
+
+button {
+  font-family: 'Arya';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2em;
+  // font-size: 24px;
+}
+
+:host ::ng-deep dropdown-input {
+  .menu-trigger {
+    border: none;
+    background: transparent;
+    border-radius: 0px;
+    border-bottom: 4px solid #b9cffb !important;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    // font-size: 18px;
+    padding: 0.83333em;
+    color: #02237E;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu-item {
+    color: #02237E;
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+
+// input
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+// text-area
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
+textarea:focus-visible {
+  outline: none;
+}

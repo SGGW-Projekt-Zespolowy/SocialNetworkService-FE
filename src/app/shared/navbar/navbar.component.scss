@@ -1,1 +1,10 @@
 @import "src/styles/navbar.scss";
+
+.relative-wrap {
+  position: relative;
+}
+
+app-user-dialog {
+  position: absolute;
+  left: calc(-1 * calc(var(--user-dialog-width) / 2.35));
+}

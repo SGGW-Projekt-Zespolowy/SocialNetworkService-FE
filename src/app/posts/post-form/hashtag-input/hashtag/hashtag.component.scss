@@ -1,0 +1,29 @@
+.relative-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  left: 0.3333em;
+}
+
+.tag {
+  padding: 0.35em 0.7em;
+  font-size: 1em;
+}
+
+.delete-icon {
+  width: 1.66666em;
+  // width: 20px;
+  height: 1.66666em;
+  // height: 20px;
+  position: absolute;
+  top: -3px;
+  z-index: 5;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+.tag {
+  box-sizing: border-box;
+}

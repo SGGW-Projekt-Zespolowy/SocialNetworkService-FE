@@ -1,0 +1,32 @@
+@import '../../../styles/scrollbar.scss';
+
+:host ::ng-deep .post {
+  max-width: var(--post-pop-up-max-width) !important;
+  box-sizing: border-box !important;
+
+  .post-content {
+    max-height: 12em !important;
+  }
+}
+
+:host {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+app-post {
+  position: relative;
+  z-index: 41;
+}
+
+app-post-comments-section {
+  position: relative;
+  z-index: 40;
+  top: -40px;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+}
+
+
+
