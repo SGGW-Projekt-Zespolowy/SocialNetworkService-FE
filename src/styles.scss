@@ -157,6 +157,14 @@ textarea {
     position: relative;
 }
 
+.modal-background {
+    position: fixed;
+    z-index: 50;
+    background: rgba(245, 245, 245, 0.815);
+    width: 100%;
+    min-height: 100%;
+}
+
 //loader
 
 .loader {

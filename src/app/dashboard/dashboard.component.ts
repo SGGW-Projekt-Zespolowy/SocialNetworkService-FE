@@ -2,6 +2,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppBreakpoints } from '../app-breakpoints';
 import { Subscription } from 'rxjs';
+import { PostPopUpService } from '../services/post-pop-up.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
   controlDisapearSub: Subscription
   friendsDisapearSub: Subscription
 
-  constructor(private responsive: BreakpointObserver) {}
+  constructor(
+    private responsive: BreakpointObserver,
+    public popUpService: PostPopUpService
+  ) {}
 
   ngOnInit(): void {
     this.controlDisapearSub = this.responsive.observe([

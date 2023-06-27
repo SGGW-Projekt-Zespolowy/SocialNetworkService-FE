@@ -1,0 +1,27 @@
+<div
+  class="modal-background">
+</div>
+<div class="images">
+  <svg-icon 
+    (click)="previousImage()"
+    class="slider rotate-45"
+    [class.inactive]="currentImageIndex <= 0"
+    [class.pointer]="currentImageIndex > 0"
+    [applyClass]="true" 
+    name="sort-down">
+  </svg-icon>
+  <img 
+    (click)="popUpService.closeImagesPreviewModal()"
+    class="image-preview pointer"
+    [src]="images[currentImageIndex]" 
+    alt="placeholder">
+  <svg-icon 
+    (click)="nexImage()"
+    class="slider rotate-minus-45"
+    [class.pointer]="this.currentImageIndex < this.images.length - 1"
+    [class.inactive]="this.currentImageIndex === this.images.length - 1"
+    
+    [applyClass]="true" 
+    name="sort-down">
+  </svg-icon>
+</div>

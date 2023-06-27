@@ -10,6 +10,7 @@ export class PostPopUpService {
   isCreatePostVisible = new Subject<boolean>()
   isEditPostVisible = new Subject<PostModel>();
   isPostDetailsVisible = new Subject<PostModel>();
+  isImagesPreviewVisible = new Subject<string[]>();
 
   constructor() { }
 
@@ -36,5 +37,13 @@ export class PostPopUpService {
  
   closePostDetailsModal() {
     this.isPostDetailsVisible.next(null);
+  }
+
+  openImagesPreviewModal(images: string[]) {
+    this.isImagesPreviewVisible.next(images);
+  }
+ 
+  closeImagesPreviewModal() {
+    this.isImagesPreviewVisible.next(null);
   }
 }

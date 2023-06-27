@@ -151,7 +151,9 @@
           Ukryj
         </div>
       </ng-container>
-      <div class="images">
+      <div 
+        class="images pointer" 
+        (click)="PostPopUpService.openImagesPreviewModal(data.images)">
         <div
           *ngIf="data.images.length > 1" 
           class="relative-wrap">
