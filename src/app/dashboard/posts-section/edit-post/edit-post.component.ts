@@ -23,12 +23,9 @@ export class EditPostComponent {
 
   ngOnInit() {
     if(this.data) {
+      const clone = structuredClone(this.data)
       this.postEditModel = {
-        title: this.data.title,
-        category: this.data.category,
-        content: this.data.content,
-        tags: this.data.tags,
-        images: this.data.images
+        ...clone
       }
     }
   }
