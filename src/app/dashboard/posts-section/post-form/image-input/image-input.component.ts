@@ -15,10 +15,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class ImageInputComponent implements ControlValueAccessor {
 
-  images: File[] = [];
+  //images: File[] = [];
+  images: string[] = [];
   acceptedFormats = ["image/jpg", "image/png", "image/gif"];
 
-  onInputChange(imagesEvent) {
+  // onInputChange(imagesEvent) {
+  //   const files: FileList = imagesEvent.target.files;
+
+  //   for(let i = 0; i < files.length; i++) {
+  //     const file = files.item(i);
+
+  //     const isExist = this.acceptedFormats.includes(file.type);
+  //     if(isExist) {
+  //       this.images.push(file);
+  //     }
+  //   }
+  //   this.onChange(this.images);
+  //   this.onTouched();
+  // }
+
+  onInputChange(imagesEvent) { 
     const files: FileList = imagesEvent.target.files;
 
     for(let i = 0; i < files.length; i++) {
@@ -26,11 +42,14 @@ export class ImageInputComponent implements ControlValueAccessor {
 
       const isExist = this.acceptedFormats.includes(file.type);
       if(isExist) {
-        this.images.push(file);
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+        const srcData = fileReader.result;
+        this.images.push(`${srcData}`)
+        };
+        fileReader.readAsDataURL(file);
       }
     }
-    this.onChange(this.images);
-    this.onTouched();
   }
   
   deleteImage(id: number) {
@@ -41,9 +60,14 @@ export class ImageInputComponent implements ControlValueAccessor {
   onTouched = () => {}
   disabled: boolean = false;
   
-  writeValue(images: File[]): void {
+  // writeValue(images: File[]): void {
+  //   this.images = images;
+  // }
+
+  writeValue(images: string[]): void {
     this.images = images;
   }
+
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }

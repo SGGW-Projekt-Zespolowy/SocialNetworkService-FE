@@ -20,9 +20,13 @@
         name="delete">
       </svg-icon>
       </div>
-      <img 
+      <!-- <img 
       class="image-preview"
       [src]="image | safeResourceUrl" 
-      [alt]="image.name">
+      [alt]="image.name"> -->
+      <img 
+        [src]="image" 
+        [alt]="'image ' + i"
+        class="image-preview">
   </div>
 </div>
