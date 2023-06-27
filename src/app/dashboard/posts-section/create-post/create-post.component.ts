@@ -31,7 +31,7 @@ export class CreatePostComponent {
           commentsCount: 0,
           followersCount: 0,
           tags: data.tags,
-          image: data.images[0],
+          images: data.images,
           category: data.category,
           verified: user.isVerified,
           degree: user.degree,

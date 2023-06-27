@@ -151,10 +151,22 @@
           Ukryj
         </div>
       </ng-container>
-      <img 
-      class="images"
-      [src]='data.image' 
-      alt="placeholder">
+      <div class="images">
+        <div
+          *ngIf="data.images.length > 1" 
+          class="relative-wrap">
+          <div
+            class="more-images">
+          <span>
+            + {{ data.images.length - 1 }}
+          </span>
+        </div>
+        </div>
+        <img 
+        class="images"
+        [src]='data.images[0]' 
+        alt="placeholder">
+      </div>
     </div>
   </div>
 </div>

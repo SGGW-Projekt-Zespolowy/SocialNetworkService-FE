@@ -28,7 +28,7 @@ export class EditPostComponent {
         category: this.data.category,
         content: this.data.content,
         tags: this.data.tags,
-        images: [this.data.image]
+        images: this.data.images
       }
     }
   }

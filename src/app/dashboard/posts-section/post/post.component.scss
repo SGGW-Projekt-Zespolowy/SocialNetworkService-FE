@@ -237,6 +237,24 @@
 
       width: 6em;
       height: 6em;
+
+      .more-images {
+        margin: 0px;
+        font-family: 'Quicksand';
+        background-color: #656c7fbe;
+        width: 6em;
+        height: 6em;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          color: #ffffffef;
+          font-size: 27px;
+          margin: 0px;
+        }
+      }
     }
   }
 }
