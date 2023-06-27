@@ -1,4 +1,4 @@
-@import '../../../../styles/scrollbar.scss';
+@import '../../../styles/scrollbar.scss';
 
 :host ::ng-deep .post {
   max-width: var(--post-pop-up-max-width) !important;

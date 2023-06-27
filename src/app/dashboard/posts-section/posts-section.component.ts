@@ -3,7 +3,6 @@ import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { AppBreakpoints } from 'src/app/app-breakpoints';
 import { PostModel } from 'src/app/models/post.model';
-import { Observable } from 'rxjs';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
