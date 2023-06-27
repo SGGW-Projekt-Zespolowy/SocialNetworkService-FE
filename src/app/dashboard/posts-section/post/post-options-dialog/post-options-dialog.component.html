@@ -1,6 +1,8 @@
 <div class="dialog-content">
   <div class="options">
-    <div class="option pointer">
+    <div
+      (click)="popUpService.openEditPostModal()" 
+      class="option pointer">
       <svg-icon 
         class="option-icon" 
         [applyClass]="true" 

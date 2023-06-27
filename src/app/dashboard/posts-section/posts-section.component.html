@@ -14,6 +14,13 @@
     (close)="popUpService.closeCreatePostModal()">
     <app-create-post></app-create-post>
   </app-pop-up>
+
+  <app-pop-up
+    PopUp
+    *ngIf="popUpService.isEditPostVisible | async"
+    (close)="popUpService.closeEditPostModal()">
+    <app-edit-post></app-edit-post>
+  </app-pop-up>
 </div>
 
 

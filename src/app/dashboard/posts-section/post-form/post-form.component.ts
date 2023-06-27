@@ -8,6 +8,9 @@ import { PostPopUpService } from 'src/app/services/post-pop-up.service';
   styleUrls: ['./post-form.component.scss']
 })
 export class PostFormComponent{
+
+  @Output() close = new EventEmitter()
+
   titles = ['siema', 'jebany', 'chuju']
 
   postForm = this.fb.group({
@@ -20,7 +23,6 @@ export class PostFormComponent{
 
   constructor(
     private fb: FormBuilder,
-    public PostPopUpService: PostPopUpService
   ) {}
 
   onSubmit() {
