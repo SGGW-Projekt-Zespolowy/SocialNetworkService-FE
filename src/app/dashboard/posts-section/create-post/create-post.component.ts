@@ -15,7 +15,7 @@ export class CreatePostComponent {
   constructor(
     public postPopUpService: PostPopUpService,
     private contextService: ContextService,
-    private postModel: PostService
+    private postService: PostService
   ) {}
 
   createComment(data: PostEditModel) {
@@ -43,7 +43,7 @@ export class CreatePostComponent {
         }
 
         this.postPopUpService.closeCreatePostModal();
-        this.postModel.addPost(post);
+        this.postService.addPost(post);
       })
   }
 }

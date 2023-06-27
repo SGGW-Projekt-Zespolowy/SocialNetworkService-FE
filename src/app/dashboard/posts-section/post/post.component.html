@@ -123,8 +123,9 @@
         </div>
       </ng-container>
     </div>
-    <div class="post-content">
-      {{ data.content }}
+    <div 
+      [innerHTML]="data.content | addLineBreaks"
+      class="post-content">
     </div>
     <div class="tag-section">
       <ng-container *ngIf="data.tags.length > 3 && !showAllTags">

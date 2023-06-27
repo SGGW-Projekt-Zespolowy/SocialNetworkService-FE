@@ -1,6 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { take } from 'rxjs';
 import { PostEditModel, PostModel } from 'src/app/models/post.model';
+import { ContextService } from 'src/app/services/context.service';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-edit-post',
@@ -13,7 +16,9 @@ export class EditPostComponent {
   postEditModel: PostEditModel;
 
   constructor(
-    public PostPopUpService: PostPopUpService,
+    public postPopUpService: PostPopUpService,
+    private contextService: ContextService,
+    private postService: PostService
   ) {}
 
   ngOnInit() {
@@ -26,5 +31,10 @@ export class EditPostComponent {
         images: [this.data.image]
       }
     }
+  }
+
+  editPost(editedPost: PostEditModel) {
+    this.postService.editPost(this.data, editedPost);
+    this.postPopUpService.closeEditPostModal();
   }
 }

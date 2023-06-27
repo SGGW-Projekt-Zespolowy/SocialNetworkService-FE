@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, delay, of } from 'rxjs';
-import { PostModel } from '../models/post.model';
+import { PostEditModel, PostModel } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,16 @@ export class PostService {
     );
   }
 
+  editPost(postToEdit: PostModel, eidtedPost: PostEditModel) {
+    // let post = this.posts.value.find(post => post === postToEdit);
+    const index = this.posts.value.findIndex(post => post === postToEdit);
+    const post = {
+      ...postToEdit,
+      ...eidtedPost
+    }
+    this.posts.value[index] = post;
+    this.posts.next(this.posts.value);
+  }
 
   postsData = [
     {
