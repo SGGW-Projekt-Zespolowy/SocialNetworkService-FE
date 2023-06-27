@@ -22,6 +22,7 @@ export class PostComponent {
 
   deletePost() {
     this.postService.removePost(this.data);
+    this.PostPopUpService.closePostDetailsModal();
   }
 
   toggleFollowingStatus() {
