@@ -18,7 +18,7 @@ export class PostService {
   }
 
   addPost(post: PostModel) {
-    return this.posts.next([...this.posts.value, post]);
+    return this.posts.next([post, ...this.posts.value]);
   }
 
   removePost(postToRemove: PostModel) {

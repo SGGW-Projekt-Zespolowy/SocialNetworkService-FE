@@ -115,6 +115,7 @@
             *ngIf="isPostOptionsVisible"
             class="relative-wrap">
             <app-post-options-dialog
+              (delete)="deletePost()"
               (toggleFollowingStatus)="toggleFollowingStatus()"
               [data]="data">
             </app-post-options-dialog>

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostModel } from 'src/app/models/post.model';
 import { ContextService } from 'src/app/services/context.service';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -15,8 +16,13 @@ export class PostComponent {
 
   constructor(
     public contextService: ContextService,
-    public PostPopUpService: PostPopUpService
+    public PostPopUpService: PostPopUpService,
+    private postService: PostService
   ) {}
+
+  deletePost() {
+    this.postService.removePost(this.data);
+  }
 
   toggleFollowingStatus() {
     if(this.data.isFollowed) {

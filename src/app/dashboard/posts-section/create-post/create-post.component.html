@@ -1,3 +1,4 @@
 <app-post-form
-  (close)="PostPopUpService.closeCreatePostModal()">
+  (submitForm)="createComment($event)"
+  (close)="postPopUpService.closeCreatePostModal()">
 </app-post-form>

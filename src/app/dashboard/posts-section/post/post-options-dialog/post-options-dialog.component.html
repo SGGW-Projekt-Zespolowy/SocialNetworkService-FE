@@ -39,7 +39,9 @@
       </span>
     </div>
     <div class="horizontal-line"></div>
-    <div class="option pointer">
+    <div
+      (click)="delete.emit()" 
+      class="option pointer">
       <svg-icon 
         class="option-icon" 
         [applyClass]="true" 

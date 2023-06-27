@@ -46,14 +46,19 @@ export class ImageInputComponent implements ControlValueAccessor {
         fileReader.onload = () => {
         const srcData = fileReader.result;
         this.images.push(`${srcData}`)
+        this.onChange(this.images);
+        this.onTouched();
         };
         fileReader.readAsDataURL(file);
       }
     }
+
   }
   
   deleteImage(id: number) {
     this.images.splice(id, 1);
+    this.onChange(this.images);
+    this.onTouched();
   }
 
   onChange = (title) => {}

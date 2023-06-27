@@ -19,6 +19,7 @@ export class PostFormComponent{
   };
 
   @Output() close = new EventEmitter()
+  @Output() submitForm = new EventEmitter<PostEditModel>()
 
   titles = ['siema', 'jebany', 'chuju']
 
@@ -33,7 +34,7 @@ export class PostFormComponent{
       title: [this.data.title, [Validators.required]],
       content: [this.data.content, [Validators.required]],
       category: [this.data.category, [Validators.required]],
-      hashtags: [this.data.tags, [Validators.required]],
+      tags: [this.data.tags, [Validators.required]],
       images: [this.data.images, [Validators.required]]
     });
   }
@@ -41,6 +42,7 @@ export class PostFormComponent{
   onSubmit() {
     if(this.postForm.valid) {
       console.log(this.postForm.value)
+      this.submitForm.emit((<PostEditModel>this.postForm.value))
     }
   }
 }

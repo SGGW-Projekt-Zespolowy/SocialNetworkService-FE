@@ -11,6 +11,7 @@ export class PostOptionsDialogComponent {
 
   @Input() data: PostModel;
   @Output() toggleFollowingStatus = new EventEmitter();
+  @Output() delete = new EventEmitter();
 
   constructor(
     public popUpService: PostPopUpService,
