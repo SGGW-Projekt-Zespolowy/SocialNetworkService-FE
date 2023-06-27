@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostModel } from 'src/app/models/post.model';
 import { ContextService } from 'src/app/services/context.service';
+import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 
 @Component({
   selector: 'app-post',
@@ -9,12 +10,12 @@ import { ContextService } from 'src/app/services/context.service';
 })
 export class PostComponent {
   @Input() data: PostModel;
-  @Output() showDetails = new EventEmitter<PostModel>()
   showAllTags: boolean = false;
   isPostOptionsVisible: boolean = false;
 
   constructor(
-    public contextService: ContextService
+    public contextService: ContextService,
+    public PostPopUpService: PostPopUpService
   ) {}
 
   toggleFollowingStatus() {

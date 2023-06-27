@@ -46,7 +46,7 @@
       </svg-icon>
       <span>{{ data.followersCount }}</span>
       <svg-icon 
-        (click)="showDetails.emit(data)"
+        (click)="PostPopUpService.openPostDetasilsModal(data)"
         class="comment-icon other-sec-icon" 
         [applyClass]="true" 
         name="comment">
