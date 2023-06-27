@@ -37,10 +37,15 @@
   </div>
 </div>
 
-<div class="posts">
-  <ng-container *ngFor="let post of posts">
+<div class="posts" *ngIf="posts | async as vm; else loading">
+  <ng-container *ngFor="let post of vm">
     <app-post
       [data]="post">
     </app-post>
   </ng-container>
 </div>
+<ng-template #loading>
+  <div class="center">
+    <div class="loader"></div>
+  </div>
+</ng-template>
