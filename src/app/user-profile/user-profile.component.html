@@ -86,14 +86,14 @@
     </div>
       
       <div class="content-2">
-        <div *ngIf="selectedTab === 'posty'">
-          <!-- Komponent Posty -->Siema
+        <div *ngIf="selectedTab === 'posty'" >
+          <app-user-profile-posts></app-user-profile-posts>
         </div>
         <div *ngIf="selectedTab === 'publikacje'">
-          <!-- Komponent Publikacje -->Elo
+          <span>Brak jakichkolwiek publikacji</span>
         </div>
         <div *ngIf="selectedTab === 'zapisane'">
-          <!-- Komponent Zapisane -->
+          <app-user-profile-posts></app-user-profile-posts>
         </div>
         <div *ngIf="selectedTab === 'aktywnosc'">
           <!-- Komponent Aktywność -->
