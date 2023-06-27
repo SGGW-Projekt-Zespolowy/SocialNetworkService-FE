@@ -57,7 +57,16 @@
   <div class="main">
     <div class="header">
       <div class="basic-info">
-        <div class="title">{{ data.title }}</div>
+        <div class="title">
+          <ng-container *ngIf="data.isSolved">
+            <svg-icon 
+            class="solved-icon" 
+            [applyClass]="true" 
+            name="solved">
+          </svg-icon>
+          </ng-container>
+          {{ data.title }}
+        </div>
         <div class="author-and-category">
           <span class="degree">{{ data.degree }}</span>
           &nbsp;

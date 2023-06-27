@@ -15,7 +15,8 @@ export interface PostModel {
   isFollowed: boolean
   isUpVoted: boolean
   isDownVoted: boolean
-  creationDate: Date
+  creationDate: Date,
+  isSolved: boolean
 }
 
 export interface TagModel {

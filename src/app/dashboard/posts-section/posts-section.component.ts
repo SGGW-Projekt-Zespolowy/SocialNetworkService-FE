@@ -63,7 +63,8 @@ const posts: PostModel[] = [
     isFollowed: false,
     isUpVoted: true,
     isDownVoted: false,
-    creationDate: new Date('June  25, 2023 12:30:00')
+    creationDate: new Date('June  25, 2023 12:30:00'),
+    isSolved: false
   },
 
   {
@@ -86,7 +87,8 @@ const posts: PostModel[] = [
     isFollowed: true,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date('June  20, 2023 12:30:00')
+    creationDate: new Date('June  20, 2023 12:30:00'),
+    isSolved: false
   },
 
   {
@@ -109,7 +111,8 @@ const posts: PostModel[] = [
     isFollowed: false,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date('June  18, 2023 12:30:00')
+    creationDate: new Date('June  18, 2023 12:30:00'),
+    isSolved: true
   },
 
   {
@@ -131,6 +134,7 @@ const posts: PostModel[] = [
     isFollowed: false,
     isUpVoted: false,
     isDownVoted: false,
-    creationDate: new Date('June  18, 2021 12:30:00')
+    creationDate: new Date('June  18, 2021 12:30:00'),
+    isSolved: false
   },
 ]
