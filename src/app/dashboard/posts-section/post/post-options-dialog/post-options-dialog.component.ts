@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PostModel } from 'src/app/models/post.model';
 
 @Component({
   selector: 'app-post-options-dialog',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-options-dialog.component.scss']
 })
 export class PostOptionsDialogComponent {
+
+  @Input() data: PostModel;
+  @Output() toggleFollowingStatus = new EventEmitter();
+
+  onIsSolvedToggle() {
+    this.data.isSolved = !this.data.isSolved;
+  }
+
 
 }

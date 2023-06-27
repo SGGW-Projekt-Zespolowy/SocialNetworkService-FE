@@ -114,7 +114,9 @@
           <div 
             *ngIf="isPostOptionsVisible"
             class="relative-wrap">
-            <app-post-options-dialog>
+            <app-post-options-dialog
+              (toggleFollowingStatus)="toggleFollowingStatus()"
+              [data]="data">
             </app-post-options-dialog>
           </div>
         </div>

@@ -11,25 +11,29 @@
       </span>
     </div>
     <div class="horizontal-line"></div>
-    <div class="option pointer">
+    <div 
+      (click)="onIsSolvedToggle()"
+      class="option pointer">
       <svg-icon 
         class="option-icon" 
         [applyClass]="true" 
         name="solved">
       </svg-icon>
-      <span>
-       oznacz jako rozwiązane
+      <span 
+        [innerText]="data.isSolved ? 'zdejmij oznaczenie' : 'oznacz jako rozwiązane'">
       </span>
     </div>
     <div class="horizontal-line"></div>
-    <div class="option pointer">
+    <div 
+      (click)="toggleFollowingStatus.emit()"
+      class="option pointer">
       <svg-icon 
         class="option-icon" 
         [applyClass]="true" 
-        name="bookmark2">
+        [name]="data.isFollowed ? 'bookmark' : 'bookmark2'">
       </svg-icon>
-      <span>
-       dodaj do zapisanych
+      <span 
+        [innerText]="data.isFollowed ? 'usuń z zapisanych' : 'dodaj do zapisanych'">
       </span>
     </div>
     <div class="horizontal-line"></div>
