@@ -8,12 +8,36 @@
   color: #02237E;
   background-color: #ffff;
   box-shadow: var(--post-box-shadow);
-  padding: 1em;
+  //padding: 1em;
   border-radius: 11px;
   box-sizing: border-box;
 
-  * {
-    font-size: 1.666666em;
+  .options {
+    font-size: 1.4em;
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 0.2em;
+      padding: 0.5em 0.5em;
+      border-radius: 9px;
+
+      .option-icon {
+        width: 1.2em;
+        height: 1.2em;
+      }
+    }
+
+    .option:hover {
+      background-color: #B9CFFB;
+    }
   }
+}
+
+hr {
+  height: 0px;
+  margin: 0px 0.5em;
+  padding: 0px ;
+  border-color: #D9D9D9CC;
 }
 

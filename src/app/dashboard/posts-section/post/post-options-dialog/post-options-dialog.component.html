@@ -1,17 +1,47 @@
 <div class="dialog-content">
-  <div class="option">
-    edytuj post
-  </div>
-  <hr>
-  <div class="option">
-    oznacz jako rozwiązane
-  </div>
-  <hr>
-  <div class="option">
-    dodaj do zapisanych
-  </div>
-  <hr>
-  <div class="option">
-    usuń post
+  <div class="options">
+    <div class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="edit">
+      </svg-icon>
+      <span>
+       edytuj post
+      </span>
+    </div>
+    <hr>
+    <div class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="solved">
+      </svg-icon>
+      <span>
+       oznacz jako rozwiązane
+      </span>
+    </div>
+    <hr>
+    <div class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="bookmark2">
+      </svg-icon>
+      <span>
+       dodaj do zapisanych
+      </span>
+    </div>
+    <hr>
+    <div class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="bin">
+      </svg-icon>
+      <span>
+        usuń post
+      </span>
+    </div>
   </div>
 </div>
