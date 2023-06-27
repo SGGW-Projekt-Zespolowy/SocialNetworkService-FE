@@ -33,6 +33,9 @@
                 <span *ngIf="errors['minlength']">
                     Hasło musi mieć co najmniej 7 znaków!
                 </span>
+                <span *ngIf="errors['incorrect']">
+                    Niepoprawne hasło!
+                </span>
             </div>
 
             <span class="forget-pass">Zapomniałeś hasła?</span>
@@ -45,5 +48,4 @@
             </div>
         </form>
     </div>
-
 </div>

@@ -1,15 +1,51 @@
-<div class="relative-wrap" *ngIf="isPopUpVisible">
-  <app-post-detailed
-    [data]="postDetailed"
-    (close)="isPopUpVisible = false">
-  </app-post-detailed>
+<div class="relative-wrap" >
+  <app-pop-up
+    PopUp
+    *ngIf="popUpService.isPostDetailsVisible | async as vm"
+    (close)="popUpService.closePostDetailsModal()">
+    <app-post-detailed
+      [data]="vm">
+    </app-post-detailed>
+  </app-pop-up>
+
+  <app-pop-up
+    PopUp
+    *ngIf="popUpService.isCreatePostVisible | async"
+    (close)="popUpService.closeCreatePostModal()">
+    <app-create-post></app-create-post>
+  </app-pop-up>
+
+  <app-pop-up
+    PopUp
+    *ngIf="popUpService.isEditPostVisible | async as vm"
+    (close)="popUpService.closeEditPostModal()">
+    <app-edit-post
+      [data]="vm">
+    </app-edit-post>
+  </app-pop-up>
 </div>
 
-<div class="posts">
-  <ng-container *ngFor="let post of posts">
+
+<div class="flex-wrap">
+  <div 
+    *ngIf="isAddPostVisible"
+    class="add-new-post" 
+    (click)="popUpService.openCreatePostModal()">
+    <svg-icon 
+    class="new-post-icon" [applyClass]="true" name="message-plus"></svg-icon>
+    <span>Dodaj Post</span>
+  </div>
+</div>
+
+<div class="posts" *ngIf="postService.getPosts() | async as vm; else loading">
+  <ng-container *ngFor="let post of vm">
     <app-post
-      (showDetails)="showPostDetails($event)"
       [data]="post">
     </app-post>
   </ng-container>
 </div>
+<ng-template #loading>
+  <div class="center">
+    <div class="loader"></div>
+  </div>
+</ng-template>

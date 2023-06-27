@@ -1,3 +1,11 @@
+<ng-container 
+  *ngIf="popUpService.isImagesPreviewVisible | async as vm">  
+<app-image-preview-modal
+  PopUp
+  [images]="vm">
+</app-image-preview-modal>
+</ng-container>
+
 <app-navbar></app-navbar>
 <div class="nav-content">
   <app-control-section *ngIf="controlIsVisible"></app-control-section>

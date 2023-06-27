@@ -1,0 +1,39 @@
+<div class="post">
+  <div class="controls">
+    <svg-icon 
+      (click)="close.emit()"
+      class="cancel-icon" 
+      [applyClass]="true" 
+      name="cancel">
+    </svg-icon>
+  </div>
+  <form 
+    [formGroup]="postForm" 
+    (ngSubmit)="onSubmit()"
+    enctype="multipart/form-data">
+    <input
+      formControlName="title" 
+      class="title" 
+      placeholder="Wpisz tytuł">
+  <div class="form-content">
+    <textarea 
+      formControlName="content"
+      class="text-content" 
+      placeholder="Wpisz treść"></textarea>
+    <div class="other-content">
+      <dropdown-input
+        formControlName="category"
+        placeholder="Kategorie"
+        [titles]="titles">
+      </dropdown-input>
+      <hashtag-input
+        formControlName="tags">
+      </hashtag-input>
+      <image-input
+        formControlName="images">
+      </image-input>
+      <button type="submit">Opublikuj</button>
+    </div>
+  </div>
+  </form>
+</div>

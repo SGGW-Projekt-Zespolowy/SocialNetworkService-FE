@@ -23,8 +23,9 @@
 
   </div>
 
-  <div class="add-new-post">
-    <svg-icon class="new-post-icon" [applyClass]="true" name="message-plus"></svg-icon>
+  <div class="add-new-post" (click)="popUpService.openCreatePostModal()">
+    <svg-icon 
+    class="new-post-icon" [applyClass]="true" name="message-plus"></svg-icon>
     <span>Dodaj Post</span>
   </div>
 </div>

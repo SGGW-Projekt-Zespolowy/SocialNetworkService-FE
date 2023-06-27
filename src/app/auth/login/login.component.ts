@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomAuthValidators } from '../custom-auth-validators';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +11,11 @@ import { CustomAuthValidators } from '../custom-auth-validators';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -27,7 +34,13 @@ export class LoginComponent implements OnInit {
     CustomAuthValidators.validateAllFormFields(this.loginForm);
     
     if(this.loginForm.valid) {
-      console.log(this.loginForm.value);
+
+      this.authService.login(this.loginForm.value).subscribe({
+        next: res => this.router.navigate(['dashboard']),
+        error: error => {
+          this.loginForm.get('password').setErrors({'incorrect': true})
+        }
+      });
     }
   }
 }

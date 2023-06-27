@@ -1,0 +1,55 @@
+<div class="dialog-content">
+  <div class="options">
+    <div
+      (click)="popUpService.openEditPostModal(data)" 
+      class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="edit">
+      </svg-icon>
+      <span>
+       edytuj post
+      </span>
+    </div>
+    <div class="horizontal-line"></div>
+    <div 
+      (click)="onIsSolvedToggle()"
+      class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="solved">
+      </svg-icon>
+      <span 
+        [innerText]="data.isSolved ? 'zdejmij oznaczenie' : 'oznacz jako rozwiązane'">
+      </span>
+    </div>
+    <div class="horizontal-line"></div>
+    <div 
+      (click)="toggleFollowingStatus.emit()"
+      class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        [name]="data.isFollowed ? 'bookmark' : 'bookmark2'">
+      </svg-icon>
+      <span 
+        [innerText]="data.isFollowed ? 'usuń z zapisanych' : 'dodaj do zapisanych'">
+      </span>
+    </div>
+    <div class="horizontal-line"></div>
+    <div
+      (click)="delete.emit()" 
+      class="option pointer">
+      <svg-icon 
+        class="option-icon" 
+        [applyClass]="true" 
+        name="bin">
+      </svg-icon>
+      <span>
+        usuń post
+      </span>
+    </div>
+  </div>
+</div>

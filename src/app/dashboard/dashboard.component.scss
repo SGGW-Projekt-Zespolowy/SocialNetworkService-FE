@@ -10,13 +10,13 @@
 app-control-section {
   position: -webkit-sticky;
   position: sticky;
-  top: var(--navbar-height);;
+  top: var(--navbar-height);
 }
 
 app-friends-section {
   position: -webkit-sticky;
   position: sticky;
-  top: var(--navbar-height);;
+  top: var(--navbar-height);
 
 }
 
@@ -24,18 +24,10 @@ app-friends-section {
   .nav-content {
     justify-content: center;
   }
-
-  // app-control-section {
-  //   display: none !important;
-  // } 
-
-  // app-friends-section {
-  //   display: none !important;
-  // }
 }
 
-// @media screen and (max-width: 1330px) { 
-//   app-control-section {
-//     display: none !important;
-//   } 
-// }
+@media screen and (max-width: 1330px) { 
+  app-posts-section {
+    width: 100%;
+  }
+}

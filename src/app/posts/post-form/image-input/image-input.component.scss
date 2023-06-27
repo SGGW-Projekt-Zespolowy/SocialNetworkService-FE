@@ -1,0 +1,66 @@
+.input-wrap {
+  display: flex;
+  border-bottom: 4px solid #b9cffb;
+}
+
+label {
+  width: 100%;
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5em;
+  // font-size: 18px;
+  padding: 0.83333em;
+  // padding: 10px;
+  color: #02237E;
+  border: none;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.images {
+  margin-top: 1.25em;
+  // margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25em;
+  // gap: 15px;
+  flex-wrap: wrap;
+}
+
+.relative-wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  left: 0.3333em;
+}
+
+.delete-icon {
+  width: 1.66666em;
+  // width: 20px;
+  height: 1.66666em;
+  // height: 20px;
+  position: absolute;
+  top: -3px;
+  z-index: 5;
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+.image-preview {
+  width: 4em;
+  // width: 45px;
+  height: 4em;
+  // height: 45px;
+  border-radius: 3px;
+}
+
+label:hover {
+  cursor: pointer;
+}

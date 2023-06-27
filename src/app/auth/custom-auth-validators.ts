@@ -1,6 +1,9 @@
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, AsyncValidatorFn, FormControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { Observable, catchError, debounceTime, first, map, of, switchMap } from "rxjs";
+import { AuthService } from "../services/auth.service";
 
 export class CustomAuthValidators {
+
     static matchValidator(source: string, target: string): ValidatorFn {
         return (control: AbstractControl): ValidationErrors | null => {
             const sourceCtrl = control.get(source);
@@ -26,4 +29,18 @@ export class CustomAuthValidators {
             }
         });
     }
+
+    static EmailIsUnique(authService: AuthService): AsyncValidatorFn {
+        return (control: AbstractControl):  Observable<ValidationErrors | null> => {
+            return control.valueChanges
+              .pipe(
+                debounceTime(350),
+                switchMap(value => authService.isEmailUnique(value)),
+                catchError(res => of(false)),
+                map((unique: boolean) => (!unique ? null : {emailNotUnique: control.value})),
+                first()
+              )
+        }
+    }
 }
+

@@ -2,8 +2,33 @@
   margin: 10px 0px 20px 0px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .relative-wrap {
   position: relative;
+}
+
+.flex-wrap {
+  display: flex;
+  justify-content: center;
+  font-size: var(--post-font-size);
+}
+
+.add-new-post {
+  width: auto;
+  margin-top: 1rem;
+  font-size: 2em;
+
+  .new-post-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: top;
+  }
+}
+
+.center {
+  margin-top: 20px;
 }

@@ -1,0 +1,32 @@
+<div class="input-wrap">
+  <label for="image-input">Dodaj zdjęcie</label>
+  <input 
+    type="file" 
+    id="image-input" 
+    (change)="onInputChange($event)"
+    ACCEPT="image/png, image/jpg, image/gif">
+</div>
+<div
+  *ngIf="images.length > 0"
+  class="images">
+  <div
+    *ngFor="let image of images; let i = index" 
+    class="image-preview">
+      <div class="relative-wrap">
+        <svg-icon 
+        (click)="deleteImage(i)"
+        class="delete-icon" 
+        [applyClass]="true" 
+        name="delete">
+      </svg-icon>
+      </div>
+      <!-- <img 
+      class="image-preview"
+      [src]="image | safeResourceUrl" 
+      [alt]="image.name"> -->
+      <img 
+        [src]="image" 
+        [alt]="'image ' + i"
+        class="image-preview">
+  </div>
+</div>

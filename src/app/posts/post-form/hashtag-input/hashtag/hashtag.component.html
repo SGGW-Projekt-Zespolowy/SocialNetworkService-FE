@@ -1,0 +1,12 @@
+<div class="relative-wrap">
+  <svg-icon 
+    (click)="delete.emit(id)"
+    class="delete-icon" 
+    [applyClass]="true" 
+    name="delete">
+  </svg-icon>
+</div>
+<div class="tag" [class]="tag.color">
+  {{ tag.content }}
+</div>
+

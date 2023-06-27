@@ -1,0 +1,5 @@
+<app-post-form
+  (submitForm)="editPost($event)"
+  [data]="postEditModel"
+  (close)="postPopUpService.closeEditPostModal()">
+</app-post-form>
