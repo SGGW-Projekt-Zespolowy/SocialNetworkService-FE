@@ -23,3 +23,11 @@ export interface TagModel {
   content: string,
   color: string,
 }
+
+export interface PostEditModel {
+  title: string,
+  content: string,
+  category: string,
+  tags: TagModel[],
+  images: string[]
+}

@@ -8,7 +8,7 @@ import { PostModel } from '../models/post.model';
 export class PostPopUpService {
 
   isCreatePostVisible = new Subject<boolean>()
-  isEditPostVisible = new Subject<boolean>();
+  isEditPostVisible = new Subject<PostModel>();
   isPostDetailsVisible = new Subject<PostModel>();
 
   constructor() { }
@@ -21,13 +21,13 @@ export class PostPopUpService {
     this.isCreatePostVisible.next(false);
   }
 
-  openEditPostModal() {
-    this.isEditPostVisible.next(true);
+  openEditPostModal(data: PostModel) {
+    this.isEditPostVisible.next(data);
     this.closePostDetailsModal();
   }
  
   closeEditPostModal() {
-    this.isEditPostVisible.next(false);
+    this.isEditPostVisible.next(null);
   }
 
   openPostDetasilsModal(data: PostModel) {
