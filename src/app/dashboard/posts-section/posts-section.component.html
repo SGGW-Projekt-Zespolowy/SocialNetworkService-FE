@@ -37,7 +37,7 @@
   </div>
 </div>
 
-<div class="posts" *ngIf="posts | async as vm; else loading">
+<div class="posts" *ngIf="postService.getPosts() | async as vm; else loading">
   <ng-container *ngFor="let post of vm">
     <app-post
       [data]="post">

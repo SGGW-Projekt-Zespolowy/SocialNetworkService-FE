@@ -1,18 +1,36 @@
 import { Injectable } from '@angular/core';
-import { delay, of } from 'rxjs';
+import { BehaviorSubject, delay, of } from 'rxjs';
+import { PostModel } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  constructor() { }
+  private posts: BehaviorSubject<PostModel[]>;
 
-  getPosts() {
-    return of(this.posts).pipe(delay(500));
+  constructor() { 
+    this.posts = new BehaviorSubject<PostModel[]>(this.postsData);
   }
 
-  posts = [
+  getPosts() {
+    return this.posts.asObservable();
+  }
+
+  addPost(post: PostModel) {
+    return this.posts.next([...this.posts.value, post]);
+  }
+
+  removePost(postToRemove: PostModel) {
+    this.posts.next(
+      [...this.posts.value
+        .filter(post => post !== postToRemove)
+      ]
+    );
+  }
+
+
+  postsData = [
     {
       id: "1",
       authorId: "1",

@@ -12,7 +12,6 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./posts-section.component.scss']
 })
 export class PostsSectionComponent {
-  posts: Observable<PostModel[]>;
   isPostDetailsVisible: boolean = false;
   isCreatePostVisible: boolean = true;
   postDetailed: PostModel;
@@ -21,7 +20,7 @@ export class PostsSectionComponent {
   constructor(
     public popUpService: PostPopUpService,
     private responsive: BreakpointObserver,
-    private postService: PostService
+    protected postService: PostService
   ) {}
 
   ngOnInit() {
@@ -32,8 +31,6 @@ export class PostsSectionComponent {
           this.isAddPostVisible = true;
         }
     });
-
-    this.posts = this.postService.getPosts();
   }
 
   showPostDetails(post: PostModel) {
