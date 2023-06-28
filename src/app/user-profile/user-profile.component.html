@@ -25,6 +25,19 @@
           [data]="vm">
         </app-edit-post>
       </app-pop-up>
+
+      <ng-container 
+        *ngIf="popUpService.isImagesPreviewVisible | async as vm">  
+        <app-image-preview-modal
+          PopUp
+          [images]="vm">
+        </app-image-preview-modal>
+      </ng-container>
+      <div
+        *ngIf="confirmModalService.isConfirmModalVisible | async"
+        class="confirm-modal-wrap">
+        <confirm-modal></confirm-modal>
+      </div>
   </div>
     <div class="user-profile-container">
         <div class="photo">
