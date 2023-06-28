@@ -1,6 +1,7 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { DropDownAnimation } from './animations';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { MedicalConsts } from 'src/app/models/specializations.model';
 
 @Component({
   selector: 'dropdown-input',
@@ -20,9 +21,9 @@ export class DropdownInputComponent implements ControlValueAccessor {
   isOpen = false;
   @Input() placeholder: string = "";
   
-  @Input() titles;
+  @Input() titles: {key: string, value: string}[];
   
-  selectedTitle: string;
+  selectedTitle: {key: string, value: string};
 
   inside = false;
   touched = false;
@@ -49,14 +50,15 @@ export class DropdownInputComponent implements ControlValueAccessor {
   onTouched = () => {}
   disabled: boolean = false;
 
-  selectTitle(title: string) {
+  selectTitle(title: {key: string, value: string}) {
     this.selectedTitle = title;
     this.isOpen = false;
     this.onChange(title);
     this.onTouched();
   }
   
-  writeValue(title: string): void {
+  writeValue(titleValue: string): void {
+    const title = this.titles.filter(x => x.key === title);
     this.selectedTitle = title;
   }
   registerOnChange(fn: any): void {
