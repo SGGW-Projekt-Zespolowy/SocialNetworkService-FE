@@ -15,6 +15,7 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { AddLineBreaksPipe } from './pipes/add-line-breaks.pipe';
 import { ImagePreviewModalComponent } from './image-preview-modal/image-preview-modal.component';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
+import { TranslateMedSpecPipe } from './pipes/translate-med-spec.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
     UserDialogComponent,
     AddLineBreaksPipe,
     ImagePreviewModalComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    TranslateMedSpecPipe
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
     RoundedDatePipe,
     AddLineBreaksPipe,
     ImagePreviewModalComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    TranslateMedSpecPipe
   ]
 })
 export class SharedModule { }
