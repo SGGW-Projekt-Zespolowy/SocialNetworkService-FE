@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
 import { AddLineBreaksPipe } from './pipes/add-line-breaks.pipe';
 import { ImagePreviewModalComponent } from './image-preview-modal/image-preview-modal.component';
+import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ImagePreviewModalComponent } from './image-preview-modal/image-preview-
     RoundedDatePipe,
     UserDialogComponent,
     AddLineBreaksPipe,
-    ImagePreviewModalComponent
+    ImagePreviewModalComponent,
+    ConfirmModalComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { ImagePreviewModalComponent } from './image-preview-modal/image-preview-
     SafeUrlPipe,
     RoundedDatePipe,
     AddLineBreaksPipe,
-    ImagePreviewModalComponent
+    ImagePreviewModalComponent,
+    ConfirmModalComponent
   ]
 })
 export class SharedModule { }

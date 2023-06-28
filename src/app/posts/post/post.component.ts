@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PostModel } from 'src/app/models/post.model';
+import { ConfirmModalService } from 'src/app/services/confirm-modal.service';
 import { ContextService } from 'src/app/services/context.service';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 import { PostService } from 'src/app/services/post.service';
@@ -17,12 +18,15 @@ export class PostComponent {
   constructor(
     public contextService: ContextService,
     public PostPopUpService: PostPopUpService,
-    private postService: PostService
+    private postService: PostService,
+    public confirmModalService: ConfirmModalService
   ) {}
 
   deletePost() {
-    this.postService.removePost(this.data);
-    this.PostPopUpService.closePostDetailsModal();
+    this.confirmModalService.openConfirmModal().subscribe(res => {
+      this.postService.removePost(this.data);
+      this.PostPopUpService.closePostDetailsModal();
+    })
   }
 
   toggleFollowingStatus() {
