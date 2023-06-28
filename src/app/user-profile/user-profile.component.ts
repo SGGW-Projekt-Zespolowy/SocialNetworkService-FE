@@ -16,7 +16,17 @@ export class UserProfileComponent {
 
   selectedTab: string;
 
+  ngOnInit() {
+    const storedTab = localStorage.getItem('selectedTab');
+    if (storedTab) {
+      this.selectedTab = storedTab; 
+    } else {
+      this.selectedTab = 'posty';
+    }
+  }
+
   selectTab(tab: string): void {
     this.selectedTab = tab;
+    localStorage.setItem('selectedTab', tab);
   }
 }
