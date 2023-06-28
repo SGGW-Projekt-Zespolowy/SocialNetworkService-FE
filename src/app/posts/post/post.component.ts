@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { delay, of, switchMap } from 'rxjs';
 import { PostModel } from 'src/app/models/post.model';
 import { ConfirmModalService } from 'src/app/services/confirm-modal.service';
 import { ContextService } from 'src/app/services/context.service';
@@ -23,7 +24,11 @@ export class PostComponent {
   ) {}
 
   deletePost() {
-    this.confirmModalService.openConfirmModal().subscribe(res => {
+    this.confirmModalService.openConfirmModal().pipe(
+      switchMap(res => of('it is working baby')),
+      delay(500)
+    ).subscribe(res => {
+      console.log(res);
       this.postService.removePost(this.data);
       this.PostPopUpService.closePostDetailsModal();
     })
