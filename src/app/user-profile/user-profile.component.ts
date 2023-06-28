@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
+import { PostPopUpService } from '../services/post-pop-up.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,7 +10,8 @@ import { PostService } from 'src/app/services/post.service';
 export class UserProfileComponent {
 
   constructor(
-    protected postService: PostService
+    public popUpService: PostPopUpService,
+    protected postService: PostService,
   ) {}
 
   selectedTab: string;

@@ -232,5 +232,12 @@
       }
     }
   }
+
+
+.absolute-wrap {
+  margin-top: var(--navbar-height);
+  position: absolute;
+  width: 100vw;
+}
   
   

@@ -1,5 +1,31 @@
 <div class="content">
     <app-navbar></app-navbar>
+    <div class="absolute-wrap" >
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isPostDetailsVisible | async as vm"
+        (close)="popUpService.closePostDetailsModal()">
+        <app-post-detailed
+          [data]="vm">
+        </app-post-detailed>
+      </app-pop-up>
+    
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isCreatePostVisible | async"
+        (close)="popUpService.closeCreatePostModal()">
+        <app-create-post></app-create-post>
+      </app-pop-up>
+    
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isEditPostVisible | async as vm"
+        (close)="popUpService.closeEditPostModal()">
+        <app-edit-post
+          [data]="vm">
+        </app-edit-post>
+      </app-pop-up>
+  </div>
     <div class="user-profile-container">
         <div class="photo">
             <img class="profile-picture" src="../../../assets/Images/placeholders/user-profile.jpg" alt="Profilowe">
