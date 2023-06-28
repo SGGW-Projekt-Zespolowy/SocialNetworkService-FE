@@ -185,6 +185,11 @@
   transform-origin: bottom left;
 }
 
+.nav-item.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
   .content-2 {
     display: flex;
     width: 100%;

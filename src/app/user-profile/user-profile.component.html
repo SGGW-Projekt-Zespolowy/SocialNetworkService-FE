@@ -74,14 +74,14 @@
 </div>
     <div class="navigation-bar-container">
         <div class="nav-items">
-          <span class="nav-item" [class.selected]="selectedTab === 'posty'" (click)="selectTab('posty')">Posty</span>
-          <span class="nav-item" [class.selected]="selectedTab === 'publikacje'" (click)="selectTab('publikacje')">Publikacje</span>
-          <span class="nav-item" (click)="selectTab('zapisane')">Zapisane</span>
-          <span class="nav-item" (click)="selectTab('aktywnosc')">Aktywność</span>
-          <span class="nav-item" (click)="selectTab('obserwowani')">Obserwowani</span>
-          <span class="nav-item" (click)="selectTab('obserwujacy')">Obserwujący</span>
-          <span class="nav-item" (click)="selectTab('kontakty')">Kontakty</span>
-          <span class="nav-item" (click)="selectTab('ustawienia')">Ustawienia</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'posty'}" (click)="selectTab('posty')">Posty</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'publikacje'}" (click)="selectTab('publikacje')">Publikacje</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'zapisane'}" (click)="selectTab('zapisane')">Zapisane</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'aktywnosc'}" (click)="selectTab('aktywnosc')">Aktywność</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'obserwowani'}" (click)="selectTab('obserwowani')">Obserwowani</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'obserwujacy'}" (click)="selectTab('obserwujacy')">Obserwujący</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'kontakty'}" (click)="selectTab('kontakty')">Kontakty</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'ustawienia'}" (click)="selectTab('ustawienia')">Ustawienia</span>
         </div>
     </div>
       
