@@ -21,7 +21,7 @@ export class DropdownInputComponent implements ControlValueAccessor {
   isOpen = false;
   @Input() placeholder: string = "";
   
-  @Input() titles: {key: string, value: string}[];
+  @Input() titles: {key: string, value: string}[] = [];
   
   selectedTitle: {key: string, value: string};
 
@@ -53,12 +53,12 @@ export class DropdownInputComponent implements ControlValueAccessor {
   selectTitle(title: {key: string, value: string}) {
     this.selectedTitle = title;
     this.isOpen = false;
-    this.onChange(title);
+    this.onChange(title.key);
     this.onTouched();
   }
   
-  writeValue(titleValue: string): void {
-    const title = this.titles.filter(x => x.key === title);
+  writeValue(titleKey: string): void {
+    const title = this.titles.find(x => x.key === titleKey);
     this.selectedTitle = title;
   }
   registerOnChange(fn: any): void {
