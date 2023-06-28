@@ -6,11 +6,13 @@ import { SharedModule } from '../shared/shared.module';
 import { PostsModule } from '../posts/posts.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { UserProfilePostsComponent } from './user-profile-posts/user-profile-posts.component';
+import { ActivityComponent } from './activity/activity.component';
 
 @NgModule({
     declarations: [
         UserProfileComponent,
-        UserProfilePostsComponent
+        UserProfilePostsComponent,
+        ActivityComponent
     ],
     imports: [
         CommonModule,
