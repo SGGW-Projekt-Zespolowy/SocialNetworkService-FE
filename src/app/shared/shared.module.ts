@@ -16,6 +16,7 @@ import { AddLineBreaksPipe } from './pipes/add-line-breaks.pipe';
 import { ImagePreviewModalComponent } from './image-preview-modal/image-preview-modal.component';
 import { ConfirmModalComponent } from './confirm-modal/confirm-modal.component';
 import { TranslateMedSpecPipe } from './pipes/translate-med-spec.pipe';
+import { TranslateDegreesPipe } from './pipes/translate-degrees.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TranslateMedSpecPipe } from './pipes/translate-med-spec.pipe';
     AddLineBreaksPipe,
     ImagePreviewModalComponent,
     ConfirmModalComponent,
-    TranslateMedSpecPipe
+    TranslateMedSpecPipe,
+    TranslateDegreesPipe
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import { TranslateMedSpecPipe } from './pipes/translate-med-spec.pipe';
     AddLineBreaksPipe,
     ImagePreviewModalComponent,
     ConfirmModalComponent,
-    TranslateMedSpecPipe
+    TranslateMedSpecPipe,
+    TranslateDegreesPipe
   ]
 })
 export class SharedModule { }

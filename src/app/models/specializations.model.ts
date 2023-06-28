@@ -19,6 +19,7 @@ export class MedicalConsts {
     {key: 'Geriatria', value: 'Geriatria'},
     {key: 'Hematologia', value: 'Hematologia'},
     {key: 'IntensywnaTerapia', value: 'Intensywna terapia'},
+    {key: 'Kardiologia', value: 'Kardiologia'},
     {key: 'MedycynaRodzinna', value: 'Medycyna rodzinna'},
     {key: 'Neurologia', value: 'Neurologia'},
     {key: 'Okulistyka', value: 'Okulistyka'},

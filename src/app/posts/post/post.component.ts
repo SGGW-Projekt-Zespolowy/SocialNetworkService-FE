@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { delay, of, switchMap } from 'rxjs';
 import { PostModel } from 'src/app/models/post.model';
+import { MedicalConsts } from 'src/app/models/specializations.model';
 import { ConfirmModalService } from 'src/app/services/confirm-modal.service';
 import { ContextService } from 'src/app/services/context.service';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
@@ -15,6 +16,7 @@ export class PostComponent {
   @Input() data: PostModel;
   showAllTags: boolean = false;
   isPostOptionsVisible: boolean = false;
+  degrees = MedicalConsts.degrees;
 
   constructor(
     public contextService: ContextService,
