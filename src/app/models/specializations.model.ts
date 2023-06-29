@@ -10,10 +10,16 @@ export class MedicalConsts {
 
   static specializations = [
     {key: 'Alergologia', value: 'Alergologia'},
+    {key: 'AnestezjologiaIIntensywnaTerapia', value: 'Anestezjologi i intensywna terapia'},
     {key: 'Angiologia', value: 'Angiologia'},
     {key: 'ChorobyPluc', value: 'Choroby Płuc'},
     {key: 'AudiologiaIFoniatria', value: 'Audiologia i Foniatria'},
     {key: 'ChorobyZakazne', value: 'Choroby zakaźne'},
+    {key: 'ChirurgiaDziecieca', value: 'Chirurgia dziecięca'},
+    {key: 'ChirurgiaOgolna', value: 'Chirurgia ogólna'},
+    {key: 'ChirurgiaPlastyczna', value: 'Chirurgia plastyczna'},
+    {key: 'ChirurgiaOnkologiczna', value: 'Chirurgia onkologiczna'},
+    {key: 'ChirurgiaSzczekowoTwarzowa', value: 'Chirurgia szczekowo twarzowa'},
     {key: 'Endokrynologia', value: 'Endokrynologia'},
     {key: 'Epidemiologia', value: 'Epidemiologia'},
     {key: 'Geriatria', value: 'Geriatria'},
