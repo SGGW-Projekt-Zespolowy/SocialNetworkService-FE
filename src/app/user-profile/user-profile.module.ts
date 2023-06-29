@@ -8,13 +8,15 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { UserProfilePostsComponent } from './user-profile-posts/user-profile-posts.component';
 import { ActivityComponent } from './activity/activity.component';
 import { FollowingComponent } from './following/following.component';
+import { FollowersComponent } from './followers/followers.component';
 
 @NgModule({
     declarations: [
         UserProfileComponent,
         UserProfilePostsComponent,
         ActivityComponent,
-        FollowingComponent
+        FollowingComponent,
+        FollowersComponent
     ],
     imports: [
         CommonModule,

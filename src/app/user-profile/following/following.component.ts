@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-following',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./following.component.scss']
 })
 export class FollowingComponent {
+  showDropdown = false;
 
+  constructor(private renderer: Renderer2) { }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
 }
+
+
