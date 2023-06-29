@@ -43,10 +43,7 @@
     class="user-profile-container" 
     *ngIf="userDetailed$ | async as vm">
         <div class="photo">
-            <img 
-              class="profile-picture" 
-              [src]="vm.profilePicture" 
-              alt="Profilowe">
+            <img class="profile-picture" src="../../../assets/Images/placeholders/doctorrr.jpeg" alt="profilowe">
             <div class="button-overlay">
                 <span class="button-text">{{ vm.defree }}</span>
             </div>
