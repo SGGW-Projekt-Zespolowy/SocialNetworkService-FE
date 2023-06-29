@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PostEditModel, PostModel } from 'src/app/models/post.model';
+import { MedicalConsts } from 'src/app/models/specializations.model';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class PostFormComponent{
   @Output() close = new EventEmitter()
   @Output() submitForm = new EventEmitter<PostEditModel>()
 
-  titles = ['siema', 'jebany', 'chuju']
+  // titles = ['siema', 'jebany', 'chuju']
+  titles = MedicalConsts.specializations;
 
   postForm: FormGroup;
 

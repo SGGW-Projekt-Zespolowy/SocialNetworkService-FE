@@ -1,0 +1,251 @@
+:host {
+  min-height: 100vh;
+}
+
+.content{
+  display: flex;
+  background: rgba(238, 236, 248, 0.3);
+}
+
+.user-profile-container {
+    font-size: var(--post-font-size);
+    background: var(--post-background-color);
+    box-shadow: var(--post-box-shadow);
+    border-radius: var(--post-border-radius);  
+    padding: var(--post-padding);
+   //margin: 0px 2em;
+    margin: var(--post-margin);
+    display: flex;
+    margin: 100px auto;
+    max-width: 1500px;
+    width: 80%;
+    height: 350px;
+  }
+
+  .photo{
+    width: 300px;
+    height: 300px;
+  }
+  
+  .profile-picture {
+    width: 289px;
+    height: 283px;
+    border-radius: 13px;
+    object-fit: cover;
+    margin-top: 30px;
+    margin-left: 45px;
+  }
+
+  .button-overlay {
+    width: 205px;
+    height: 43px;
+    background-color: #022B9B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid white 10px;
+    position: relative;
+    top: -42px;
+    left: 76px;
+  }
+  
+  .button-text {
+    color: white;
+    font-size: 20px;
+    font-family: 'Quicksand';
+  }
+
+  .full-name{
+    position: relative;
+    left: 85px;
+    margin-top: 28px;
+    font-family: "Arya";
+    font-size: 36px;
+    font-weight: 400;
+    color: #02237E;
+    white-space: nowrap;
+    
+  }
+
+  .infos {
+    position: relative;
+    left: -130px;
+    margin-top: 7em;
+    margin-right: 2em;
+    margin-left: -5px;
+    
+    .info {
+      display: flex;
+      align-items: center;
+      min-width: 31em;
+      margin-top: 23px;
+    
+        .name {
+          font-family: "Quicksand";
+          font-size: 20px;
+          font-weight: 400;
+          padding-left: 0.83333em;
+          color: #000000;
+        }
+
+        .icon{
+          width: 29px;
+          height: 29px;
+        }
+    }
+  }
+  
+  .container {
+    display: flex;
+    position: relative;
+    left: -23%;
+    top: -10%;
+    margin-top: 70px;
+    margin-right: 1em;
+    margin-left: 18em;
+    margin-bottom: 5px;
+    border-left: 2px solid #02237E;
+    color: #022B9B;
+    font-size: 27px;
+    font-family: "Arya";
+    font-weight: 700;
+    letter-spacing: -0.81px;
+  }
+  
+  .column {
+    flex: 1;
+    margin-right: 17%;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-left: 50px;
+  }
+
+  .row-2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    direction: rtl;
+    margin-bottom: 5px;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navigation-bar-container {
+    display: flex;
+    width: 90%;
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    align-items: center;
+    margin: -57px auto;
+    border-bottom: 2px solid #B9CFFB;
+    padding-bottom: 10px;
+  }
+
+  
+.nav-items {
+  font-size: 1.3em;
+  color: #02237E;
+  font-size: 25px;
+  font-family: "Arya";
+  display: flex;
+
+  .nav-item {
+    margin-left: 65px;
+    cursor: pointer;
+    position: relative;
+    left: 5%;
+  }
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: -10px;
+  margin-bottom: -13px;
+  background-color: #B9CFFB;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-item.active::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+  .content-2 {
+    display: flex;
+    width: 100%;
+    min-height: 380px;
+    background: rgba(238, 236, 248, 0.3);
+    font-family: 'Quicksand';
+    font-weight: 400;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    padding: 0px 20px;
+    align-items: center;
+    margin-top: 55px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 500px) { 
+    .navigation-bar-container {
+      padding: 0px 10px;
+    }
+  
+    .nav-item {
+      margin-left: 0.5em;
+    }
+  
+    .nav-items {
+      margin-right: 0px;
+    }
+}
+
+  @media screen and (max-width: 1200px) { 
+    .infos {
+      font-size: 10px;
+      .info {
+        min-width: 26em;
+      }
+    }
+  }
+
+
+.absolute-wrap {
+  margin-top: var(--navbar-height);
+  position: absolute;
+  width: 100vw;
+}
+
+.fa-solid.fa-calendar-days {
+  color: #022B9B;
+  font-size: 30px;
+}
+  
+  

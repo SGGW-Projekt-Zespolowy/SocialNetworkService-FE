@@ -68,7 +68,7 @@
           {{ data.title }}
         </div>
         <div class="author-and-category">
-          <span class="degree">{{ data.degree }}</span>
+          <span class="degree">{{ data.degree | translateDegrees }}</span>
           &nbsp;
           <span class="author">{{ data.author }}</span>
           &nbsp;
@@ -86,7 +86,7 @@
           <svg-icon class="unverification-icon" [applyClass]="true" name="unverified"></svg-icon>
           &nbsp;
           <span class="category">
-            {{ data.category }}
+            {{ data.category | translateMedSpec }}
           </span>
         </div>
       </div>

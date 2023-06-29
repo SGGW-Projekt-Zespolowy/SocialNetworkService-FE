@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { delay, of, switchMap } from 'rxjs';
 import { PostModel } from 'src/app/models/post.model';
+import { MedicalConsts } from 'src/app/models/specializations.model';
+import { ConfirmModalService } from 'src/app/services/confirm-modal.service';
 import { ContextService } from 'src/app/services/context.service';
 import { PostPopUpService } from 'src/app/services/post-pop-up.service';
 import { PostService } from 'src/app/services/post.service';
@@ -13,16 +16,24 @@ export class PostComponent {
   @Input() data: PostModel;
   showAllTags: boolean = false;
   isPostOptionsVisible: boolean = false;
+  degrees = MedicalConsts.degrees;
 
   constructor(
     public contextService: ContextService,
     public PostPopUpService: PostPopUpService,
-    private postService: PostService
+    private postService: PostService,
+    public confirmModalService: ConfirmModalService
   ) {}
 
   deletePost() {
-    this.postService.removePost(this.data);
-    this.PostPopUpService.closePostDetailsModal();
+    this.confirmModalService.openConfirmModal().pipe(
+      switchMap(res => of('it is working baby')),
+      delay(500)
+    ).subscribe(res => {
+      console.log(res);
+      this.postService.removePost(this.data);
+      this.PostPopUpService.closePostDetailsModal();
+    })
   }
 
   toggleFollowingStatus() {

@@ -1,1 +1,159 @@
-<p>user-profile works!</p>
+<div class="content">
+    <app-navbar></app-navbar>
+    <div class="absolute-wrap" >
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isPostDetailsVisible | async as vm"
+        (close)="popUpService.closePostDetailsModal()">
+        <app-post-detailed
+          [data]="vm">
+        </app-post-detailed>
+      </app-pop-up>
+    
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isCreatePostVisible | async"
+        (close)="popUpService.closeCreatePostModal()">
+        <app-create-post></app-create-post>
+      </app-pop-up>
+    
+      <app-pop-up
+        PopUp
+        *ngIf="popUpService.isEditPostVisible | async as vm"
+        (close)="popUpService.closeEditPostModal()">
+        <app-edit-post
+          [data]="vm">
+        </app-edit-post>
+      </app-pop-up>
+
+      <ng-container 
+        *ngIf="popUpService.isImagesPreviewVisible | async as vm">  
+        <app-image-preview-modal
+          PopUp
+          [images]="vm">
+        </app-image-preview-modal>
+      </ng-container>
+      <div
+        *ngIf="confirmModalService.isConfirmModalVisible | async"
+        class="confirm-modal-wrap">
+        <confirm-modal></confirm-modal>
+      </div>
+  </div>
+  <div 
+    class="user-profile-container" 
+    *ngIf="userDetailed$ | async as vm">
+        <div class="photo">
+            <img 
+              class="profile-picture" 
+              [src]="vm.profilePicture" 
+              alt="Profilowe">
+            <div class="button-overlay">
+                <span class="button-text">{{ vm.defree }}</span>
+            </div>
+        </div>
+        <div class="full-name">{{ vm.firstName }} {{ vm.lastName }}</div>
+        <div class="infos">
+            <div class="info">
+                <svg-icon [applyClass]="true" class="icon" name="location"></svg-icon>
+                <div class="name">
+                    Warszawski Uniwersytet Medyczny
+                </div>
+            </div>
+            <div class="info">
+                <svg-icon [applyClass]="true" class="icon" name="medical"></svg-icon>
+                <div class="name">
+                    Brak specjalizacji
+                </div>
+            </div>
+            <div class="info">
+                <!-- <svg-icon [applyClass]="true" class="icon" name="phone"></svg-icon> -->
+                <i class="fa-solid fa-calendar-days"></i>
+                <div class="name">
+                    {{ vm.dateOfBirth | date:'M/d/yyyy' }}
+                </div>
+            </div>
+            <div class="info">
+                <svg-icon [applyClass]="true" class="icon" name="message-profile"></svg-icon>
+                <div class="name">
+                    {{ vm.email }}
+                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column">
+              <div class="row">
+                <span>obserwujący:</span>
+              </div>
+              <div class="row">
+                <span>obserwowani:</span>
+              </div>
+              <div class="row">
+                <span>kontakty:</span>
+              </div>
+              <div class="row">
+                <span>publikacje:</span>
+              </div>
+              <div class="row">
+                <span>posty:</span>
+              </div>
+            </div>
+            <div class="column right-column">
+              <div class="row-2">
+                <span class="right-align">{{ vm.followers.length}}</span>
+              </div>
+              <div class="row-2">
+                <span class="right-align">{{ vm.followedByMeUsers.length}}</span>
+              </div>
+              <div class="row-2">
+                <span class="right-align">{{ vm.contacts.length}}</span>
+              </div>
+              <div class="row-2">
+                <span class="right-align">{{ vm.publications.length}}</span>
+              </div>
+              <div class="row-2">
+                <span class="right-align">{{ vm.posts.length}}</span>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+    <div class="navigation-bar-container">
+        <div class="nav-items">
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'posty'}" (click)="selectTab('posty')">Posty</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'publikacje'}" (click)="selectTab('publikacje')">Publikacje</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'zapisane'}" (click)="selectTab('zapisane')">Zapisane</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'aktywnosc'}" (click)="selectTab('aktywnosc')">Aktywność</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'obserwowani'}" (click)="selectTab('obserwowani')">Obserwowani</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'obserwujacy'}" (click)="selectTab('obserwujacy')">Obserwujący</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'kontakty'}" (click)="selectTab('kontakty')">Kontakty</span>
+          <span class="nav-item" [ngClass]="{'active': selectedTab === 'ustawienia'}" (click)="selectTab('ustawienia')">Ustawienia</span>
+        </div>
+    </div>
+      
+      <div class="content-2">
+        <div *ngIf="selectedTab === 'posty'" >
+          <app-user-profile-posts></app-user-profile-posts>
+        </div>
+        <div *ngIf="selectedTab === 'publikacje'">
+          <app-publications></app-publications>
+        </div>
+        <div *ngIf="selectedTab === 'zapisane'">
+          <app-user-profile-posts></app-user-profile-posts>
+        </div>
+        <div *ngIf="selectedTab === 'aktywnosc'">
+          <app-activity></app-activity>
+        </div>
+        <div *ngIf="selectedTab === 'obserwowani'">
+          <app-following></app-following>
+        </div>
+        <div *ngIf="selectedTab === 'obserwujacy'">
+          <app-followers></app-followers>
+        </div>
+        <div *ngIf="selectedTab === 'kontakty'">
+          <app-following></app-following>
+        </div>
+        <div *ngIf="selectedTab === 'ustawienia'">
+          <!-- Komponent Ustawienia -->
+        </div>
+      </div>
+    

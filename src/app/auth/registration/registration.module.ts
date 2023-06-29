@@ -4,6 +4,7 @@ import { RegistrationComponent } from './registration.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 const routes: Routes = [
   {path: '', component: RegistrationComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    AngularSvgIconModule.forRoot()
   ]
 })
 export class RegistrationModule { }

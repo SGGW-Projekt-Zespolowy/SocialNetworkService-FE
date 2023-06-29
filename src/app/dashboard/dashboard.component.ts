@@ -3,6 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppBreakpoints } from '../app-breakpoints';
 import { Subscription } from 'rxjs';
 import { PostPopUpService } from '../services/post-pop-up.service';
+import { ConfirmModalService } from '../services/confirm-modal.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +20,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(
     private responsive: BreakpointObserver,
-    public popUpService: PostPopUpService
+    public popUpService: PostPopUpService,
+    public confirmModalService: ConfirmModalService
   ) {}
 
   ngOnInit(): void {

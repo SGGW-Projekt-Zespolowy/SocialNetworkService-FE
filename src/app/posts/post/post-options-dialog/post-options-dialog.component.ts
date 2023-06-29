@@ -14,7 +14,7 @@ export class PostOptionsDialogComponent {
   @Output() delete = new EventEmitter();
 
   constructor(
-    public popUpService: PostPopUpService,
+    public popUpService: PostPopUpService
   ) {}
 
   onIsSolvedToggle() {

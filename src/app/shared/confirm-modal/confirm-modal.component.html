@@ -1,0 +1,24 @@
+<div
+  class="modal-background">
+</div>
+<div class="flex-wrap">
+  <div class="modal-content">
+    <div class="message">
+      Czy na pewno chcesz usunąć ten post?<br> 
+      Po usunięciu nie będzie go można odzyskać
+    </div>
+    <div class="controls">
+      <span
+        (click)="confirmModalService.approve()" 
+        class="approve-btn modal-btn pointer">
+        Tak
+      </span>
+      <span
+        (click)="confirmModalService.reject()" 
+        class="reject-btn modal-btn pointer">
+        Nie
+      </span>
+    </div>
+  </div>
+</div>
+

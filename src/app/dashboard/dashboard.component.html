@@ -5,6 +5,11 @@
   [images]="vm">
 </app-image-preview-modal>
 </ng-container>
+<div
+  *ngIf="confirmModalService.isConfirmModalVisible | async"
+  class="confirm-modal-wrap">
+  <confirm-modal></confirm-modal>
+</div>
 
 <app-navbar></app-navbar>
 <div class="nav-content">

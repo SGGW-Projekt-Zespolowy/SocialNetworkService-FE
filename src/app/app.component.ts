@@ -75,5 +75,23 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/edit.svg', 'edit').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/solved.svg', 'solved').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/drop-down-arrow.svg', 'drop-down-arrow').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/drop-up-arrow.svg', 'drop-up-arrow').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/instagram.svg', 'instagram').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/location.svg', 'location').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/message-profile.svg', 'message-profile').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/phone-profile.svg', 'phone').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/medical-s.svg', 'medical').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/dots.svg', 'dots').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/invite.svg', 'invite').subscribe();
   }
 }
