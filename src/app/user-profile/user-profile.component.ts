@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
 import { PostPopUpService } from '../services/post-pop-up.service';
 import { ConfirmModalService } from '../services/confirm-modal.service';
+import { ActivatedRoute } from '@angular/router';
+import { UserDetailed } from '../models/user.model';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,12 +16,20 @@ export class UserProfileComponent {
   constructor(
     public popUpService: PostPopUpService,
     protected postService: PostService,
-    public confirmModalService: ConfirmModalService
+    public confirmModalService: ConfirmModalService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
+  userDetailed$: Observable<UserDetailed>;
   selectedTab: string;
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
+  }
+
+  ngOnInit() {
+    this.userDetailed$ = this.activatedRoute.data.pipe(map(data => {
+      return data['userDetailed'];
+    }))
   }
 }

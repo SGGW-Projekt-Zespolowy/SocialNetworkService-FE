@@ -39,14 +39,19 @@
         <confirm-modal></confirm-modal>
       </div>
   </div>
-    <div class="user-profile-container">
+  <div 
+    class="user-profile-container" 
+    *ngIf="userDetailed$ | async as vm">
         <div class="photo">
-            <img class="profile-picture" src="../../../assets/Images/placeholders/user-profile.jpg" alt="Profilowe">
+            <img 
+              class="profile-picture" 
+              [src]="vm.profilePicture" 
+              alt="Profilowe">
             <div class="button-overlay">
-                <span class="button-text">Student</span>
+                <span class="button-text">{{ vm.defree }}</span>
             </div>
         </div>
-        <div class="full-name">Elżbieta Dąbek</div>
+        <div class="full-name">{{ vm.firstName }} {{ vm.lastName }}</div>
         <div class="infos">
             <div class="info">
                 <svg-icon [applyClass]="true" class="icon" name="location"></svg-icon>
@@ -69,7 +74,7 @@
             <div class="info">
                 <svg-icon [applyClass]="true" class="icon" name="message-profile"></svg-icon>
                 <div class="name">
-                    elzbieta.dabek@mymail.com
+                    {{ vm.email }}
                  </div>
             </div>
         </div>
@@ -93,23 +98,23 @@
             </div>
             <div class="column right-column">
               <div class="row-2">
-                <span class="right-align">76</span>
+                <span class="right-align">{{ vm.followers.length}}</span>
               </div>
               <div class="row-2">
-                <span class="right-align">43</span>
+                <span class="right-align">{{ vm.followedByMeUsers.length}}</span>
               </div>
               <div class="row-2">
-                <span class="right-align">14</span>
+                <span class="right-align">{{ vm.contacts.length}}</span>
               </div>
               <div class="row-2">
-                <span class="right-align">2</span>
+                <span class="right-align">{{ vm.publications.length}}</span>
               </div>
               <div class="row-2">
-                <span class="right-align">8</span>
+                <span class="right-align">{{ vm.posts.length}}</span>
               </div>
             </div>
         </div>
-    </div>
+  </div>
 </div>
     <div class="navigation-bar-container">
         <div class="nav-items">
