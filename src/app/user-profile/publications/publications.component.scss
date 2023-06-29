@@ -1,0 +1,37 @@
+
+.content{
+    font-size: var(--post-font-size);
+    margin: 40px auto;
+    max-width: 1500px;
+    min-height: 75px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border-radius: 23px;
+    background: #FFF;
+    box-shadow: 0px 5px 10px 1px rgba(217, 217, 217, 0.50);
+    padding: var(--post-padding);
+    margin: var(--post-margin);
+    display: flex;
+    max-width: 950px;
+    min-height: 70px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+  }
+
+  .describe{
+    color: #000;
+    font-size: 24px;
+    font-family: "Quicksand";
+    margin-right: 153px;
+    white-space:  normal;
+    margin-top: 15px;
+    margin-left: 35px;
+    margin-bottom: 10px;
+  }
+
+

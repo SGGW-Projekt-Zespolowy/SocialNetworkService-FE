@@ -9,6 +9,7 @@ import { UserProfilePostsComponent } from './user-profile-posts/user-profile-pos
 import { ActivityComponent } from './activity/activity.component';
 import { FollowingComponent } from './following/following.component';
 import { FollowersComponent } from './followers/followers.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { FollowersComponent } from './followers/followers.component';
         UserProfilePostsComponent,
         ActivityComponent,
         FollowingComponent,
-        FollowersComponent
+        FollowersComponent,
+        PublicationsComponent
     ],
     imports: [
         CommonModule,
