@@ -24,6 +24,11 @@ export class UserProfileComponent {
   selectedTab: string;
 
   ngOnInit() {
+
+    this.userDetailed$ = this.activatedRoute.data.pipe(map(data => {
+      return data['userDetailed'];
+    }))
+
     const storedTab = localStorage.getItem('selectedTab');
     if (storedTab) {
       this.selectedTab = storedTab; 
@@ -37,9 +42,4 @@ export class UserProfileComponent {
     localStorage.setItem('selectedTab', tab);
   }
 
-  ngOnInit() {
-    this.userDetailed$ = this.activatedRoute.data.pipe(map(data => {
-      return data['userDetailed'];
-    }))
-  }
 }
