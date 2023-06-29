@@ -35,11 +35,14 @@ export class UserProfileComponent {
     } else {
       this.selectedTab = 'posty';
     }
+
+    this.userDetailed$ = this.activatedRoute.data.pipe(map(data => {
+      return data['userDetailed'];
+    }))
   }
 
   selectTab(tab: string): void {
     this.selectedTab = tab;
     localStorage.setItem('selectedTab', tab);
   }
-
 }
