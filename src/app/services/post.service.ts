@@ -73,7 +73,7 @@ export class PostService {
     },
   
     {
-      id: "1",
+      id: "2",
       authorId: "1",
       title: 'Przerost mięśnia sercowego',
       author: 'John Doe',
@@ -97,7 +97,7 @@ export class PostService {
     },
   
     {
-      id: "1",
+      id: "3",
       authorId: "f6e2d04a-0524-485b-e7ad-08db7590bc89",
       title: 'Przeszczep wątroby u cukrzyka',
       author: 'Janek Paweł Wypych',
@@ -121,7 +121,7 @@ export class PostService {
     },
   
     {
-      id: "1",
+      id: "4",
       authorId: "1",
       title: 'Przesz',
       author: 'Jan',
@@ -143,5 +143,4 @@ export class PostService {
       isSolved: false
     },
   ]
-  
 }

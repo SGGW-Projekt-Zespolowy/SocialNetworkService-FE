@@ -24,7 +24,7 @@ export class PostCommentsSectionComponent {
   ) {}
 
   ngOnInit() {
-    this.commentService.getCommentForPost(this.postId)
+    this.commentService.getCommentsForPost(this.postId)
       .subscribe(comments => {
         this.comments = comments;
       })
