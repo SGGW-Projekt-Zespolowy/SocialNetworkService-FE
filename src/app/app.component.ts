@@ -91,5 +91,7 @@ export class AppComponent implements OnInit {
     this.iconReg.loadSvg('../assets/Icons/medical-s.svg', 'medical').subscribe();
 
     this.iconReg.loadSvg('../assets/Icons/dots.svg', 'dots').subscribe();
+
+    this.iconReg.loadSvg('../assets/Icons/invite.svg', 'invite').subscribe();
   }
 }
