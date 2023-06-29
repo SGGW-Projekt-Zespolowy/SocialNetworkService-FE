@@ -8,7 +8,7 @@ import { AppBreakpoints } from 'src/app/app-breakpoints';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss']
 })
-export class SearchBarComponent implements OnInit, OnDestroy {
+export class SearchBarComponent implements OnInit {
 
   searchToggleSub: Subscription;
   searchBarIsVisible: boolean = true;
@@ -19,7 +19,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   constructor(private responsive: BreakpointObserver) {}
 
   ngOnInit(): void {
-    this.searchToggleSub = this.responsive.observe([
+    this.responsive.observe([
       AppBreakpoints.Small
       ])
       .subscribe(result => {
@@ -34,7 +34,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    this.searchToggleSub.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.searchToggleSub.unsubscribe();
+  // }
 }
