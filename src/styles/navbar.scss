@@ -64,6 +64,12 @@ search-bar {
     padding: 0px 10px;
   }
 
+  .logo{
+    margin-left: -2px !important;
+    width: 135px !important;
+    height: 35px !important;
+  }
+
   .nav-item {
     margin-left: 0.5em;
   }
@@ -78,7 +84,7 @@ search-bar {
   }
 
   .nav-icon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 22px;
   }
 }

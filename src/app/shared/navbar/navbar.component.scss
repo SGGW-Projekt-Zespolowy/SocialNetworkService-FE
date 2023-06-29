@@ -8,3 +8,10 @@ app-user-dialog {
   position: absolute;
   left: calc(-1 * calc(var(--user-dialog-width) / 2.35));
 }
+
+.logo{
+  height: 61px;
+  width: 190px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
