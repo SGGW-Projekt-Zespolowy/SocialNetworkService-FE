@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CustomAuthValidators } from '../custom-auth-validators';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { MedicalConsts } from 'src/app/models/specializations.model';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-  titles = ['Student', 'Lek. stażysta', 'Lek. rezydent', 'Lek. med.', 'Lek. dent.', 'Dr n. med.', 'Dr hab n. med.', 'Prof dr hab n. med.'];
+  // titles = ['Student', 'Lek. stażysta', 'Lek. rezydent', 'Lek. med.', 'Lek. dent.', 'Dr n. med.', 'Dr hab n. med.', 'Prof dr hab n. med.'];
+  titles = MedicalConsts.degrees;
   showPassword = false;
   registrationForm: FormGroup 
 
