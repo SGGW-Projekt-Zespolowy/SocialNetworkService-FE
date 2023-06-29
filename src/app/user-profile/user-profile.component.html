@@ -62,13 +62,14 @@
             <div class="info">
                 <svg-icon [applyClass]="true" class="icon" name="medical"></svg-icon>
                 <div class="name">
-                    Okulistyka
+                    Brak specjalizacji
                 </div>
             </div>
             <div class="info">
-                <svg-icon [applyClass]="true" class="icon" name="phone"></svg-icon>
+                <!-- <svg-icon [applyClass]="true" class="icon" name="phone"></svg-icon> -->
+                <i class="fa-solid fa-calendar-days"></i>
                 <div class="name">
-                    555 444 666
+                    {{ vm.dateOfBirth | date:'M/d/yyyy' }}
                 </div>
             </div>
             <div class="info">
