@@ -7,12 +7,14 @@ import { PostsModule } from '../posts/posts.module';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { UserProfilePostsComponent } from './user-profile-posts/user-profile-posts.component';
 import { ActivityComponent } from './activity/activity.component';
+import { FollowingComponent } from './following/following.component';
 
 @NgModule({
     declarations: [
         UserProfileComponent,
         UserProfilePostsComponent,
-        ActivityComponent
+        ActivityComponent,
+        FollowingComponent
     ],
     imports: [
         CommonModule,
