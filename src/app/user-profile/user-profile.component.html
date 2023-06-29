@@ -48,7 +48,7 @@
                 [src]="vm.profilePicture" 
                 alt="profilowe">
             <div class="button-overlay">
-                <span class="button-text">{{ vm.defree }}</span>
+                <span class="button-text">{{ vm.defree | translateDegrees }}</span>
             </div>
         </div>
         <div class="full-name">{{ vm.firstName }} {{ vm.lastName }}</div>

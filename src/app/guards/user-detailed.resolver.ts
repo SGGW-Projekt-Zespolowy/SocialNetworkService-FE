@@ -30,7 +30,8 @@ export class UserDetailedResolver implements Resolve<UserDetailed> {
           userDetailed.profilePicture = HttpClientHelper.avatarPlaceholder;
         }
         return userDetailed;
-      })
+      }),
+      tap(user => console.log(user))
     )
   }
 }
